@@ -57,6 +57,9 @@ $container-max-width: 1120px;
 $container-max-width-narrow: 840px;
 // $container-max-width-wide: 75rem;
 
+$page-top-gradient: linear-gradient($color-secondary-100, transparent);
+$page-top-gradient-height: 80vh;
+
 // // site header
 $site-header-background-color: transparent;
 $site-header-color: $color-primary-400;
