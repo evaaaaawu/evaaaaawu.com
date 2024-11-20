@@ -1,4 +1,5 @@
 ---
+import LogoLink from "./LogoLink.astro";
 import PrimaryNavigation from "./PrimaryNavigation.astro";
 const { skipTo = "#main" } = Astro.props;
 ---
@@ -8,11 +9,7 @@ const { skipTo = "#main" } = Astro.props;
 
   <div class="container">
     <div class="site-header__inner">
-      <a href="/index.html">
-        <img aria-hidden="true" src="/images/logo.svg" alt="" />
-        <p class="visually-hidden">NAME_OF_SITE</p>
-      </a>
-
+      <LogoLink />
       <PrimaryNavigation />
     </div>
   </div>
