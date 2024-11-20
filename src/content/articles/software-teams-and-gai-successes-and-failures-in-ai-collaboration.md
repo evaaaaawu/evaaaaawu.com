@@ -1,4 +1,4 @@
-<!-- ---
+---
 title: 軟體團隊與 GAI: 與 AI 協作的成與敗
 subtitle: 分享 [AI Your Summer](https://gamma.app/public/AI-Your-Summer-plvjdnqv7xsokbx?mode=doc) 此系列活動 [2023/6/13 場次](https://www.accupass.com/event/2305221045441859361432) 的筆記。
 author: Eva Wu
@@ -9,7 +9,7 @@ updateDate: 2024-11-01
 tags:
   - AI
 featured: true
---- -->
+---
 
 本文為 [AI Your Summer](https://gamma.app/public/AI-Your-Summer-plvjdnqv7xsokbx?mode=doc) 此系列活動 [2023/6/13 場次](https://www.accupass.com/event/2305221045441859361432) 筆記分享，內容有經過個人的重新架構，並非當天講座流程，歡迎一起討論交流。
 
