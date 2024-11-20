@@ -8,6 +8,10 @@
   margin-inline: auto;
 }
 
+.ml-auto {
+  margin-inline-start: auto;
+}
+
 @each $size-name, $size-value in $sizes {
   .margin {
     &-#{$size-name} {

@@ -1,10 +1,10 @@
 ---
-const { href, theme = "default" } = Astro.props;
+const { href, theme = "default", class: className } = Astro.props;
 let El = "button";
 if (href) El = "a";
 ---
 
-<El class="button" {href} data-type={theme}>
+<El class:list={["button", className]} {href} data-type={theme}>
   <slot />
 </El>
 
@@ -26,6 +26,8 @@ if (href) El = "a";
     border-radius: $button-border-radius;
     transition: 275ms ease;
 
+    min-width: fit-content;
+
     &[data-type="primary"] {
       background-color: $button-primary-background;
       color: $button-primary-color;
@@ -35,14 +37,15 @@ if (href) El = "a";
         color: $button-primary-color-hover;
       }
     }
-
-    &[data-type="accent"] {
-      background-color: $button-accent-background;
-      color: $button-accent-color;
+    &[data-type="secondary"] {
+      background-color: $button-secondary-background;
+      color: $button-secondary-color;
+      outline: $button-secondary-outline;
+      // outline-offset: $button-outline-thickness * -1;
 
       &:is(:hover, :focus) {
-        background-color: $button-accent-background-hover;
-        color: $button-accent-color-hover;
+        background-color: $button-secondary-background-hover;
+        color: $button-secondary-color-hover;
       }
     }
   }

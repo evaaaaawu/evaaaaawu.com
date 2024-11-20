@@ -1,22 +1,30 @@
 ---
 import LogoLink from "./LogoLink.astro";
 import PrimaryNavigation from "./PrimaryNavigation.astro";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <footer class="site-footer">
   <div class="container">
-    <LogoLink />
-    <PrimaryNavigation label="footer navigation">
-      <li><a href="/about.html">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-      <li><a href="#">Page 4</a></li>
-    </PrimaryNavigation>
-    <p>Footer content here!</p>
+    <div class="flex-group align-center">
+      <LogoLink />
+      <PrimaryNavigation label="footer navigation">
+        <li><a href="/about.html">Page 2</a></li>
+        <li><a href="#">Page 3</a></li>
+        <li><a href="#">Page 4</a></li>
+      </PrimaryNavigation>
+      <SocialLinks />
+      <p class="ml-auto">© 2024 Eva Wu 的程式學習筆記</p>
+    </div>
   </div>
 </footer>
 
 <style lang="scss">
   @use "../styles/abstracts" as *;
+
+  .flex-group {
+    width: 100%;
+  }
 
   .site-footer {
     background-color: $footer-background-color;

@@ -108,10 +108,15 @@ $button-border-radius: $border-radius-2;
 // $button-accent-background: $color-accent-400;
 // $button-accent-color-hover: $color-neutral-100;
 // $button-accent-background-hover: $color-accent-500;
-// $button-primary-color: $color-neutral-100;
-// $button-primary-background: $color-primary-700;
-// $button-primary-color-hover: $color-neutral-100;
-// $button-primary-background-hover: $color-primary-800;
+$button-primary-color: $color-neutral-100;
+$button-primary-background: $color-primary-400;
+$button-primary-color-hover: $color-neutral-100;
+$button-primary-background-hover: $color-primary-500;
+$button-secondary-color: $color-neutral-100;
+$button-secondary-background: $color-secondary-400;
+$button-secondary-color-hover: $color-neutral-100;
+$button-secondary-background-hover: $color-secondary-500;
+$button-secondary-outline: $color-secondary-500;
 
 // // cards
 // $card-flow-spacing: $size-2;
