@@ -1,4 +1,4 @@
----
+<!-- ---
 title: CSS 的 display 排列模式
 subtitle: CSS 的 display 屬性會決定一個元素在頁面中的排列方式，並影響其內部和周圍元素的佈局。
 author: Eva Wu
@@ -9,7 +9,7 @@ updateDate: 2024-11-10
 tags:
   - CSS
 featured: false
----
+--- -->
 
 ### display: block
 

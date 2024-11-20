@@ -1,4 +1,4 @@
----
+<!-- ---
 title: HTML 語意化
 subtitle: HTML 語意化就是用合乎語意的 HTML 標籤開發。
 author: Eva Wu
@@ -9,7 +9,7 @@ updateDate: 2024-11-01
 tags:
   - HTML
 featured: false
----
+--- -->
 
 HTML 語意化就是用合乎語意的 HTML 標籤開發，像是 <form> 標籤或是 <table> 標籤。
 

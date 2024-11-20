@@ -1,17 +1,14 @@
 ---
-
+const { label } = Astro.props;
 ---
 
-<nav aria-label="primary navigation">
+<nav aria-label={label}>
   <ul class="nav | flex-group">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/about.html">Page 2</a></li>
-    <li><a href="#">Page 3</a></li>
-    <li><a href="#">Page 4</a></li>
+    <slot />
   </ul>
 </nav>
 
-<style lang="scss">
+<style lang="scss" is:global>
   @use "../styles/abstracts" as *;
   .nav {
     --flex-column-gap: #{$navigation-gap};

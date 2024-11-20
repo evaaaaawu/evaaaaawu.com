@@ -1,10 +1,16 @@
 ---
 import LogoLink from "./LogoLink.astro";
+import PrimaryNavigation from "./PrimaryNavigation.astro";
 ---
 
 <footer class="site-footer">
   <div class="container">
     <LogoLink />
+    <PrimaryNavigation label="footer navigation">
+      <li><a href="/about.html">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+      <li><a href="#">Page 4</a></li>
+    </PrimaryNavigation>
     <p>Footer content here!</p>
   </div>
 </footer>
