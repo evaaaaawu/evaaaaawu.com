@@ -12,8 +12,8 @@ export async function getStaticPaths() {
   }));
 }
 
-const { article } = Astro.props;
-const { Content } = await article.render();
+const { post } = Astro.props;
+const { Content } = await post.render();
 ---
 
 <BaseLayout>
