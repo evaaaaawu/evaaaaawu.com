@@ -1,5 +1,6 @@
 ---
 import Tag from "./Tag.astro";
+import FormattedDate from "./FormattedDate.astro";
 
 const { article } = Astro.props;
 ---
@@ -12,6 +13,7 @@ const { article } = Astro.props;
     />
     <Tag class="tag" tag={article.data.tags[0]} />
   </div>
+  <FormattedDate date={article.data.creationDate} />
   <h3 class="fs-500 fw-bold">{article.data.title}</h3>
   <p>
     <a href={`/articles/${article.slug}`}>
