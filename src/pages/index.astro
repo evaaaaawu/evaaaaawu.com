@@ -2,28 +2,40 @@
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticlePreview from "../components/ArticlePreview.astro";
+import { getCollection } from "astro:content";
+
+const allArticles = await getCollection("articles");
 ---
 
-<BaseLayout withGradient title="Let's get to work">
+<BaseLayout withGradient title="Eva Wu's Tech Blog">
   <div class="container flow">
-    <h1 class="heading-1">Let's go</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum nulla
-      repellendus dolore quam quas? Nisi eaque veniam dolorem enim. Odit
-      incidunt nisi dignissimos facilis perspiciatis quidem accusantium at
-      consectetur minus.
-    </p>
-    <p>
-      Aperiam non nulla recusandae totam atque officia debitis tenetur, natus
-      veritatis eius perferendis libero earum voluptatum doloremque dignissimos,
-      ut laborum illum eligendi autem ipsa quaerat. Dolorum consequatur ipsum
-      harum ut.
-    </p>
-    <p>
-      Dolore molestias et esse neque beatae atque. Quas necessitatibus,
-      quibusdam est vero neque corporis doloremque consectetur error, dicta
-      animi commodi! Accusamus distinctio dolor eligendi sint repudiandae
-      sapiente adipisci nemo doloribus?
-    </p>
+    <section class="section">
+      <h1 class="heading-1">Eva Wu's<br />Tech Blog</h1>
+      <p class="fs-500">
+        Discover the perfect blend of adventure and flavor at Travel Fun Food!
+        Dive into captivating travel stories and indulge your taste buds with
+        delectable culinary experiences. Join us on a journey of exploration and
+        gastronomy, where every adventure is seasoned with excitement. Ready to
+        embark on a world of travel, fun, and food? 🌍
+      </p>
+    </section>
+
+    <section class="section flow">
+      <h2 class="heading-2">Featured articles</h2>
+    </section>
+
+    <!-- all blogs link -->
+
+    <section class="section flow">
+      <h2 class="heading-2">Travel articles</h2>
+      <div class="grid-auto-fit">
+        {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
+      </div>
+    </section>
+
+    <!-- all blogs link -->
+
+    <!-- Newsletter signup -->
   </div>
 </BaseLayout>
