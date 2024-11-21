@@ -1,0 +1,22 @@
+---
+const { article } = Astro.props;
+---
+
+<article class="flow">
+  <div class="image-container">
+    <img
+      src={`/images/articles/${article.data.imageSrc}`}
+      alt={article.data.imageAlt}
+    />
+    <a href="#" class="tag">
+      {article.data.tags[0]}
+    </a>
+  </div>
+  <h3 class="fs-500 fw-bold">{article.data.title}</h3>
+  <p>
+    <a href={`/articles/${article.slug}`}>
+      Read more{" "}
+      <span class="visually-hidden">about {article.data.title}</span>
+    </a>
+  </p>
+</article>

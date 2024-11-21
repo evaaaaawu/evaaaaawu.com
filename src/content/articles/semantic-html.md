@@ -7,7 +7,7 @@ imgAlt: Semantic HTML
 creationDate: 2023-02-12
 updateDate: 2024-11-01
 tags:
-  - HTML
+  - HTML
 featured: false
 ---
 
