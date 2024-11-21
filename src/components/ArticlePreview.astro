@@ -1,4 +1,6 @@
 ---
+import Tag from "./Tag.astro";
+
 const { article } = Astro.props;
 ---
 
@@ -8,9 +10,7 @@ const { article } = Astro.props;
       src={`/images/articles/${article.data.imageSrc}`}
       alt={article.data.imageAlt}
     />
-    <a href="#" class="tag">
-      {article.data.tags[0]}
-    </a>
+    <Tag class="tag" tag={article.data.tags[0]} />
   </div>
   <h3 class="fs-500 fw-bold">{article.data.title}</h3>
   <p>
@@ -20,3 +20,30 @@ const { article } = Astro.props;
     </a>
   </p>
 </article>
+
+<style lang="scss">
+  @use "../styles/abstracts" as *;
+
+  article {
+    --flow-spacer: #{$article-preview-spacing};
+  }
+
+  .image-container {
+    position: relative;
+  }
+
+  .tag {
+    position: absolute;
+    z-index: 1;
+    bottom: $article-preview-tag-offset;
+    left: $article-preview-tag-offset;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: $article-preview-aspect-ratio;
+    border-radius: $border-radius-2;
+  }
+</style>

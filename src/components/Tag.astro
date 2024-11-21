@@ -1,0 +1,30 @@
+---
+const { tag, class: className, ...rest } = Astro.props;
+---
+
+<a class={className} {...rest} href="#">
+  {tag}
+</a>
+
+<style lang="scss">
+  @use "../styles/abstracts" as *;
+
+  a {
+    color: $tag-color;
+    background-color: $tag-background-color;
+    border: $tag-border;
+    border-radius: $tag-border-radius;
+    padding: $tag-padding;
+    text-transform: $tag-text-transform;
+    font-weight: $tag-font-weight;
+    font-size: $tag-font-size;
+    box-shadow: $tag-box-shadow;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      color: $tag-color-hover;
+      background-color: $tag-background-color-hover;
+    }
+  }
+</style>
