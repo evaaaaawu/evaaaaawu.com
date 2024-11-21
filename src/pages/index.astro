@@ -1,11 +1,14 @@
 ---
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
+import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticlePreview from "../components/ArticlePreview.astro";
-import { getCollection } from "astro:content";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
 const allArticles = await getCollection("articles");
+const featuredArticles = await getCollection("articles", ({ data }) => {
+  return data.featured;
+});
 ---
 
 <BaseLayout withGradient title="Eva Wu's Tech Blog">
@@ -23,6 +26,11 @@ const allArticles = await getCollection("articles");
 
     <section class="section flow">
       <h2 class="heading-2">Featured articles</h2>
+      {
+        featuredArticles
+          .slice(0, 4)
+          .map((article) => <ArticlePreview {article} />)
+      }
     </section>
 
     <!-- all blogs link -->
