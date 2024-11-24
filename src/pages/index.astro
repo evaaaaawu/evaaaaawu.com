@@ -26,11 +26,16 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
 
     <section class="section flow">
       <h2 class="heading-2">Featured articles</h2>
-      {
-        featuredArticles
-          .slice(0, 4)
-          .map((article) => <ArticlePreview {article} />)
-      }
+      <div class="home-featured-grid">
+        <ArticlePreview article={featuredArticles[0]} excerptLength="200" />
+        <div class="">
+          {
+            featuredArticles
+              .slice(1, 4)
+              .map((article) => <ArticlePreview {article} />)
+          }
+        </div>
+      </div>
     </section>
 
     <!-- all blogs link -->
@@ -47,3 +52,14 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
     <!-- Newsletter signup -->
   </div>
 </BaseLayout>
+
+<style>
+  .home-featured-grid {
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: 800px) {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+</style>
