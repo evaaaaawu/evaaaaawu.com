@@ -1,7 +1,8 @@
 ---
-import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Tag from "../../components/Tag.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
@@ -14,12 +15,36 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
+
 ---
 
 <BaseLayout>
-  <article>
-    <div class="container" data-type="narrow">
-      <Content />
+  <div class="container flow">
+    <div class="meta">
+      <div class="flex-group align-center">
+        <Tag tag={article.data.tags[0]} />
+        creation date:<FormattedDate date={article.data.creationDate} />
+        update date:<FormattedDate date={article.data.updateDate} />
+      </div>
+      <a
+        href="#"
+        class="flex-group align-center"
+        style="--flex-column-gap: .5rem"
+      >
+        <img src="/images/share.svg" alt="" />
+        <span>Share</span>
+      </a>
     </div>
-  </article>
+    <h1 class="heading-2">{article.data.title}</h1>
+    <Content />
+  </div>
 </BaseLayout>
+
+<style>
+  .meta {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+</style>

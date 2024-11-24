@@ -13,7 +13,7 @@ featured: true
 
 開始之前直接先附上我整理的總結表格:
 
-![Pasted 2023-09-02T13!29!52.907Z.png](./JavaScript%20的%20splice、slice、split%20傻傻分不清楚-assets/Pasted%202023-09-02T13!29!52.907Z.png)
+<!-- ![Pasted 2023-09-02T13!29!52.907Z.png](./JavaScript%20的%20splice、slice、split%20傻傻分不清楚-assets/Pasted%202023-09-02T13!29!52.907Z.png) -->
 
 splice、slice、split 在分開看它們時沒什麼感覺，但當三個都遇到一遍後就會覺得似曾相識，分不太清楚彼此的差異，就好像丸子三兄弟一樣，不仔細看清楚並停下來好好分析一番，就會不知道到底什麼情況下應該要用誰?
 
@@ -220,4 +220,4 @@ console.log(arr) //畫面會回傳 [1, 2, 3, 4]
 
 最後，再貼一次我整理的總結表格，希望以後可以輕鬆分辨出這三位丸子三兄弟，不要再傻傻分不清楚了。
 
-![Pasted 2023-09-02T13!29!52.908Z.png](./JavaScript%20的%20splice、slice、split%20傻傻分不清楚-assets/Pasted%202023-09-02T13!29!52.908Z.png)
+<!-- ![Pasted 2023-09-02T13!29!52.908Z.png](./JavaScript%20的%20splice、slice、split%20傻傻分不清楚-assets/Pasted%202023-09-02T13!29!52.908Z.png) -->
