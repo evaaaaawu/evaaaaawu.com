@@ -15,11 +15,10 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
-
 ---
 
 <BaseLayout>
-  <div class="container flow">
+  <article class="container flow">
     <div class="meta">
       <div class="flex-group align-center">
         <Tag tag={article.data.tags[0]} />
@@ -37,7 +36,7 @@ const { Content } = await article.render();
     </div>
     <h1 class="heading-2">{article.data.title}</h1>
     <Content />
-  </div>
+  </article>
 </BaseLayout>
 
 <style>
