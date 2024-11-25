@@ -1,0 +1,20 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="padding-block-8">
+  <p>We have got lot more exciting blogs for you. Feel free to explore them.</p>
+  <Button theme="secondary">View all blogs</Button>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts" as *;
+
+  div {
+    border-top: $divider;
+    display: flex;
+    gap: $size-8;
+    align-items: center;
+    justify-content: space-between;
+  }
+</style>
