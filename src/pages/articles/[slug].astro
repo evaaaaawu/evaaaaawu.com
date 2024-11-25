@@ -5,6 +5,7 @@ import Tag from "../../components/Tag.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import authors from "../../content/authors/authors.json";
 import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
+import ArticlePreview from "../../components/ArticlePreview.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
@@ -20,6 +21,9 @@ const { Content } = await article.render();
 const articleAuthor = article.data.author;
 const authorInfo = authors.find(function (author) {
   return author.name === articleAuthor;
+});
+const featuredArticles = await getCollection("articles", ({ data }) => {
+  return data.featured;
 });
 ---
 
@@ -48,13 +52,32 @@ const authorInfo = authors.find(function (author) {
       image={authorInfo.image}
     />
   </article>
+  <div class="container">
+    <section class="featured section | flow">
+      <h2 class="heading-2">Featured articles</h2>
+      <div class="grid-auto-fit">
+        {
+          featuredArticles
+            .slice(0, 3)
+            .map((article) => <ArticlePreview excerptLength="80" {article} />)
+        }
+      </div>
+    </section>
+  </div>
 </BaseLayout>
 
-<style>
+<style lang="scss">
+  @use "../../styles/abstracts" as *;
+
   .meta {
     width: 100%;
     display: flex;
     gap: 1rem;
     justify-content: space-between;
+  }
+
+  .featured {
+    margin-top: $section-padding-block;
+    border-top: $divider;
   }
 </style>
