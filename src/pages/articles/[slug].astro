@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
+import authors from "../../content/authors/authors.json";
+import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
@@ -15,10 +17,14 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
+const articleAuthor = article.data.author;
+const authorInfo = authors.find(function (author) {
+  return author.name === articleAuthor;
+});
 ---
 
 <BaseLayout>
-  <article class="container flow">
+  <article class="full-article | container flow" data-type="narrow">
     <div class="meta">
       <div class="flex-group align-center">
         <Tag tag={article.data.tags[0]} />
@@ -36,6 +42,11 @@ const { Content } = await article.render();
     </div>
     <h1 class="heading-2">{article.data.title}</h1>
     <Content />
+    <AboutTheAuthor
+      name={authorInfo.name}
+      description={authorInfo.description}
+      image={authorInfo.image}
+    />
   </article>
 </BaseLayout>
 

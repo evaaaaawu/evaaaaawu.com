@@ -3,7 +3,7 @@
 .full-article {
   font-size: $article-body-font-size-sm-screen;
 
-  h2 {
+  > h2 {
     font-size: $article-h2-font-size-sm-screen;
     font-weight: $article-h2-font-weight;
   }
@@ -11,12 +11,12 @@
   @include mq(medium) {
     font-size: $article-body-font-size-lg-screen;
 
-    h2 {
+    > h2 {
       font-size: $article-h2-font-size-lg-screen;
     }
   }
 
-  img {
+  > img {
     width: 100%;
     max-height: 40vmin;
     object-fit: cover;
