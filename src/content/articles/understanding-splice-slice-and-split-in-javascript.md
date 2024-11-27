@@ -1,8 +1,8 @@
 ---
 title: JavaScript 的 splice、slice、split 傻傻分不清楚
 subtitle: splice 用於修改原陣列，可以進行插入、刪除或同時進行；slice 用於提取陣列或字串的部分，並返回新陣列或字串，且不改變原內容；split 會將字串依照指定分隔符號切分為新的陣列，原字串則保持不變。
-author: Eva Wu
-imageSrc: understanding-splice-slice-and-split-in-javascript.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/understanding-splice-slice-and-split-in-javascript.png
 imgAlt: Understanding splice, slice, and split in JavaScript
 creationDate: 2023-08-05
 updateDate: 2024-11-09

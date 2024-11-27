@@ -9,7 +9,7 @@ const { article, excerptLength = 0 } = Astro.props;
 <article class="flow">
   <div class="image-container">
     <img
-      src={`/images/articles/${article.data.imageSrc}`}
+      src={article.data.imageSrc}
       alt={article.data.imageAlt}
     />
     <Tag class="tag" tag={article.data.tags[0]} />

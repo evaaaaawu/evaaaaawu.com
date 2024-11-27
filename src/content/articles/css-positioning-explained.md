@@ -1,8 +1,8 @@
 ---
 title: CSS 的 position 定位
 subtitle: CSS 的 position 屬性用於控制 HTML 元素的定位方式。
-author: Eva Wu
-imageSrc: css-positioning-explained.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/css-positioning-explained.png
 imgAlt: CSS Positioning Explained
 creationDate: 2023-01-29
 updateDate: 2024-11-01

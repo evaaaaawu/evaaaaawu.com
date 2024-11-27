@@ -1,8 +1,8 @@
 ---
 title: 征服 RWD
 subtitle: RWD 是一種設計方式，讓網站能夠在各種設備和螢幕尺寸下進行調整，以最佳化的方式呈現內容。
-author: Eva Wu
-imageSrc: mastering-responsive-web-design-rwd.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/mastering-responsive-web-design-rwd.png
 imgAlt: Mastering Responsive Web Design
 creationDate: 2023-02-05
 updateDate: 2024-11-01

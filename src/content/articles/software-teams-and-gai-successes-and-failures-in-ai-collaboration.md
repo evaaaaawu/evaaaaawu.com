@@ -1,8 +1,8 @@
 ---
 title: 軟體團隊與 GAI-與 AI 協作的成與敗
 subtitle: 分享 AI Your Summer 此系列活動 2023/6/13 場次的筆記。
-author: Eva Wu
-imageSrc: software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
 imgAlt: Software Teams and GAI-Successes and Failures in AI Collaboration
 creationDate: 2023-07-17
 updateDate: 2024-11-01

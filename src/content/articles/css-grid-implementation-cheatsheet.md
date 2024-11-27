@@ -1,8 +1,8 @@
 ---
 title: CSS GRID 實作小抄
 subtitle: CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的控制網頁元素的排列和大小。
-author: Eva Wu
-imageSrc: css-grid-implementation-cheatsheet.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/css-grid-implementation-cheatsheet.png
 imgAlt: CSS GRID Implementation Cheatsheet
 creationDate: 2023-01-08
 updateDate: 2024-11-10

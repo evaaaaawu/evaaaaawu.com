@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import authors from "../../content/authors/authors.json";
 import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
 import ArticlePreview from "../../components/ArticlePreview.astro";
 import ViewAllBlogs from "../../components/ViewAllBlogs.astro";
@@ -20,10 +19,15 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
-const articleAuthor = article.data.author;
-const authorInfo = authors.find(function (author) {
-  return author.name === articleAuthor;
-});
+// const allAuthors = await Astro.glob("../../content/authors/*.json");
+const articleAuthorPath = article.data.author;
+const articleAuthorName = articleAuthorPath.match(/\/([^\/]+)\.json$/)[1];
+const authorInfo = await import(
+  `../../content/authors/${articleAuthorName}.json`
+).then((info) => info.default);
+// const authorInfo = allAuthors.find(function (author) {
+//   return author.name === articleAuthorName;
+// });
 const featuredArticles = await getCollection("articles", ({ data }) => {
   return data.featured;
 });

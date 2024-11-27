@@ -1,8 +1,8 @@
 ---
 title: ChatGPT Prompt Engineering for Developers 課程重點筆記
 subtitle: ChatGPT Prompt Engineering for Developers 是生成式 AI 出現後 DeepLearning.AI 推出的一堂很有名的課程，是一個適合給所有人看的使用 AI Prompt 指南。
-author: Eva Wu
-imageSrc: key-notes-from-chatgpt-prompt-engineering-for-developers-course.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/key-notes-from-chatgpt-prompt-engineering-for-developers-course.png
 imgAlt: Key Notes from "ChatGPT Prompt Engineering for Developers" Course
 creationDate: 2023-05-14
 updateDate: 2024-11-01

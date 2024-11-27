@@ -1,8 +1,8 @@
 ---
 title: CSS 的 display 排列模式
 subtitle: CSS 的 display 屬性會決定一個元素在頁面中的排列方式，並影響其內部和周圍元素的佈局。
-author: Eva Wu
-imageSrc: css-display-layout-modes.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/css-display-layout-modes.png
 imgAlt: CSS Display Layout Modes
 creationDate: 2023-01-22
 updateDate: 2024-11-10

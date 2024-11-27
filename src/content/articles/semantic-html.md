@@ -1,8 +1,8 @@
 ---
 title: HTML 語意化
 subtitle: HTML 語意化就是用合乎語意的 HTML 標籤開發。
-author: Eva Wu
-imageSrc: semantic-html.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/semantic-html.png
 imgAlt: Semantic HTML
 creationDate: 2023-02-12
 updateDate: 2024-11-01

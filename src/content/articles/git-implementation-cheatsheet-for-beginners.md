@@ -1,8 +1,8 @@
 ---
 title: 給開發新手看的 Git 實作小抄
 subtitle: Git 是一個分散式版本控制系統，主要用來管理和追蹤程式碼的變更，特別適合用於多人協作的開發專案。
-author: Eva Wu
-imageSrc: git-implementation-cheatsheet-for-beginners.png
+author: src/content/authors/eva.json
+imageSrc: /images/articles/git-implementation-cheatsheet-for-beginners.png
 imgAlt: Git Implementation Cheatsheet for Beginners
 creationDate: 2023-06-15
 updateDate: 2024-11-01
