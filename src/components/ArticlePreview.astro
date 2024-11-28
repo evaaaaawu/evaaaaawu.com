@@ -8,16 +8,17 @@ const { article, excerptLength = 0 } = Astro.props;
 
 <article class="flow">
   <div class="image-container">
-    <img
-      src={article.data.imageSrc}
-      alt={article.data.imageAlt}
-    />
+    <img src={article.data.imageSrc} alt={article.data.imageAlt} />
     <Tag class="tag" tag={article.data.tags[0]} />
   </div>
   <FormattedDate date={article.data.creationDate} />
-  <h3 class="fs-500 fw-bold">{article.data.title}</h3>
+  <h3 transition:name={article.data.title} class="fs-500 fw-bold">
+    {article.data.title}
+  </h3>
   {
-    excerptLength > 0 && <p>{createExcerpt(article.body).substring(0, excerptLength)}...</p>
+    excerptLength > 0 && (
+      <p>{createExcerpt(article.body).substring(0, excerptLength)}...</p>
+    )
   }
   <p>
     <a href={`/articles/${article.slug}`}>

@@ -50,7 +50,9 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         <span>Share</span>
       </a>
     </div>
-    <h1 class="heading-2">{article.data.title}</h1>
+    <h1 transition:name={article.data.title} class="heading-2">
+      {article.data.title}
+    </h1>
     <Content />
     <AboutTheAuthor
       name={authorInfo.name}
