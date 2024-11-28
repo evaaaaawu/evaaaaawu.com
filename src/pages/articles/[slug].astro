@@ -33,7 +33,13 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
 });
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.subtitle}
+  author={article.data.author}
+  image={article.data.imageSrc}
+  ogimage={`/open-graph/${article.slug}.png`}
+>
   <article class="full-article | container flow" data-type="narrow">
     <div class="meta">
       <div class="flex-group align-center">

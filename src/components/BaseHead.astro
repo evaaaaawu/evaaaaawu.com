@@ -1,7 +1,13 @@
 ---
 import "../styles/main.scss";
 import { ViewTransitions } from "astro:transitions";
-const { title } = Astro.props;
+import { SEOMetadata } from "astro-seo-metadata";
+const {
+  title = "Eva Wu's Tech Blog",
+  description = "Discover the perfect blend of adventure and flavor at Travel Fun Food! Dive into captivating travel stories and indulge your taste buds with delectable culinary experiences. Join us on a journey of exploration and gastronomy, where every adventure is seasoned with excitement. Ready to embark on a world of travel, fun, and food? 🌍",
+  ogimage = "/newsletter-cta.jpg",
+  author,
+} = Astro.props;
 ---
 
 <head>
@@ -18,4 +24,15 @@ const { title } = Astro.props;
     rel="stylesheet"
   />
   <ViewTransitions />
+  <SEOMetadata
+    siteName={"Eva Wu's Tech Blog"}
+    title={title}
+    description={description}
+    image={`${Astro.url.origin}${ogimage}`}
+    author={author}
+    astroSitemap={true}
+    canonicalUrl={Astro.url.toString()}
+    type={"website"}
+    astroGenerator={true}
+  />
 </head>
