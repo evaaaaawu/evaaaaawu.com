@@ -59,7 +59,12 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
     gap: 1rem;
 
     @media (min-width: 800px) {
-      grid-template-columns: 3fr 1fr;
+      --overflow-grid-direction: vertical;
+      grid-template-columns: 1fr 1fr;
+
+      .home-featured-grid__sidebar {
+        --article-preview-layout: alternative;
+      }
     }
   }
 </style>
