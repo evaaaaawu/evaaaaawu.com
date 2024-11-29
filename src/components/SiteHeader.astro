@@ -12,19 +12,40 @@ const { skipTo = "#main" } = Astro.props;
   <div class="container">
     <div class="site-header__inner">
       <LogoLink />
-      <div class="flex-group align-center" style="--flex-column-gap: 2rem">
-        <PrimaryNavigation label="primary navigation">
+      <button aria-controls="main-menu" aria-expanded="false">
+        <span class="visually-hidden">Menu</span>
+        <img class="menu-icon" src="/images/menu.svg" alt="" />
+        <img class="close-menu-icon" src="/images/close-menu.svg" alt="" />
+      </button>
+      <div class="nav-grid">
+        <PrimaryNavigation id="main-menu" label="primary navigation">
           <li><a href="/">Home</a></li>
           <li><a href="/articles">Articles</a></li>
           <li><a href="/about">About</a></li>
           <li><a href="/contact">Contact</a></li>
         </PrimaryNavigation>
-        <SocialLinks />
-        <Button theme="primary">Subscribe to newsletter</Button>
+        <SocialLinks class="socials" />
+        <Button class="subscribe" theme="primary"
+          >Subscribe to newsletter</Button
+        >
       </div>
     </div>
   </div>
 </header>
+
+<script>
+  const navToggle = document.querySelector('[aria-controls="main-menu"]');
+
+  navToggle.addEventListener("click", () => {
+    const isOpened = navToggle.getAttribute("aria-expanded");
+
+    if (isOpened === "true") {
+      navToggle.setAttribute("aria-expanded", "false");
+    } else {
+      navToggle.setAttribute("aria-expanded", "true");
+    }
+  });
+</script>
 
 <style lang="scss">
   @use "../styles/abstracts" as *;
@@ -36,12 +57,143 @@ const { skipTo = "#main" } = Astro.props;
 
     &__inner {
       display: flex;
+      position: relative;
       gap: $size-4;
       align-items: $site-header-alignment;
       justify-content: $site-header-jusitifcation-small-screens;
 
       @include mq(medium) {
         justify-content: $site-header-jusitifcation-large-screens;
+      }
+    }
+
+    .nav {
+      display: flex;
+      gap: $navigation-gap;
+    }
+
+    [aria-controls="main-menu"] {
+      display: none;
+    }
+
+    .nav-grid {
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+      gap: $navigation-gap;
+    }
+
+    @media (max-width: $sticky-nav-medium-breakpoint) {
+      .nav-grid {
+        display: none;
+
+        /* display: grid is turned on lower down */
+        gap: 1rem;
+        grid-template-areas:
+          "nav socials"
+          "nav subscribe";
+
+        position: absolute;
+        left: 0;
+        padding: $sticky-nav-padding;
+        border-radius: $sticky-nav-border-radius;
+        background: $sticky-nav-bg;
+        backdrop-filter: $sticky-nav-effect;
+        width: 100%;
+        top: calc(100% + 4px);
+
+        [aria-label="primary navigation"] {
+          grid-area: nav;
+        }
+
+        .subscribe {
+          align-self: end;
+          grid-area: subscribe;
+        }
+
+        .socials {
+          grid-area: socials;
+          align-self: start;
+        }
+
+        .nav {
+          flex-direction: column;
+        }
+      }
+
+      [aria-controls="main-menu"] {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        background: transparent;
+        border: 0;
+
+        &[aria-expanded="true"] > .menu-icon {
+          display: none;
+        }
+
+        &[aria-expanded="false"] > .close-menu-icon {
+          display: none;
+        }
+      }
+
+      [aria-expanded="true"] + .nav-grid {
+        display: grid;
+      }
+    }
+
+    @media (max-width: $sticky-nav-small-breakpoint) {
+      .nav-grid {
+        gap: 4rem;
+        grid-template-areas:
+          "nav"
+          "socials"
+          "subscribe";
+      }
+    }
+
+    @supports (animation-timeline: view()) {
+      position: sticky;
+      z-index: 1000;
+      top: -10rem;
+
+      animation: sticky-nav forwards;
+      animation-timeline: view();
+      animation-range-start: 120vh;
+      animation-range-end: 160vh;
+
+      &__inner {
+        padding: var(--sticky-nav-padding);
+      }
+
+      &__inner::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        border-radius: $sticky-nav-border-radius;
+        backdrop-filter: var(--sticky-nav-effect, none);
+        background-color: var(--sticky-nav-bg, transparent);
+      }
+
+      @keyframes sticky-nav {
+        from {
+          --sticky-nav-effect: #{$sticky-nav-effect};
+          --sticky-nav-bg: #{$sticky-nav-bg};
+          --sticky-nav-padding: #{$sticky-nav-padding};
+
+          width: min($sticky-nav-max-width, 90%);
+          margin-inline: auto;
+        }
+        to {
+          --sticky-nav-effect: #{$sticky-nav-effect};
+          --sticky-nav-bg: #{$sticky-nav-bg};
+          --sticky-nav-padding: #{$sticky-nav-padding};
+
+          top: 0;
+          width: min($sticky-nav-max-width, 90%);
+          margin-inline: auto;
+        }
       }
     }
   }
