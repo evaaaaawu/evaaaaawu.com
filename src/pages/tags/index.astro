@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const allArticles = await getCollection("articles");
+const uniqueTags = [
+  ...new Set(allArticles.map((article) => article.data.tags).flat()),
+];
+---
+
+<BaseLayout title="Tag Index">
+  <div class="container">
+    <div class="">
+      {
+        uniqueTags.map((tag) => {
+          const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
+          return (
+            <p class="">
+              <a href={`/tags/${slugFriendlyTag}`}>{tag}</a>
+            </p>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<!-- 樣式參考
+<style>
+  a {
+    color: #00539f;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
+    font-size: 1.15em;
+    background-color: #f8fcfd;
+  }
+</style> -->
