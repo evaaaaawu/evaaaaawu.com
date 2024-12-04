@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.9",
     "astro": "^4.7.0",
     "astro-meta-tags": "^0.3.1",
     "astro-og-canvas": "^0.5.4",
