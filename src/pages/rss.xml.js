@@ -1,12 +1,20 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import rss from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET(context) {
+  const articles = await getCollection("articles");
   return rss({
     title: 'Eva Wu | Tech Blog',
     description: 'My Tech Blog',
     site: context.site,
-    //TODO: glob 路徑要改成正確的，但不知道怎麼改
-    items: await pagesGlobToRssItems(import.meta.glob('./**/*.md')),
+    items: articles.map((article) => ({
+      title: article.data.title,
+      subtitle: article.data.subtitle,
+      creationDate: article.data.creationDate,
+      updateDate: article.data.updateDate,
+      tags: article.data.tags,
+      link: `/articles/${article.id}/`,
+    })),
     customData: `<language>zh-tw</language>`,
-  });
+  })
 }
