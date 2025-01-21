@@ -1,5 +1,10 @@
-# Astro + Sass Starter Template: NO scoped styles
+# Eva Wu's Tech Blog
 
-This is the starter template for the final module of [Beyond CSS](https://beyondcss.dev).
+<p>This is my personal tech blog, primarily dedicated to programming study notes and software/digital-related content. Occasionally, I may also share aspects of my personal life.</p>
 
-This version is set up to use Astro, but where you prefer keeping all styling in `.scss` files.
+<p>Here is the URL: https://evawu.netlify.app/</p>
+
+### Built With:
+- Astro
+- TinaCMS
+- Netlify
