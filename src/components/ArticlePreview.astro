@@ -15,10 +15,11 @@ const { article, excerptLength = 0 } = Astro.props;
   <h2 class="fs-500 fw-bold">{article.data.title}</h2>
   {
     excerptLength > 0 && (
-      <p>{createExcerpt(article.body).substring(0, excerptLength)}...</p>
+      <p class="fs-400">{createExcerpt(article.body).substring(0, excerptLength)}...</p>
     )
   }
   <p>
+
     <a href={`/articles/${article.slug}`}>
       Read more
       <span class="visually-hidden">about {article.data.title}</span>

@@ -34,7 +34,7 @@ $box-shadow-5: 0px 6px 5px rgb(0, 0, 0, 0.04), 0px 22px 18px rgb(0, 0, 0, 0.06),
 
 // // body
 $body-font-family: $font-family-base;
-$body-font-size: $font-size-400;
+$body-font-size: $font-size-500;
 $body-line-height: 1.5;
 $body-font-weight: $font-weight-default;
 $body-text-color: $color-text-default;
@@ -70,7 +70,7 @@ $section-padding-block: clamp(5rem, 10vh, 6rem);
 $container-min-margin-inline: $size-4;
 $container-max-width: 1120px;
 $container-max-width-narrow: 840px;
-// $container-max-width-wide: 75rem;
+$container-max-width-wide: 75rem;
 
 $page-top-gradient: linear-gradient($color-secondary-100, transparent);
 $page-top-gradient-height: 80vh;
