@@ -5,7 +5,6 @@ import Tag from "../../components/Tag.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
 import ArticlePreview from "../../components/ArticlePreview.astro";
-import ViewAllBlogs from "../../components/ViewAllBlogs.astro";
 import NewsletterCTA from "../../components/NewsletterCTA.astro";
 
 export async function getStaticPaths() {
@@ -77,7 +76,6 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         }
       </div>
     </section>
-    <ViewAllBlogs />
     <NewsletterCTA withImage />
   </div>
 </BaseLayout>

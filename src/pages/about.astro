@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 
 import NewsletterCTA from "../components/NewsletterCTA.astro";
-import ViewAllBlogs from "../components/ViewAllBlogs.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticlePreview from "../components/ArticlePreview.astro";
 
@@ -66,6 +65,5 @@ allArticles.sort(
   <div class="container margin-block-10 flow">
     <h2 class="heading-2">Read the most recent article</h2>
     <ArticlePreview article={allArticles[0]} />
-    <ViewAllBlogs />
   </div>
 </BaseLayout>
