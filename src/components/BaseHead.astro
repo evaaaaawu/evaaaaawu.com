@@ -1,6 +1,5 @@
 ---
 import "../styles/main.scss";
-import { ViewTransitions } from "astro:transitions";
 import { SEOMetadata } from "astro-seo-metadata";
 const {
   title = "Eva Wu's Tech Blog",
@@ -23,9 +22,8 @@ const {
     href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet"
   />
-  <ViewTransitions />
   <SEOMetadata
-    siteName={"Eva Wu's Tech Blog"}
+    siteName={"https://evaaaaawu.com/"}
     title={title}
     description={description}
     image={`${Astro.url.origin}${ogimage}`}
