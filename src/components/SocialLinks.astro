@@ -1,23 +1,23 @@
 ---
 const { class: className, ...rest } = Astro.props;
-
-const socialHandle = "tff";
-const socialNetworks = ["instagram", "twitter", "facebook"];
 ---
 
 <ul class:list={["flex-group", className]} {...rest}>
-  {
-    socialNetworks.map((socialNetwork) => (
-      <li>
-        <a
-          href={`https://${socialNetwork}.com/${socialHandle}`}
-          aria-label={socialNetwork}
-        >
-          <img src={`/images/${socialNetwork}.svg`} alt="" />
-        </a>
-      </li>
-    ))
-  }
+  <li>
+    <a href="https://bsky.app/profile/evaaaaawu.bsky.social" aria-label="bluesky">
+      <img src="/images/social-networks/bluesky.svg" alt="bluesky" />
+    </a>
+  </li>
+  <li>
+    <a href="https://x.com/evaaaaawutw" aria-label="x">
+      <img src="/images/social-networks/x.svg" alt="x" />
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/evaaaaawu" aria-label="github">
+      <img src="/images/social-networks/github.svg" alt="github" />
+    </a>
+  </li>
 </ul>
 
 <style>
