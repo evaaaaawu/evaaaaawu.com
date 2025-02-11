@@ -11,7 +11,7 @@ const { article, excerptLength = 0 } = Astro.props;
 
     <Tag class="tag" tag={article.data.tags[0]} />
   </div>
-  <FormattedDate date={article.data.creationDate} />
+  <FormattedDate date={article.data.updateDate} />
   <h2 class="fs-500 fw-bold">{article.data.title}</h2>
   {
     excerptLength > 0 && (
@@ -19,7 +19,6 @@ const { article, excerptLength = 0 } = Astro.props;
     )
   }
   <p>
-
     <a href={`/articles/${article.slug}`}>
       Read more
       <span class="visually-hidden">about {article.data.title}</span>

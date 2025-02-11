@@ -1,13 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 
-import NewsletterCTA from "../components/NewsletterCTA.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticlePreview from "../components/ArticlePreview.astro";
 
 const allArticles = await getCollection("articles");
 allArticles.sort(
-  (a, b) => Date.parse(b.data.creationDate) - Date.parse(a.data.creationDate),
+  (a, b) => Date.parse(b.data.creationDate) - Date.parse(a.data.creationDate)
 );
 ---
 
@@ -59,11 +58,11 @@ allArticles.sort(
       touch of spontaneity to our journeys. Let&#39;s make Travel Fun Food not
       just a blog but a shared experience of discovery.
     </p>
-
-    <NewsletterCTA />
   </div>
   <div class="container margin-block-10 flow">
-    <h2 class="heading-2">Read the most recent article</h2>
-    <ArticlePreview article={allArticles[0]} />
+    <h2 class="heading-2">閱讀我最新的三篇文章</h2>
+    <div class="grid-auto-fit">
+      {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
+    </div>
   </div>
 </BaseLayout>
