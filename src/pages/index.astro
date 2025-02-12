@@ -2,8 +2,6 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticlePreview from "../components/ArticlePreview.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import SiteFooter from "../components/SiteFooter.astro";
 
 const allArticles = await getCollection("articles");
 const featuredArticles = await getCollection("articles", ({ data }) => {
@@ -44,10 +42,6 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
       </div>
     </section>
-
-    <!-- all blogs link -->
-
-    <!-- Newsletter signup -->
   </div>
 </BaseLayout>
 
