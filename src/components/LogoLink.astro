@@ -1,8 +1,22 @@
 ---
-const nameOfSite = "Eva Wu's Tech Blog"
+const nameOfSite = "Eva Wu's Tech Blog";
 ---
 
 <a href="/">
-  <img aria-hidden="true" src="/images/logo.svg" alt="" />
+  <img aria-hidden="true" src="/images/logo.png" alt="" />
   <p class="visually-hidden">{nameOfSite}</p>
 </a>
+
+<style lang="scss">
+  @use "../styles/abstracts" as *;
+
+  img {
+    width: 90px;
+    height: 90px;
+    aspect-ratio: 1;
+    border-radius: $border-radius-3;
+    object-fit: cover;
+    background-color: rgba(215, 215, 215, 0.4);
+    box-shadow: $box-shadow-3;
+  }
+</style>
