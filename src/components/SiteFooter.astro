@@ -1,20 +1,12 @@
 ---
-import LogoLink from "./LogoLink.astro";
-import PrimaryNavigation from "./PrimaryNavigation.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="flex-group align-center">
-      <LogoLink />
-      <PrimaryNavigation label="footer navigation">
-        <li><a href="/articles">Articles</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </PrimaryNavigation>
+  <div class="container margin-block-start-8">
+    <div class="space-between">
       <SocialLinks />
-      <p class="ml-auto">© 2024 Eva Wu 的程式學習筆記</p>
+      <p class="ml-auto">© 2025 Eva Wu's Tech Blog</p>
     </div>
   </div>
 </footer>
@@ -22,8 +14,9 @@ import SocialLinks from "./SocialLinks.astro";
 <style lang="scss">
   @use "../styles/abstracts" as *;
 
-  .flex-group {
-    width: 100%;
+  .space-between {
+    display: flex;
+    justify-content: space-between;
   }
 
   .site-footer {
@@ -38,12 +31,6 @@ import SocialLinks from "./SocialLinks.astro";
       &:is(:hover, :focus) {
         color: $footer-link-color-hover;
       }
-    }
-
-    // this styles the .nav in the <PrimaryNavigation> component
-    .nav {
-      display: flex;
-      gap: $navigation-gap;
     }
   }
 </style>

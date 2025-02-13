@@ -13,50 +13,30 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
   <div class="container flow">
     <section class="section">
       <h1 class="heading-1">Eva Wu's<br />Tech Blog</h1>
-      <p class="fs-600">
-        This is my personal tech blog, primarily dedicated to programming study
-        notes and software/digital-related content.
-        Occasionally, I may also share aspects of my personal life.
+      <p class="fs-700 margin-block-start-6">
+        歡迎來到我的個人技術部落格，我主要會撰寫程式學習筆記和軟體/數位相關內容，偶爾可能也會分享我的個人生活。
+        <!-- This is my personal tech blog, primarily dedicated to programming study
+        notes and software/digital-related content. Occasionally, I may also
+        share aspects of my personal life. -->
       </p>
     </section>
 
     <section class="section flow">
       <h2 class="heading-2">Featured articles</h2>
-      <div class="home-featured-grid">
-        <ArticlePreview article={featuredArticles[0]} excerptLength="200" />
-        <div class="">
-          {
-            featuredArticles
-              .slice(1, 4)
-              .map((article) => <ArticlePreview {article} />)
-          }
-        </div>
+      <div class="grid-auto-fit">
+        {
+          featuredArticles
+            .slice(0, 8)
+            .map((article) => <ArticlePreview {article} excerptLength="100" />)
+        }
       </div>
     </section>
 
-    <!-- all blogs link -->
-
     <section class="section flow">
-      <h2 class="heading-2">Travel articles</h2>
+      <h2 class="heading-2">Recent articles</h2>
       <div class="grid-auto-fit">
         {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
       </div>
     </section>
   </div>
 </BaseLayout>
-
-<style>
-  .home-featured-grid {
-    display: grid;
-    gap: 1rem;
-
-    @media (min-width: 800px) {
-      --overflow-grid-direction: vertical;
-      grid-template-columns: 1fr 1fr;
-
-      .home-featured-grid__sidebar {
-        --article-preview-layout: alternative;
-      }
-    }
-  }
-</style>
