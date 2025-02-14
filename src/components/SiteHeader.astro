@@ -84,11 +84,10 @@ const { skipTo = "#main" } = Astro.props;
         display: none;
 
         /* display: grid is turned on lower down */
-        gap: 1rem;
+        gap: 3rem;
         grid-template-areas:
-          "nav socials"
-          "nav subscribe";
-
+          "nav"
+          "socials";
         position: absolute;
         left: 0;
         padding: $sticky-nav-padding;
@@ -100,11 +99,6 @@ const { skipTo = "#main" } = Astro.props;
 
         [aria-label="primary navigation"] {
           grid-area: nav;
-        }
-
-        .subscribe {
-          align-self: end;
-          grid-area: subscribe;
         }
 
         .socials {
@@ -140,11 +134,10 @@ const { skipTo = "#main" } = Astro.props;
 
     @media (max-width: $sticky-nav-small-breakpoint) {
       .nav-grid {
-        gap: 4rem;
+        gap: 3rem;
         grid-template-areas:
           "nav"
-          "socials"
-          "subscribe";
+          "socials";
       }
     }
 

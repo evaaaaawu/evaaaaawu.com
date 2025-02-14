@@ -80,7 +80,7 @@ $page-top-gradient-height: 80vh;
 // // site header
 $site-header-background-color: transparent;
 $site-header-color: $color-primary-400;
-$site-header-padding: $size-10 0;
+$site-header-padding: $size-4 0;
 $site-header-margin: 0;
 $site-header-jusitifcation-small-screens: space-between;
 $site-header-jusitifcation-large-screens: space-between;
@@ -106,7 +106,7 @@ $navigation-font-weight: $font-weight-semi-bold;
 
 $sticky-nav-effect: blur(16px);
 $sticky-nav-bg: hsl(0 0% 95% / 0.7);
-$sticky-nav-padding: $size-8;
+$sticky-nav-padding: $size-1 $size-4;
 $sticky-nav-border-radius: $border-radius-2;
 $sticky-nav-max-width: 1000px;
 $sticky-nav-medium-breakpoint: 900px;
