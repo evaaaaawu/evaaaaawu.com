@@ -6,16 +6,19 @@ const allArticles = await getCollection("articles");
 const uniqueTags = [
   ...new Set(allArticles.map((article) => article.data.tags).flat()),
 ];
+
+// sort tags alphabetically
+uniqueTags.sort();
 ---
 
-<BaseLayout title="Tag Index">
+<BaseLayout title="Eva Wu's Tech Blog | Tags">
   <div class="container">
-    <div class="">
+    <div class="flex-group">
       {
         uniqueTags.map((tag) => {
           const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
           return (
-            <p class="">
+            <p>
               <a href={`/tags/${slugFriendlyTag}`}>{tag}</a>
             </p>
           );
@@ -24,3 +27,27 @@ const uniqueTags = [
     </div>
   </div>
 </BaseLayout>
+
+<style lang="scss">
+  @use "../../styles/abstracts" as *;
+
+  // same as Tag.astro
+  a {
+    color: $tag-color;
+    background-color: $tag-background-color;
+    border: $tag-border;
+    border-radius: $tag-border-radius;
+    padding: $tag-padding;
+    text-transform: $tag-text-transform;
+    font-weight: $tag-font-weight;
+    font-size: $tag-font-size;
+    box-shadow: $tag-box-shadow;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      color: $tag-color-hover;
+      background-color: $tag-background-color-hover;
+    }
+  }
+</style>

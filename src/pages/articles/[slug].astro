@@ -3,8 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tag from "../../components/Tag.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
 import ArticlePreview from "../../components/ArticlePreview.astro";
+// import AboutTheAuthor from "../../components/AboutTheAuthor.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
@@ -17,15 +17,11 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await article.render();
-// const allAuthors = await Astro.glob("../../content/authors/*.json");
-const articleAuthorPath = article.data.author;
-const articleAuthorName = articleAuthorPath.match(/\/([^\/]+)\.json$/)[1];
-const authorInfo = await import(
-  `../../content/authors/${articleAuthorName}.json`
-).then((info) => info.default);
-// const authorInfo = allAuthors.find(function (author) {
-//   return author.name === articleAuthorName;
-// });
+// const articleAuthorPath = article.data.author;
+// const articleAuthorName = articleAuthorPath.match(/\/([^\/]+)\.json$/)[1];
+// const authorInfo = await import(
+//   `../../content/authors/${articleAuthorName}.json`
+// ).then((info) => info.default);
 const featuredArticles = await getCollection("articles", ({ data }) => {
   return data.featured;
 });
@@ -45,24 +41,16 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         creation date:<FormattedDate date={article.data.creationDate} />
         update date:<FormattedDate date={article.data.updateDate} />
       </div>
-      <a
-        href="#"
-        class="flex-group align-center"
-        style="--flex-column-gap: .5rem"
-      >
-        <img src="/images/share.svg" alt="" />
-        <span>Share</span>
-      </a>
     </div>
     <h1 transition:name={article.data.title} class="heading-2">
       {article.data.title}
     </h1>
     <Content />
-    <AboutTheAuthor
+    <!-- <AboutTheAuthor
       name={authorInfo.name}
       description={authorInfo.description}
       image={authorInfo.image}
-    />
+    /> -->
   </article>
   <div class="container">
     <section class="featured section | flow">
@@ -71,7 +59,7 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         {
           featuredArticles
             .slice(0, 3)
-            .map((article) => <ArticlePreview excerptLength="80" {article} />)
+            .map((article) => <ArticlePreview {article} excerptLength="80" />)
         }
       </div>
     </section>
@@ -80,13 +68,6 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
 
 <style lang="scss">
   @use "../../styles/abstracts" as *;
-
-  .meta {
-    width: 100%;
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-  }
 
   .featured {
     margin-top: $section-padding-block;

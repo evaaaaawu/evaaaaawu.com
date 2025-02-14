@@ -27,7 +27,7 @@ const featuredArticles = await getCollection("articles", ({ data }) => {
         {
           featuredArticles
             .slice(0, 8)
-            .map((article) => <ArticlePreview {article} excerptLength="100" />)
+            .map((article) => <ArticlePreview {article} excerptLength="80" />)
         }
       </div>
     </section>
