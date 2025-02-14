@@ -6,5 +6,4 @@
 
 ### Built With:
 - Astro
-- TinaCMS
 - Netlify

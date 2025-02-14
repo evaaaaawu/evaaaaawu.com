@@ -1,6 +1,7 @@
 @use "colors" as *;
 @use "typography" as *;
 @use "sizes" as *;
+@use "sass:math";
 
 $active-theme: $light;
 $enable-media-query-dark-mode: false;
@@ -144,7 +145,7 @@ $button-secondary-outline: $color-secondary-500;
 
 $article-preview-spacing: $size-3;
 $article-preview-tag-offset: $size-4;
-$article-preview-aspect-ratio: 1.34/1;
+$article-preview-aspect-ratio: math.div(1.34, 1);
 
 $tag-text-transform: uppercase;
 $tag-font-weight: $font-weight-extra-bold;

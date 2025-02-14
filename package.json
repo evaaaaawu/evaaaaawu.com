@@ -15,11 +15,9 @@
     "astro-meta-tags": "^0.3.1",
     "astro-og-canvas": "^0.5.6",
     "astro-seo-metadata": "^0.6.0",
-    "markdown-it": "^14.1.0",
-    "tinacms": "^2.5.0"
+    "markdown-it": "^14.1.0"
   },
   "devDependencies": {
-    "@tinacms/cli": "^1.6.12",
     "@types/node": "^22.10.0",
     "sass": "^1.76.0"
   }
