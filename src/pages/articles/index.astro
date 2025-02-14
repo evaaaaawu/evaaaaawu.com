@@ -10,7 +10,7 @@ allArticles.sort((a, b) => Date.parse(b.data.creationDate) - Date.parse(a.data.c
 
 <BaseLayout title="Eva Wu's Tech Blog | Articles">
   <div class="container">
-    <div class="grid-auto-fit">
+    <div class="grid-auto-fit margin-block-10">
       {
         allArticles.map((article) => (
           <ArticlePreview {article} excerptLength="80" />
