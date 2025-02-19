@@ -12,9 +12,7 @@ featured: true
 ---
 
 CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的控制網頁元素的排列和大小。
-
 它允許設計者在行（row）和列（column）上進行精確的控制，進而創建複雜的佈局，讓我們可以不需要依賴於浮動或定位等傳統技術。
-
 這裡分享我閱讀[這篇](https://css-tricks.com/snippets/css/complete-guide-grid/)文章整理的 CSS GRID 實作筆記:
 
 ## Properties for the Parent (Grid Container)

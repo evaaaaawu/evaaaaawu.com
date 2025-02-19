@@ -192,6 +192,9 @@ CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活�
 
    <!-- ![截圖 2023-12-19 下午12.05.01.png](./CSS%20Flexbox%20實作小抄-assets/截圖%202023-12-19%20下午12.05.01.png) -->
 
+## 其他推薦
+可到 [Flexbox Playground](https://flexiting.com/playground/) 網站測試實際效果
+
 ## Reference
 
 - <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
