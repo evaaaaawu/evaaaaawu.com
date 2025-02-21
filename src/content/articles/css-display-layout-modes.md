@@ -21,13 +21,13 @@ featured: false
 以 inline 方式排版，但具有 block 屬性表示你對它的尺寸有絕對的掌控權，但是它不會占用整個水平空間，可以彼此相鄰。
 
 ### display: flex
-可參考 CSS Flexbox 實作小抄 本篇文章
+可參考 [CSS Flexbox 實作小抄](/articles/css-flexbox-implementation-cheatsheet) 本篇文章
 
 ### display: grid
-可參考 CSS GRID 實作小抄 本篇文章
+可參考 [CSS GRID 實作小抄](/articles/css-grid-implementation-cheatsheet) 本篇文章
 
 ### display: none
 這個設定會讓元素消失。
 
 ### 其他
-[htmlreference.io](htmlreference.io) 網站可以快速查看到元素和它們的 display 屬性。
+[htmlreference.io](https://htmlreference.io) 網站可以快速查看到元素和它們的 display 屬性。
