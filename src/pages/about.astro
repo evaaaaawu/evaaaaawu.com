@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ArticlePreview from "../components/ArticlePreview.astro";
+// import ArticlePreview from "../components/ArticlePreview.astro";
 
 const allArticles = await getCollection("articles");
 allArticles.sort(
@@ -14,58 +14,15 @@ allArticles.sort(
   <div class="full-article container flow margin-block-10" data-type="narrow">
     <h1 class="heading-2">Eva Wu</h1>
     <p class="fs-600">
-      軟體開發者，除了寫程式，也喜歡音樂、旅行、寫作和探索各種好用的軟體產品，深深體會到好的軟體可以賦予人們全新能力的強大力量，因此致力於打造出好用的軟體產品以對社會產生正面影響力。
+      軟體開發者，除了寫程式，也喜歡寫作、音樂、旅行和探索各種好用的軟體產品。
+      <!-- 深深體會到好的軟體可以賦予人們全新能力的強大力量，因此致力於打造出好用的軟體產品以對社會產生正面影響力。 -->
+      <br />
+      最後，如果想要聯繫我或是和我交流我都很歡迎！最好的方式是寫信給我()，基本上只要我有興趣或是很好回覆的我都會回。當然，如果你偏好使用其他社群軟體和我聯繫也可以，只是我不會很常點開(或是我也不確定軟體本身會不會檔陌生訊息)，所以可以預期得到回覆的速度會比較慢。
     </p>
-    <p class="fs-600">
-      Welcome to Travel Fun Food! I'm Linda Xu, the founder and chief explorer
-      behind this adventure-filled blog. With a passion for travel, a love for
-      diverse cuisines, and an insatiable curiosity for the world, I embarked on
-      a journey to share my experiences and discoveries with fellow wanderers.
-    </p>
-    <h2 id="from-wanderlust-to-words-my-background">
-      From Wanderlust to Words: My Background
-    </h2>
-    <p>
-      In a world where every journey leaves an indelible mark, let me share a
-      bit about my background. Raised in [Author&#39;s Hometown], my love for
-      exploration was sparked during childhood family vacations. From quaint
-      villages to bustling cities, each destination fueled my curiosity and
-      ignited a desire to uncover the hidden gems of our planet.
-    </p>
-    <img src="/images/about/about-page-1.jpg" alt="" />
-    <h2 id="the-birth-of-travel-fun-food">The Birth of Travel Fun Food</h2>
-    <p>
-      The idea of Travel Fun Food was born from a simple realization – that the
-      joy of travel and the delight of savoring unique cuisines should be
-      shared. What began as a personal journal of my escapades soon transformed
-      into a vibrant platform where travel enthusiasts and foodies alike could
-      find inspiration, tips, and tales from my journeys around the globe.
-    </p>
-    <h2 id="exploring-the-world-one-post-at-a-time">
-      Exploring the World, One Post at a Time
-    </h2>
-    <p>
-      Since its inception in 2020, Travel Fun Food has evolved into a tapestry
-      of stories, photographs, and recommendations. From the bustling streets of
-      Ahmedabad to the serene landscapes of India, each post is a chapter in the
-      ever-growing story of exploration and appreciation for the world&#39;s
-      diversity.
-    </p>
-    <img src="/images/about/about-page-2.jpg" alt="" />
-
-    <h2 id="become-a-part-of-the-adventure">Become a Part of the Adventure</h2>
-    <p>
-      As we continue to unravel the wonders of the world, I invite you to join
-      our community of fellow travelers and food enthusiasts. Follow along for
-      travel tips, culinary delights, and the occasional mishap that adds a
-      touch of spontaneity to our journeys. Let&#39;s make Travel Fun Food not
-      just a blog but a shared experience of discovery.
-    </p>
-  </div>
-  <div class="container margin-block-10 flow">
+  <!-- <div class="container margin-block-10 flow">
     <h2 class="heading-2">閱讀我最新的三篇文章</h2>
     <div class="grid-auto-fit">
       {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
     </div>
-  </div>
+  </div> -->
 </BaseLayout>
