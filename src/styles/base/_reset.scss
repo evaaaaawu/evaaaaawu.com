@@ -7,13 +7,14 @@
 * {
   margin: 0;
   padding: 0;
-  // This will affect the markdown syntax
+  // NOTE: This will affect the markdown syntax
   // font: inherit;
 }
 
 img,
 picture,
-svg {
+svg,
+iframe {
   display: block;
   max-width: 100%;
 }

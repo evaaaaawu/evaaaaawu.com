@@ -7,7 +7,14 @@ const { article, excerptLength = 0 } = Astro.props;
 
 <article class="flow">
   <div class="image-container">
-    <img src={article.data.imageSrc} alt={article.data.imageAlt} />
+    <picture>
+      <source srcset={article.data.imageWebp} type="image/webp" />
+      <img
+        src={article.data.imagePng}
+        alt={article.data.imageAlt}
+        loading="lazy"
+      />
+    </picture>
 
     <Tag class="tag" tag={article.data.tags[0]} />
   </div>
@@ -15,7 +22,9 @@ const { article, excerptLength = 0 } = Astro.props;
   <h2 class="fs-500 fw-bold">{article.data.title}</h2>
   {
     excerptLength > 0 && (
-      <p class="fs-400">{createExcerpt(article.body).substring(0, excerptLength)}...</p>
+      <p class="fs-400">
+        {createExcerpt(article.body).substring(0, excerptLength)}...
+      </p>
     )
   }
   <p>

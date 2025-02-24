@@ -27,9 +27,21 @@ input {
   padding: $form-input-padding;
 }
 
+ul,
+ol {
+  padding-left: 1em;
+}
+
+ul {
+  list-style: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
 pre,
 code {
   border-radius: 10px;
-  padding: 10px;
   overflow-x: auto;
 }

@@ -2,10 +2,11 @@
 title: 軟體團隊與 GAI-與 AI 協作的成與敗
 subtitle: 分享 AI Your Summer 此系列活動 2023/6/13 場次的筆記。
 author: src/content/authors/eva.json
-imageSrc: /images/articles/software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
+imageWebp: /images/articles/webp/software-teams-and-gai-successes-and-failures-in-ai-collaboration.webp
+imagePng: /images/articles/png/software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
 imgAlt: Software Teams and GAI-Successes and Failures in AI Collaboration
 creationDate: 2023-07-17
-updateDate: 2024-11-01
+updateDate: 2023-07-17
 tags:
   - AI
 featured: true
@@ -34,13 +35,14 @@ Mosky:「我不確定市場會如何去平衡 junior 和 senior 的需求，我�
 
 Caesar:「希望 50% 以上的工作使用 AI，可能一個 engineer 搭配一個 AI Assistant；engineer 負責發想、架構、理解整個需求，AI 負責任何一個 framework 和 CRUD 等。」
 
-Mosky:「請大家去探索 AI 可以節省你幾 ％ 的時間？根據這個 metrics 再去衡量大家是不是應該都要使用 AI 到某個節省程度的時間(擴大使用)。公司目前的態度是非常強烈鼓勵大家去嘗試，其實在 Generative AI 年會前原本是比較保守的，但經過 Generative AI 年會後覺得好像不能那麼保守，所以每一個 AI 服務我個人都會代表公司去認真讀過，然後明定說什麼樣的服務是可以用到什麼程度 ex. ChatGPT 絕對不可以傳跟公司有關的資料，因為他東西都會拿來 train。\*sum up: 我會用時間當作是衡量的指標，內部會有明確的 guideline 讓大家知道什麼樣的東西可以怎麼樣子用。」
+Mosky:「請大家去探索 AI 可以節省你幾 ％ 的時間？根據這個 metrics 再去衡量大家是不是應該都要使用 AI 到某個節省程度的時間(擴大使用)。公司目前的態度是非常強烈鼓勵大家去嘗試，其實在 Generative AI 年會前原本是比較保守的，但經過 Generative AI 年會後覺得好像不能那麼保守，所以每一個 AI 服務我個人都會代表公司去認真讀過，然後明定說什麼樣的服務是可以用到什麼程度 ex. ChatGPT 絕對不可以傳跟公司有關的資料，因為他東西都會拿來 train。
+sum up: 我會用時間當作是衡量的指標，內部會有明確的 guideline 讓大家知道什麼樣的東西可以怎麼樣子用。」
 
 ### **Q: AI 時代對程式學習者的影響？軟體工程師需要投入培育的能力技能樹發展有不一樣嗎？有工具後可以往一些更橫向的東西發展？會需要做哪些調整？**
 
 Caesar:「對於 junior 來說必經的路還是會需要經過，以前端工程師為例，我自己的職能就會是 JavaScript、HTML、CSS，這些你還是要懂，甚至是跳一層 React / Vue / Angular 這些東西你有興趣，或是公司在用的，你還是要知道框架怎麼去運作，甚至是 virtual DOM、fiber，或者是整個 event 怎麼去做處理，他的整個 lifecycle 怎麼去進行，這個雖然說 ChatGPT 會跟你講答案，可是你要知道這整個事情是怎麼樣去運作的，那為什麼還是需要知道這件事情呢？因為當你已經知道答案的時候，你才知道怎麼去問答案，如果當你連答案都不曉得的時候，你連他的 lifecycle 定位在哪邊，或者是問題出現在哪個定位點都不曉得，那你怎麼會期待他產出一個對的答案？所以我覺得這是 junior 要面對的課題，然後我覺得嚴峻的未來有可能發生的是其實大部分的工作、大部分的 CRUD、大部分的所有基礎 coding 能力，可能 AI 都已經可以取代你了，然後一個 senior 他搭配一個 AI 就可以做完可能 1 個或 1.5 個 junior developer 能做的事情，那 junior 如果你是從零到想要入門的時候，這一段你可能自己要練苦工、不斷學習，所以 junior 的門檻會提高，工程師的發展需要用更宏觀、抽象的角度去思考。」
 
-Mosky:「我覺得一定是有一個起點，然後你要到達那個終點。以前必須自己敲鍵盤，現在是下 prompt 就可以加速你到終點，可是有一件很重要的事情是你還是必須知道你的終點在哪裡，ChatGPT 是幫助你更快的跑到這個終點，所以對於所有工程師來說，有一件非常重要的事情是，你還是需要知道你的終點在哪裡，這個技能你還是必須培養，而且在人類還需要為產出負責的前提下，一定要有人知道那個終點在哪裡，無論你是 senior 還是 junior，所以一定程度的硬實力是需要培養的，所以我會認為 ChatGPT 他不是取代你，而是去加速你到終點。ex. 終點: 學習到某個技能、完成公司某個需求，那 ChatGPT 可以做的是提供另外一個途徑，幫助你達到你想要獲得的硬實力/軟實力。\*sum up: 要知道你的終點在哪裡、該培養的硬實力/軟實力還是要去培養，但是在這個過程中，AI 可以幫助你達到你想要做到的事情。」
+Mosky:「我覺得一定是有一個起點，然後你要到達那個終點。以前必須自己敲鍵盤，現在是下 prompt 就可以加速你到終點，可是有一件很重要的事情是你還是必須知道你的終點在哪裡，ChatGPT 是幫助你更快的跑到這個終點，所以對於所有工程師來說，有一件非常重要的事情是，你還是需要知道你的終點在哪裡，這個技能你還是必須培養，而且在人類還需要為產出負責的前提下，一定要有人知道那個終點在哪裡，無論你是 senior 還是 junior，所以一定程度的硬實力是需要培養的，所以我會認為 ChatGPT 他不是取代你，而是去加速你到終點。ex. 終點: 學習到某個技能、完成公司某個需求，那 ChatGPT 可以做的是提供另外一個途徑，幫助你達到你想要獲得的硬實力/軟實力。sum up: 要知道你的終點在哪裡、該培養的硬實力/軟實力還是要去培養，但是在這個過程中，AI 可以幫助你達到你想要做到的事情。」
 
 - Bernard 幫大家提問: 「我是 junior，我本來就不知道終點在哪裡，我不知道我不知道什麼，所以當我不知道終點在哪裡個時候，我要怎麼去知道終點在哪裡？對於一個要拼入行拿到門票的 junior，你給他的建議是什麼？」
 

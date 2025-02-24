@@ -2,10 +2,11 @@
 title: CSS 的 position 定位
 subtitle: CSS 的 position 屬性用於控制 HTML 元素的定位方式。
 author: src/content/authors/eva.json
-imageSrc: /images/articles/css-positioning-explained.png
+imageWebp: /images/articles/webp/css-positioning-explained.webp
+imagePng: /images/articles/png/css-positioning-explained.png
 imgAlt: CSS Positioning Explained
 creationDate: 2023-01-29
-updateDate: 2024-11-01
+updateDate: 2023-01-29
 tags:
   - CSS
 featured: false
@@ -13,21 +14,21 @@ featured: false
 
 ### 靜態定位 position: static
 
-```
+```css
 .targetClass {
-    position: static;  // 昭告天下，我是乖乖牌 
-    top: 100px;        // 無效 
-    left: 100px;       // 無效 
+  position: static;  // 昭告天下，我是乖乖牌
+  top: 100px;        // 無效
+  left: 100px;       // 無效
 }
 ```
 
 ### 相對定位 position: relative
 
-```
+```css
 .targetClass {
-    position: relative;    // 我是一般少年 
-    top: 10px;             // 會受外在刺激，產生向下偏移 
-    left: 20px;            // 會受外在刺激，產生向右偏移 
+  position: relative;    // 我是一般少年
+  top: 10px;             // 會受外在刺激，產生向下偏移
+  left: 20px;            // 會受外在刺激，產生向右偏移
 }
 ```
 
@@ -37,21 +38,21 @@ featured: false
 
 因此，要使用絕對定位時，我們通常會在它的父層定義 position: relative ，做為狂妄少年 (absolute) 的定位參考點。
 
-```
+```css
 .targetClass {
-    position: absolute;  // 我是狂妄少年
-    top: 10px;           // 會受外在刺激，產生向下偏移，但請給我一個歸屬！ 
-    left: 20px;          // 會受外在刺激，產生向右偏移，但請給我一個歸屬！
+  position: absolute;  // 我是狂妄少年
+  top: 10px;           // 會受外在刺激，產生向下偏移，但請給我一個歸屬！ 
+  left: 20px;          // 會受外在刺激，產生向右偏移，但請給我一個歸屬！
 } 
 ```
 
 ### 固定定位 position: fixed
 
-```
+```css
 .targetClass {
-    position: fixed;  // 我是猖狂少年
-    top: 10px;        // 會受外在刺激，產生向下偏移，但我心中的格局是像 viewport 這麼大！
-    left: 20px;       // 會受外在刺激，產生向右偏移，但我心中的格局是像 viewport 這麼大！
+  position: fixed;  // 我是猖狂少年
+  top: 10px;        // 會受外在刺激，產生向下偏移，但我心中的格局是像 viewport 這麼大！
+  left: 20px;       // 會受外在刺激，產生向右偏移，但我心中的格局是像 viewport 這麼大！
 }
 ```
 
