@@ -25,6 +25,9 @@ const { Content } = await article.render();
 const featuredArticles = await getCollection("articles", ({ data }) => {
   return data.featured;
 });
+featuredArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
 ---
 
 <BaseLayout

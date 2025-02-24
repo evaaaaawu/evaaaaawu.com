@@ -3,10 +3,13 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allArticles = await getCollection("articles");
+allArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+
 const uniqueTags = [
   ...new Set(allArticles.map((article) => article.data.tags).flat()),
 ];
-
 // sort tags alphabetically
 uniqueTags.sort();
 ---

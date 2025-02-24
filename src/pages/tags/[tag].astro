@@ -5,6 +5,9 @@ import ArticlePreview from "../../components/ArticlePreview.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
+  allArticles.sort(
+    (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+  );
 
   // create an array of all the tags, with no repeats
   const uniqueTags = [
