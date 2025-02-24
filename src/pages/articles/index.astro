@@ -13,7 +13,7 @@ allArticles.sort((a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.upd
     <div class="grid-auto-fit margin-block-10">
       {
         allArticles.map((article) => (
-          <ArticlePreview {article} excerptLength="80" />
+          <ArticlePreview {article} />
         ))
       }
     </div>

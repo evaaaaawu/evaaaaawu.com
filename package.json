@@ -14,8 +14,7 @@
     "astro": "^5.0.2",
     "astro-meta-tags": "^0.3.1",
     "astro-og-canvas": "^0.5.6",
-    "astro-seo-metadata": "^0.6.0",
-    "markdown-it": "^14.1.0"
+    "astro-seo-metadata": "^0.6.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

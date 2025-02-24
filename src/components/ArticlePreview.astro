@@ -1,8 +1,7 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
 import Tag from "./Tag.astro";
-import { createExcerpt } from "../utils/create-excerpt";
-const { article, excerptLength = 0 } = Astro.props;
+const { article } = Astro.props;
 ---
 
 <article class="flow">
@@ -20,13 +19,7 @@ const { article, excerptLength = 0 } = Astro.props;
   </div>
   <FormattedDate date={article.data.updateDate} />
   <h2 class="fs-500 fw-bold">{article.data.title}</h2>
-  {
-    excerptLength > 0 && (
-      <p class="fs-400">
-        {createExcerpt(article.body).substring(0, excerptLength)}...
-      </p>
-    )
-  }
+  <p class="fs-400">{article.data.subtitle}</p>
   <p>
     <a href={`/articles/${article.slug}`}>
       Read more
