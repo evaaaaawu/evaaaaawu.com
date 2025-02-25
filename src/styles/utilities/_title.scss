@@ -1,0 +1,6 @@
+@use '../abstracts/' as *;
+
+h3 {
+  font-size: $font-size-500;
+  font-weight: $font-weight-semi-bold;
+}
