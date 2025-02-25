@@ -9,7 +9,7 @@ creationDate: 2024-11-03
 updateDate: 2024-11-03
 tags:
   - JavaScript
-featured: true
+featured: false
 ---
 
 JavaScript 有原生值和物件兩大資料型別：原生值包含 String、Boolean、Number、BigInt、Undefined、Null 和 Symbol，它們是不可變的，表示我們不能改變那個值本身，所以當你希望資料被更新時，只能「產生一個新的值來取代舊的」；物件則包含 Array、Function 和 Objects，它們是可變的，屬於以參考形式存在的資料，所以當我們 mutate 變數中的一個物件或陣列時，這個變數的參考對象並不會改變，只是內容被修改而已，因此當你想要改變一個變數的參考對象或是避免舊有的物件或陣列內容被修改到時，你應該產生一個全新的物件或陣列來取代舊有的。
