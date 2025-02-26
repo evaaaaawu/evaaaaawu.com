@@ -96,6 +96,7 @@ const { skipTo = "#main" } = Astro.props;
         backdrop-filter: $sticky-nav-effect;
         width: 100%;
         top: calc(100% + 4px);
+        z-index: 1000;
 
         [aria-label="primary navigation"] {
           grid-area: nav;
@@ -104,6 +105,7 @@ const { skipTo = "#main" } = Astro.props;
         .socials {
           grid-area: socials;
           align-self: start;
+          margin-left: 1.3rem;
         }
 
         .nav {
