@@ -33,8 +33,8 @@ const { article } = Astro.props;
 
   article {
     --_article-preview-layout: var(--article-preview-layout, default);
-
     --flow-spacer: #{$article-preview-spacing};
+    max-width: 550px;
   }
 
   .image-container {
