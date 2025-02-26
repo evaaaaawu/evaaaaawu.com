@@ -1,0 +1,63 @@
+---
+import { ARTICLES_PER_PAGE } from "../../../utils/constants";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticlePreview from "../../../components/ArticlePreview.astro";
+
+// Generate static paths for each page.
+export async function getStaticPaths() {
+  const allArticles = await getCollection("articles");
+  allArticles.sort(
+    (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+  );
+  const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
+
+  const paths = [];
+  for (let i = 1; i <= totalPages; i++) {
+    paths.push({ params: { page: i.toString() } });
+  }
+
+  return paths;
+}
+
+// Get the current page number from the URL.
+const currentPage = parseInt(Astro.params.page, 10);
+
+// Retrieve and sort all articles.
+const allArticles = await getCollection("articles");
+allArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+
+// Slice the array to get only the articles for the current page.
+const startIndex = (currentPage - 1) * ARTICLES_PER_PAGE;
+const pagedArticles = allArticles.slice(
+  startIndex,
+  startIndex + ARTICLES_PER_PAGE
+);
+const totalPages = Math.ceil(allArticles.length / ARTICLES_PER_PAGE);
+---
+
+<BaseLayout title={`Eva Wu's Tech Blog | Articles - Page ${currentPage}`}>
+  <div class="container">
+    <div class="grid-auto-fit margin-block-10">
+      {pagedArticles.map((article) => <ArticlePreview article={article} />)}
+    </div>
+    <nav class="pagination text-center">
+      {
+        currentPage > 1 && (
+          <a href={`/articles/page/${currentPage - 1}`} class="prev">
+            &lt; Previous
+          </a>
+        )
+      }
+      {
+        currentPage < totalPages && (
+          <a href={`/articles/page/${currentPage + 1}`} class="next">
+            Next &gt;
+          </a>
+        )
+      }
+    </nav>
+  </div>
+</BaseLayout>
