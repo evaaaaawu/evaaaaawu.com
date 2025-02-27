@@ -18,13 +18,17 @@ JavaScript 有原生值和物件兩大資料型別：原生值包含 String、Bo
 
 以下提供 Array.isArray() 和 Object.prototype.toString.call() 方法的範例：
 
-```js
+<!-- ```js
 Array.isArray([1, 2, 3]); // true
 Array.isArray({ foo: 123 }); // false
-```
-<br />
+``` -->
 
-```js
+<picture>
+  <source srcset="/images/article-contents/webp/about-javascript-data-types/code-1.webp" type="image/webp">
+  <img src="/images/article-contents/png/about-javascript-data-types/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<!-- ```js
 const arr = [1, 2, 3];
 const fn = () => {
   return 123;
@@ -34,7 +38,12 @@ const obj = { foo: 123 };
 console.log(Object.prototype.toString.call(arr)); // [object Array]
 console.log(Object.prototype.toString.call(fn)); // [object Function]
 console.log(Object.prototype.toString.call(obj)); // [object Object]
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/about-javascript-data-types/code-2.webp" type="image/webp">
+  <img src="/images/article-contents/png/about-javascript-data-types/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Reference
 [JavaScript 有哪些資料型別 (data types)? 該怎麼辨別一個變數的資料型別?｜ExplainThis](https://www.explainthis.io/zh-hant/swe/js-data-types)

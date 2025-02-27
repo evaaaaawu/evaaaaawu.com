@@ -9,8 +9,8 @@ $enable-media-query-dark-mode: false;
 // Contextual
 $color-text-default: $color-neutral-black;
 $color-background-default: $color-neutral-white;
-$color-text-interactive-default: $color-primary-400;
-$color-text-interactive-hover: $color-primary-400;
+$color-text-interactive-default: $color-accent-200;
+$color-text-interactive-hover: $color-accent-200;
 
 // // set to 0 to disable
 // $letter-spacing-loose: 0;
@@ -56,9 +56,9 @@ $heading-line-height: 1.1;
 $heading-text-transform: none;
 
 $heading-1-font-size: $font-size-900;
-$heading-1-color: $color-primary-400;
+$heading-1-color: $color-accent-200;
 $heading-2-font-size: $font-size-800;
-$heading-2-color: $color-primary-400;
+$heading-2-color: $color-accent-200;
 $heading-3-font-size: $font-size-700;
 $heading-3-color: $heading-color-default;
 
@@ -79,7 +79,7 @@ $page-top-gradient-height: 80vh;
 
 // // site header
 $site-header-background-color: transparent;
-$site-header-color: $color-primary-400;
+$site-header-color: $color-accent-200;
 $site-header-padding: $size-4 0;
 $site-header-margin: 0;
 $site-header-jusitifcation-small-screens: space-between;
@@ -87,8 +87,8 @@ $site-header-jusitifcation-large-screens: space-between;
 $site-header-alignment: center;
 
 // // // skip navigation
-$skip-nav-color: $color-primary-200;
-$skip-nav-background-color: $color-primary-500;
+$skip-nav-color: $color-accent-200;
+$skip-nav-background-color: $color-accent-200;
 $skip-nav-padding: $size-4 $size-8;
 $skip-nav-outline-color: $color-accent-400;
 $skip-nav-outline-size: 2px;
@@ -105,7 +105,7 @@ $navigation-font-family: $body-font-family;
 $navigation-font-weight: $font-weight-semi-bold;
 
 $sticky-nav-effect: blur(16px);
-$sticky-nav-bg: hsl(0 0% 95% / 0.7);
+$sticky-nav-bg: rgba(253, 246, 227, 0.7);
 $sticky-nav-padding: $size-1 $size-4;
 $sticky-nav-border-radius: $border-radius-2;
 $sticky-nav-max-width: 1000px;
@@ -114,7 +114,7 @@ $sticky-nav-small-breakpoint: 500px;
 
 // // site footer
 $footer-background-color: transparent;
-$footer-text-color: $color-neutral-200;
+$footer-text-color: $color-accent-200;
 $footer-link-color: $color-text-interactive-default;
 $footer-link-color-hover: $color-text-interactive-hover;
 $footer-link-font-family: $font-family-base;
@@ -134,9 +134,9 @@ $button-border-radius: $border-radius-2;
 // $button-accent-color-hover: $color-neutral-100;
 // $button-accent-background-hover: $color-accent-500;
 $button-primary-color: $color-neutral-100;
-$button-primary-background: $color-primary-400;
+$button-primary-background: $color-accent-200;
 $button-primary-color-hover: $color-neutral-100;
-$button-primary-background-hover: $color-primary-500;
+$button-primary-background-hover: $color-accent-200;
 $button-secondary-color: $color-neutral-100;
 $button-secondary-background: $color-secondary-400;
 $button-secondary-color-hover: $color-neutral-100;
@@ -188,12 +188,12 @@ $form-input-padding: $size-3 $size-6;
 // $form-input-font-weight: $font-weight-semi-bold;
 // $form-input-font-size: $body-font-size;
 // $form-input-background-color: $color-neutral-100;
-// $form-input-border-default: 3px solid $color-primary-200;
-// $form-input-border-focus: 3px solid $color-primary-400;
+// $form-input-border-default: 3px solid $color-accent-200;
+// $form-input-border-focus: 3px solid $color-accent-200;
 // $form-input-padding: $size-3;
 // $form-input-border-radius: $border-radius-1;
 
-// $form-placeholder-color: $color-primary-300;
+// $form-placeholder-color: $color-accent-200;
 // $form-placeholder-font-family: $form-input-font-family;
 // $form-placeholder-font-weight: $form-input-font-weight;
 // $form-placeholder-font-size: $body-font-size;
