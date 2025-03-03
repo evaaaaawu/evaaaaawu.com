@@ -43,7 +43,7 @@ splice、slice、split 在分開看它們時沒什麼感覺，但當三個都遇
 - [三男 split](#三男-split)
 - [為什麼 slice 可以操作 array 和 string，但 splice 就只能夠操作 array，卻不能操作 string ?](#為什麼-slice-可以操作-array-和-string但-splice-就只能夠操作-array卻不能操作-string)
 
-## **長男 splice**
+## 長男 splice
 
 [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) 解釋( Array.prototype.splice() )：
 
@@ -60,58 +60,78 @@ e.g., 是回傳「陣列」還是「字串」? 回傳的是「一個新的陣列
 
 從索引 2 的位置開始，刪除 0 個元素並插入「a」：
 
-```js
+<!-- ```js
 let arr1 = [0, 1, 2, 3, 4, 5, 6];
 arr2 = arr1.splice(2, 0, "a");
 console.log(arr1);
-// 畫面會回傳[
+// [
 //   0, 1, 'a', 2,
 //   3, 4, 5, 6
 // ]
 console.log(arr2);
-// 畫面會回傳 [] (表示沒有元素被刪除)
-```
+// []
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-1.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 從索引 2 的位置開始，刪除 1 個元素：
 
-```js
+<!-- ```js
 let arr1 = [0, 1, 2, 3, 4, 5, 6];
 arr2 = arr1.splice(2, 1);
 console.log(arr1);
-// 畫面會回傳[ 0, 1, 3, 4, 5, 6 ]
+// [ 0, 1, 3, 4, 5, 6 ]
 console.log(arr2);
-//畫面會回傳[ 2 ]
-```
+// [ 2 ]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-2.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 從索引 2 的位置開始，刪除 1 個元素並插入「a」：
 
-```js
+<!-- ```js
 let arr1 = [0, 1, 2, 3, 4, 5, 6];
 arr2 = arr1.splice(2, 1, "a");
 console.log(arr1);
-// 畫面會回傳[
+// [
 //   0, 1, 'a', 3,
 //   4, 5, 6
 // ]
 console.log(arr2);
-//畫面會回傳[ 2 ]
-```
+// [ 2 ]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-3.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-3.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 從索引 2 的位置開始，刪除 1 個元素並插入「a, b, c」：
 
-```js
+<!-- ```js
 let arr1 = [0, 1, 2, 3, 4, 5, 6];
 arr2 = arr1.splice(2, 1, "a", "b", "c");
 console.log(arr1);
-// 畫面會回傳[
+// [
 //   0, 1, 'a', 'b', 'c',
 //   3, 4, 5, 6
 // ]
 console.log(arr2);
-//畫面會回傳[ 2 ]
-```
+// [ 2 ]
+``` -->
 
-## **次男 slice**
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-4.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-4.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+## 次男 slice
 
 [mdn](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) 解釋( Array.prototype.slice() )：
 
@@ -127,23 +147,33 @@ The slice() method extracts a section of a string and returns it as a new string
 
 從位置 3 開始切：
 
-```js
+<!-- ```js
 let arr = [0, 1, 2, 3, 4, 5, 6];
 console.log(arr.slice(3));
-//畫面會回傳[3,4,5,6]
-```
+// [ 3, 4, 5, 6 ]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-5.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-5.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 從位置 3 開始切，切到位置 6 (不包含位置 6 )：
 
-```js
+<!-- ```js
 let arr = [0, 1, 2, 3, 4, 5, 6];
 console.log(arr.slice(3, 6));
-//畫面會回傳[3,4,5]
-```
+// [ 3, 4, 5 ]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-6.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-6.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 以上只有舉出提取「陣列」的例子，至於提取「字串」的部分，就請發揮想像力，自行舉一反三了。(翻譯：我懶得寫了 😂)
 
-## **三男 split**
+## 三男 split
 
 [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) 解釋( String.prototype.split() )：
 
@@ -153,12 +183,17 @@ The split() method takes a pattern and divides a String into an ordered list of 
 
 直接用以下例子進行說明：
 
-```js
+<!-- ```js
 const myString = "hello!nihao!你好";
 const myNewArray = myString.split("!");
 console.log(myNewArray);
-//畫面會回傳['hello', 'nihao', '你好']
-```
+// [ 'hello', 'nihao', '你好' ]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-7.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-7.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 要注意使用的分隔符號在回傳的新「陣列」中會不見，以上述的例子來看，我們指定用「!」作為分隔符號，所以回傳的新陣列，也就是原本字串的分割，就不會有「!」出現。
 
@@ -166,24 +201,29 @@ console.log(myNewArray);
 
 再來也看一下 [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) 提供的 Demo：
 
-```js
+<!-- ```js
 const str = "The quick brown fox jumps over the lazy dog.";
 const words = str.split(" ");
 console.log(words);
-//畫面會回傳[
+// [
 //   'The',   'quick',
 //   'brown', 'fox',
 //   'jumps', 'over',
 //   'the',   'lazy',
 //   'dog.'
 // ]
-```
+``` -->
 
-```js
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-8.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-8.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<!-- ```js
 const str = "The quick brown fox jumps over the lazy dog.";
 const chars = str.split("");
 console.log(chars);
-//畫面會回傳[
+// [
 //   'T', 'h', 'e', ' ', 'q', 'u', 'i',
 //   'c', 'k', ' ', 'b', 'r', 'o', 'w',
 //   'n', ' ', 'f', 'o', 'x', ' ', 'j',
@@ -192,20 +232,30 @@ console.log(chars);
 //   'l', 'a', 'z', 'y', ' ', 'd', 'o',
 //   'g', '.'
 // ]
-```
+``` -->
 
-```js
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-9.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-9.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<!-- ```js
 const str = "The quick brown fox jumps over the lazy dog.";
 const strCopy = str.split();
 console.log(strCopy);
-//畫面會回傳[ 'The quick brown fox jumps over the lazy dog.' ]
-```
+// ['The quick brown fox jumps over the lazy dog.']
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-10.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-10.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 這邊可以發現若原本的字串是一個完整的句子，使用「' '」(中間有空格)作為分隔符號會拆分成一個一個單子、使用「''」(中間沒有空格)作為分隔符號會拆分成一個一個字母，使用「」(沒有放入任何東西)作為分隔符號則會把原本完整的字串(這裡是一個完整的句子)，直接放進新的陣列中，成為此陣列唯一的元素。
 
 好了，「大家來找碴」遊戲到這裡暫時告一段落，這之中大概還有很多功能我沒有列舉出來，這些就等以後如果我有機會碰到再說了。
 
-## **為什麼 slice 可以操作 array 和 string，但 splice 就只能夠操作 array，卻不能操作 string？**
+## 為什麼 slice 可以操作 array 和 string，但 splice 就只能夠操作 array，卻不能操作 string？
 
 這個是我玩完「找不同」遊戲後心裡所產生的疑問，目前我的理解是，通常可以拿來操作 array 的函式應該大部分也可以用來操作 string，畢竟這樣能夠一舉兩得，是再好不過的了，但是 splice 為什麼就偏偏只能操作 array？
 
@@ -213,27 +263,42 @@ console.log(strCopy);
 
 若變數型態為 Primitive Types，只呼叫任何內建函式，變數的值並不會改變，e.g.,
 
-```js
+<!-- ```js
 let a = "hello";
 a.toUpperCase();
-console.log(a); //畫面會回傳 hello
-```
+console.log(a); // hello
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-11.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-11.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 必須要重新賦值，a 才會被改變：
 
-```js
+<!-- ```js
 let a = "hello";
 a = a.toUpperCase();
-console.log(a); //畫面會回傳 HELLO
-```
+console.log(a); // HELLO
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-12.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-12.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 回到原本的問題，我們知道 splice 函式本身的功能是會直接改變原本的值的，這樣就會和 JavaScript 中 Immutable (不可變的) 的特性相互違背，這也就是為什麼 splice 函式不能操作 string 的原因，就好像是法律上會有憲法的最高原則掛在那邊，如果底下的民法、刑法等違背了憲法，就會不適用的道理一樣。但是因為 array 在 JavaScript 中的變數型態為 Object，沒有 Immutable (不可變的) 的特性，所以直接操作原本的值並不會有問題。以下也舉個簡單的例子說明：
 
-```js
+<!-- ```js
 let arr = [1, 2, 3];
 arr.push(4);
-console.log(arr); //畫面會回傳 [1, 2, 3, 4]
-```
+console.log(arr); // [1, 2, 3, 4]
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/code-13.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-13.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 從上述的例子可以看到，若變數型態是 Object，直接呼叫內建函式，變數的值就會被改變。
 

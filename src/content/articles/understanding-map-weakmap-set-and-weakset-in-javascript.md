@@ -76,10 +76,10 @@ Set 這個數據結構類似陣列，但是裡面的元素值都是唯一，不�
 
 和 Set 的使用方法相似，但有兩個主要不同的地方：
 
-- WeakSet 內的元素值只能是 Object（Set 可接受各種資料類型的值）
+- WeakSet 內的元素值只能是 Object（Set 可接受各種資料類型的值）。
 
-- WeakSet 內的元素都是  「弱引用」(weak reference)，可以被垃圾回收機制回收。
+- WeakSet 內的元素都是「弱引用」(weak reference)，可以被垃圾回收機制回收。
 
 ## Reference
 
-[請解釋 Set、Map、WeakSet 和 WeakMap 的區別？｜ExplainThis](https://www.explainthis.io/zh-hant/swe/set-map-weakset-weakmap)
+[請解釋 Set、Map、WeakSet 和 WeakMap 的區別？｜ ExplainThis](https://www.explainthis.io/zh-hant/swe/set-map-weakset-weakmap)

@@ -56,11 +56,16 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 - 宣告我要用 grid
 
-```css
+<!-- ```css
 .container {
   display: grid | inline-grid;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/display.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/display.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### **網格**
 
@@ -69,39 +74,54 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 網格邊線長度 & 交接點名稱
 - 可直接寫寬 / 高 數字，亦可加入 \[自行取名\]，幫網格切線取名
 
-```css
+<!-- ```css
 .container {
   grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
   grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows.webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows.png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(1).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 - 同一條網格切線可以有多個名字
 
-```css
+<!-- ```css
 .container {
   grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(3).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 - 可以用 repeat() 簡化內容
 
-```css
+<!-- ```css
 .container {
   grid-template-columns: repeat(3, 20px [col-start]);
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(4).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(4).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 #### **grid-template-areas**
 
 - 網格區塊配置（要搭配 grid-area）
 
-```css
+<!-- ```css
 .item-a {
   grid-area: header;
 }
@@ -124,11 +144,16 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
     "main main . sidebar"
     "footer footer footer footer";
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-areas.webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-areas.png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-areas(1).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-areas(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-template-areas(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-areas(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 #### **grid-auto-rows / grid-auto-columns**
@@ -136,19 +161,24 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 隱形網格邊線長度
 - 指定任何自動生成的隱形網格邊線長度，我們可以根據以下流程說明思考 grid-auto-rows / grid-auto-columns 是如何被創建：
 
-```css
+<!-- ```css
 .container {
   grid-template-rows: 90px 90px;
   grid-template-columns: 60px 60px;
 }
-```
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(1).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(1).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-```css
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+</picture>
+
+<!-- ```css
 .item-a {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
@@ -157,22 +187,32 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
   grid-column: 5 / 6;
   grid-row: 2 / 3;
 }
-```
-
-<picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(2).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
-</picture>
-
-```css
-.container {
-  grid-auto-columns: 60px;
-}
-```
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(3).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(3).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(4).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(4).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+</picture>
+
+<!-- ```css
+.container {
+  grid-auto-columns: 60px;
+}
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(5).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(5).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(6).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-rows+grid-auto-columns(6).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 #### **grid-auto-flow**
@@ -182,7 +222,7 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 以下舉例說明：
 
-```css
+<!-- ```css
 <section class="container">
   <div class="item-a">item-a</div>
   <div class="item-b">item-b</div>
@@ -190,22 +230,32 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
   <div class="item-d">item-d</div>
   <div class="item-e">item-e</div>
 </section>
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(1).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 我們定義了一個具有五列和兩行的網格，並且將 grid-auto-flow 設置為 row（這也是預設值）：
 
-```css
+<!-- ```css
 .container {
   display: grid;
   grid-template-columns: 60px 60px 60px 60px 60px;
   grid-template-rows: 30px 30px;
   grid-auto-flow: row;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(2).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 在將 items 放置到網格上時，我們只為其中兩個 items 指定了位置：
 
-```css
+<!-- ```css
 .item-a {
   grid-column: 1;
   grid-row: 1 / 3;
@@ -214,29 +264,39 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
   grid-column: 5;
   grid-row: 1 / 3;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(3).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 因為我們將 grid-auto-flow 設置為 row，所以網格將如下所示：
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(1).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(1).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(4).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(4).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 如果我們改成將 grid-auto-flow 設置為 column，則 item-b、item-c 和 item-d 將沿著列向下排列：
 
-```css
+<!-- ```css
 .container {
   display: grid;
   grid-template-columns: 60px 60px 60px 60px 60px;
   grid-template-rows: 30px 30px;
   grid-auto-flow: column;
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(2).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(5).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(5).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-auto-flow(6).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(6).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 ### **容器整體**
@@ -276,12 +336,17 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 容器整體的垂直＋水平對齊方式
 - 用法: place-content: align-content justify-content;，也可以只設一個數字，代表 align-content = justify-content
 
-```css
+<!-- ```css
 .center {
   display: grid;
   place-content: center;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/place-content.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/place-content.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### **容器內**
 
@@ -320,12 +385,17 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 容器內每個網格內容的垂直＋水平對齊方式
 - 用法: place-items: align-items justify-items;，也可以只設一個數字，代表 align-items = justify-items
 
-```css
+<!-- ```css
 .center {
   display: grid;
   place-items: center;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/place-items.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/place-items.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### **網格間空隙**
 
@@ -333,18 +403,23 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 - 網格間的空隙
 
-```css
+<!-- ```css
 .container {
   grid-template-columns: 100px 50px 100px;
   grid-template-rows: 80px auto 80px;
   row-gap: 15px;
   column-gap: 10px;
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/row-gap+column-gap.webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/row-gap+column-gap.png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/row-gap+column-gap(1).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/row-gap+column-gap(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/row-gap+column-gap(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/row-gap+column-gap(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 #### **gap**
@@ -352,13 +427,18 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 網格間的空隙
 - 用法: gap: row-gap column-gap;，也可以只設一個數字，代表 row-gap = column-gap
 
-```css
+<!-- ```css
 .container {
   grid-template-columns: 100px 50px 100px;
   grid-template-rows: 80px auto 80px;
   gap: 15px 10px;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/gap.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/gap.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Properties for the Children(Grid Items)
 
@@ -366,32 +446,42 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 - 決定 item 的格子從哪開始、到哪結束
 
-```css
+<!-- ```css
 .item-a {
   grid-column-start: 2;
   grid-column-end: five;
   grid-row-start: row1-start;
   grid-row-end: 3;
 }
-```
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(1).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(1).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-```css
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+</picture>
+
+<!-- ```css
 .item-b {
   grid-column-start: 1;
   grid-column-end: span col4-start;
   grid-row-start: 2;
   grid-row-end: span 2;
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(2).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(3).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(4).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column-start+grid-column-end+grid-row-start+grid-row-end(4).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 - 注意事項
@@ -402,21 +492,26 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 - 決定 item 的格子從哪開始、到哪結束
 
-```css
+<!-- ```css
 .item-c {
   grid-column: 3 / span 2;
   grid-row: third-line / 4;
 }
-```
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column+grid-row(1).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column+grid-row(1).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column+grid-row(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column+grid-row(2).webp" type="image/webp">
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column+grid-row(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-column+grid-row(3).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-column+grid-row(3).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 - 注意事項
@@ -426,36 +521,51 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 
 - 決定 item 的格子從哪開始、到哪結束
 
-```css
+<!-- ```css
 .item {
   grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end>;
 }
-```
-
-- 作為為項目指定名稱的一種方式：
-
-```css
-.item-d {
-  grid-area: header;
-}
-```
-
-- 作為簡寫（short-shorthand）來同時設定 grid-row-start + grid-column-start + grid-row-end + grid-column-end：
-
-```css
-.item-d {
-  grid-area: 1 / col4-start / last-line / 6;
-}
-```
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-area(1).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(1).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
+
+- 作為為項目指定名稱的一種方式：
+
+<!-- ```css
+.item-d {
+  grid-area: header;
+}
+``` -->
 
 <picture>
   <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-area(2).webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(2).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+- 作為簡寫（short-shorthand）來同時設定 grid-row-start + grid-column-start + grid-row-end + grid-column-end：
+
+<!-- ```css
+.item-d {
+  grid-area: 1 / col4-start / last-line / 6;
+}
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-area(3).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-area(4).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(4).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/grid-area(5).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(5).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 #### **align-self**
@@ -493,15 +603,20 @@ CSS Grid 是一種強大的二維佈局系統，能夠幫助我們更靈活的�
 - 此網格內容的垂直＋水平對齊方式
 - 用法: place-self: align-self justify-self;，也可以只設一個數字，代表 align-self = justify-self
 
-```css
+<!-- ```css
 .item-a {
   place-self: center;
 }
-```
+``` -->
 
 <picture>
-  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/place-self.webp" type="image/webp">
-  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/place-self.png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/place-self(1).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/place-self(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-grid-implementation-cheatsheet/place-self(2).webp" type="image/webp">
+  <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/place-self(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
 ## Reference

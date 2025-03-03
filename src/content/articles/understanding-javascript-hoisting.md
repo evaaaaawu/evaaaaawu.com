@@ -22,17 +22,27 @@ featured: false
 
 但函式提升要注意的是，如果是函式表達式，提升行為會與它宣告的變數一樣，所以如果用 var 宣告的 foo 函式，在宣告前使用時，當時值會是 undefined，因此呼叫 undefined 會報錯：
 
-```js
+<!-- ```js
 foo(); // Uncaught TypeError: foo is not a function
 var foo = function () {};
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-javascript-hoisting/code-1.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-javascript-hoisting/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 用 let 宣告的 foo 函式，在宣告前使用時，此時 foo 在暫時死區，因此呼叫 foo 會報錯：
 
-```js
+<!-- ```js
 foo(); // Uncaught ReferenceError: foo is not defined
 let foo = function () {};
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-javascript-hoisting/code-2.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-javascript-hoisting/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Reference
 

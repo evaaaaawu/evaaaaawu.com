@@ -43,25 +43,6 @@ featured: true
 
    建立要忽略的檔案
 
-   ```
-   常見的忽略檔案清單(可以整份直接貼上，不需要等遇到時才一個個處理)
-
-   # OS X
-   .DS_Store*
-   Icon?
-   ._*
-
-   # Windows
-   Thumbs.db
-   ehthumbs.db
-   Desktop.ini
-
-   # npm
-   node_modules
-   .log
-   .gz
-   ```
-
 3. `git add .`
 
    程式碼更動已告一段落，先把所有檔案加進去版本控制系統

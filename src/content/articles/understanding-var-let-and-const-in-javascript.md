@@ -32,38 +32,59 @@ var、let 和 const 都是在 JavaScript 用來做變數宣告的保留字，�
 
 在宣告上，var 可以被重複宣告，但是 let 與 const 則不行。所以當使用 var 時，可以做到以下這樣：
 
-```js
+<!-- ```js
 var greeting = "Hello! This ExplainThis :)";
 var greeting = "ExplainThis is a website that helps you learn programming!";
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-var-let-and-const-in-javascript/code-1.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-var-let-and-const-in-javascript/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 let 則不能重複宣告，但可以重新賦值，所以會如下面這樣：
 
-```js
-// 不行這樣！不然會有 SyntaxError: Identifier 'greeting' has already been declared
-let greeting = "Hello! This ExplainThis :)";
-let greeting = "ExplainThis is a website that helps you learn programming!";
+<!-- ```js
+// there will be SyntaxError: 
+// Identifier 'greeting' has already been declared
+let greeting = "Hello";
+let greeting = "Hello, hello, everyone";
 
-// 可以這樣 :)
-let greeting = "Hello! This ExplainThis :)";
-greeting = "ExplainThis is a website that helps you learn programming!";
-```
+// it works like this for let declaration
+let greeting = "Hello";
+greeting = "Hello, hello, everyone";
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-var-let-and-const-in-javascript/code-2.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-var-let-and-const-in-javascript/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## 3. 在提升上，var 宣告的變數會自動初始化值為 undefined，因此在宣告前就使用變數，不會出現錯誤，而會是 undefined ；但是 let 與 const 宣告的變數則不會自動初始化，而是會進到暫時死區 (TDZ)，因此在 let 與 const 宣告變數前使用該變數，會出現錯誤。
 
 在提升上，var 宣告的變數會自動初始化，因此在宣告前就使用變數，不會出現錯誤，而會是 undefined ，例如下面這樣：
 
-```js
+<!-- ```js
 console.log(greeting); // undefined
 var greeting = "hi there";
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-var-let-and-const-in-javascript/code-3.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-var-let-and-const-in-javascript/code-3.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 但是 let 與 const 則不會，而是會進到暫時死區 (TDZ)，因此在 let 與 const 宣告變數前使用該變數，會出現錯誤：
 
-```js
+<!-- ```js
 console.log(greeting); // Uncaught ReferenceError: greeting is not defined
 let greeting = "hi there";
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-var-let-and-const-in-javascript/code-4.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-var-let-and-const-in-javascript/code-4.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## 而針對 let 和 const 的比較，最主要的一大區別在於，用 let 宣告的變數可以重新賦值，但是用 const 的不行。
 
@@ -73,11 +94,16 @@ let 與 const 在絕多數面向都是一樣，兩者的一大區別在於，
 
 所以下面這個例子是可行的：
 
-```js
-const user = { name: "小明" };
-user.name = "小王";
-console.log(user); // {name: '小王'}
-```
+<!-- ```js
+const user = { name: "John" };
+user.name = "Mary";
+console.log(user); // {name: 'Mary'}
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-var-let-and-const-in-javascript/code-5.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-var-let-and-const-in-javascript/code-5.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 至於何時用 let；何時用 const，沒有一個標準答案。業界目前普遍的觀點是多數時候都用 const，只有非得要重新賦值才用 let。
 

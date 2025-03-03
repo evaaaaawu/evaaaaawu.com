@@ -49,11 +49,16 @@ CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活�
 
 - 宣告我要用 flex
 
-```css
+<!-- ```css
 .container {
-  display: flex; /* or inline-flex */
+  display: flex | inline-flex;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-flexbox-implementation-cheatsheet/display.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-flexbox-implementation-cheatsheet/display.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### 排列方向與換行
 
@@ -88,11 +93,16 @@ CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活�
 - = flex-direction + flex-wrap
 - 預設值是 row nowrap
 
-```css
+<!-- ```css
 .container {
   flex-flow: column wrap;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-flexbox-implementation-cheatsheet/flex-flow.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-flexbox-implementation-cheatsheet/flex-flow.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### 對齊方式
 
@@ -142,25 +152,35 @@ CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活�
 
 #### **row-gap / column-gap**
 
-```css
+<!-- ```css
 .container {
   display: flex;
   ...
   row-gap: 10px;
   column-gap: 20px;
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-flexbox-implementation-cheatsheet/row-gap+column-gap.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-flexbox-implementation-cheatsheet/row-gap+column-gap.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 #### **gap**
 
-```css
+<!-- ```css
 .container {
   display: flex;
   ...
   gap: 10px;
   gap: 10px 20px; /* row-gap column gap */
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/css-flexbox-implementation-cheatsheet/gap.webp" type="image/webp">
+  <img src="/images/article-contents/png/css-flexbox-implementation-cheatsheet/gap.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Properties for the Children (flex items)
 

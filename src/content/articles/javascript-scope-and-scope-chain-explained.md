@@ -26,15 +26,18 @@ featured: false
 
 作用域鏈(Scope Chain)可以透過以下程式碼來了解：
 
-```js
+<!-- ```js
 let a = 100;
 function find() {
-  // 在 find 函式作用域中沒有變數 a，於是透過作用域鏈往父層尋找，
-  // 在這邊的父層是全域，也就找到了 a 變數
   console.log(a); // 100
 }
 find();
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/javascript-scope-and-scope-chain-explained/code.webp" type="image/webp">
+  <img src="/images/article-contents/png/javascript-scope-and-scope-chain-explained/code.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Reference
 

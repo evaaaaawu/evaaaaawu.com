@@ -1,5 +1,5 @@
 ---
-title: 為什麼在 JavaScript 中 0.1 + 0.2 會等於 0.30000000000000004 這個怪異數字？
+title: 為什麼在 JavaScript 中 0.1 + 0.2 不會剛好是 0.3？
 subtitle: 因為二進位制 + 電腦記憶體有限，所以 0.1 + 0.2 = 0.30000000000000004。
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/why-01-plus-02-equals-030000000000000004-in-javascript.webp
@@ -18,10 +18,15 @@ featured: false
 
 如果要避免上述問題，在 JavaScript 中有  toFixed  和  toPrecision  等給數字操作的方法，讓我們能夠設定我們要的精確度，舉例來說，可以設定精確到小數第一位。因此
 
-```js
+<!-- ```js
 console.log((0.1 + 0.2).toFixed(1)); // 0.3
 console.log((0.1 + 0.2).toPrecision(1)); // 0.3
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/why-01-plus-02-equals-030000000000000004-in-javascript/code.webp" type="image/webp">
+  <img src="/images/article-contents/png/why-01-plus-02-equals-030000000000000004-in-javascript/code.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## Reference
 

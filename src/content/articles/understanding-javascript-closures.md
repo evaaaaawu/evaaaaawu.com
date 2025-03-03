@@ -20,12 +20,11 @@ featured: false
 
 ### 狀態保存
 
-在寫程式時，我們很常會需要記住某個狀態，React 套件就有提供一個  useState  讓開發者來管理狀態。
+在寫程式時，我們很常會需要記住某個狀態，React 套件就有提供一個 useState 讓開發者來管理狀態。
 
 簡化版 useState 實作範例：
 
-```js
-// 因為閉包的關係，getState 與 setState 可以取得與記得 state
+<!-- ```js
 function useState(initialState) {
   let state = initialState;
 
@@ -36,6 +35,7 @@ function useState(initialState) {
   function setState(updatedState) {
     state = updatedState;
   }
+
   return [getState, setState];
 }
 
@@ -46,7 +46,12 @@ setCount(1);
 count(); // 1
 setCount(500);
 count(); // 500
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-javascript-closures/code-1.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-javascript-closures/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### 快取(cache)機制
 
@@ -54,29 +59,27 @@ count(); // 500
 
 手寫快取(cache)機制：
 
-```js
+<!-- ```js
 function memoize(fn) {
-  // 聲明一個 cache 物件，透過 cache 來放快取的東西
-  // 因為閉包的緣故，下面回傳的函式可以存取到這個 cache 變數
   const cache = {};
 
-  // 透過擴展運算符，拿到引數
   return (...args) => {
-    // 將引數當作快取的 key
     const key = JSON.stringify(args);
-    // 查看現在的快取有沒有這個 key，有的話就不用再算，直接回傳
     if (key in cache) {
       return cache[key];
     } else {
-      // 沒有的話，就把收到引數帶入，運算出結果
       const val = fn(...args);
-      // 把結果放入快取，下次有同樣的 key 就不用重新運算
       cache[key] = val;
       return val;
     }
   };
 }
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-javascript-closures/code-2.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-javascript-closures/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ### 模擬私有變數
 
@@ -84,10 +87,7 @@ function memoize(fn) {
 
 模擬私有變數實作範例：
 
-```js
-// privateCounter 沒被法被外部修改，
-// 因為閉包的關係 increment 與 decrement 可以存取到 privateCounter
-// 因此 privateCounter 只能夠透過 increment 與 decrement 來改，這能有效避免被誤觸到
+<!-- ```js
 var counter = (function () {
   var privateCounter = 0;
   function changeBy(val) {
@@ -112,7 +112,12 @@ counter.increment();
 console.log(counter.value()); // logs 2
 counter.decrement();
 console.log(counter.value()); // logs 1
-```
+``` -->
+
+<picture>
+  <source srcset="/images/article-contents/webp/understanding-javascript-closures/code-3.webp" type="image/webp">
+  <img src="/images/article-contents/png/understanding-javascript-closures/code-3.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
 ## 閉包的缺點：記憶體洩漏(memory leak)
 

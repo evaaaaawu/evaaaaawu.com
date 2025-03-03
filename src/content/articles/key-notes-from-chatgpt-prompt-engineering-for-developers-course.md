@@ -27,7 +27,7 @@ ChatGPT Prompt Engineering for Developers 是生成式 AI 出現後 [DeepLearnin
   - [推論](#推論)
   - [轉換](#轉換)
   - [擴展](#擴展)
-- [參考資料](#參考資料)
+- [Reference](#Reference)
 
 ## Introduction
 
@@ -338,6 +338,6 @@ LLM（大型語言模型）可以分為兩種類型：基礎型 LLM（Base LLM�
 
   Sign the email as `AI customer agent`.
 
-## 參考資料
+## Reference
 
 [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction)

@@ -36,28 +36,38 @@ RWD 的核心目標是提供一致且良好的使用體驗，不需要針對不�
 
   e.g., 只要簡單在 media query 中更改 html element 的 font-size 大小，就可以輕易讓整個網頁在大螢幕上放大。
 
-  ```css
+  <!-- ```css
   @media (min-width: 700px) {
     html {
       font-size: 25px;
     }
   }
-  ```
+  ``` -->
+
+  <picture>
+    <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-1.webp" type="image/webp">
+    <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-1.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+  </picture>
 
 - 使用 max-width 以防止在大螢幕檢視時寬度過大。e.g. 如下：
 
-  ```css
+  <!-- ```css
   .container {
     background: #23424a;
     color: white;
 
     width: 80%;
-    max-width: 750px; /* 新增這個 */
+    max-width: 750px;
     margin: 0 auto;
 
     padding: 2em;
   }
-  ```
+  ``` -->
+
+  <picture>
+    <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-2.webp" type="image/webp">
+    <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-2.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+  </picture>
 
 - CSS Units: vh, vw, vmin, vmax
 
@@ -71,44 +81,64 @@ RWD 的核心目標是提供一致且良好的使用體驗，不需要針對不�
 
 - 下述兩個設定其實本質上是一樣的，但第一個寫法比較符合直覺，所以我會選擇用第一個。
 
-  ```css
+  <!-- ```css
   .container {
     width: 100%;
     max-width: 600px;
   }
-  ```
+  ``` -->
 
-  <br>
+  <picture>
+    <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-3.webp" type="image/webp">
+    <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-3.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+  </picture>
 
-  ```css
+  <br />
+
+  <!-- ```css
   .container {
     width: 600px;
     max-width: 100%;
   }
-  ```
+  ``` -->
 
-- 補充: min(), max(), and clamp()
+  <picture>
+    <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-4.webp" type="image/webp">
+    <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-4.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+  </picture>
 
-  - min() 寫法:
+- 補充: min(), max() and clamp()
 
-    ```css
+  - min() 寫法：：
+
+    <!-- ```css
     .content {
       width: min(500px, 70%);
     }
-    ```
+    ``` -->
 
-    上述寫法等同於:
+    <picture>
+      <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-5.webp" type="image/webp">
+      <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-5.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+    </picture>
 
-    ```css
+    上述寫法等同於：
+
+    <!-- ```css
     .content {
       width: 70%
       max-width: 500px;
     }
-    ```
+    ``` -->
 
-  - clamp() 寫法:
+    <picture>
+      <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-6.webp" type="image/webp">
+      <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-6.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+    </picture>
 
-    ```css
+  - clamp() 寫法：
+
+    <!-- ```css
     .title {
       font-size: clamp(2rem, 5vw, 5rem);
     }
@@ -116,7 +146,12 @@ RWD 的核心目標是提供一致且良好的使用體驗，不需要針對不�
     .p {
       font-size: clamp(1rem, 1.25vw, 1.25rem);
     }
-    ```
+    ``` -->
+
+    <picture>
+      <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-7.webp" type="image/webp">
+      <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-7.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+    </picture>
 
 ### Reference
 
