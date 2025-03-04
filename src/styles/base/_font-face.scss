@@ -1,28 +1,53 @@
+/* Google Fonts for Montserrat and Noto Sans TC */
+
 @font-face {
-  font-family: "Alegreya SC";
-  font-weight: 700;
-  font-display: swap;
-  src: url("/fonts/alegreyasc-bold-webfont.woff2") format("woff2"),
-    url("/fonts/alegreyasc-bold-webfont.woff") format("woff");
-}
-@font-face {
-  font-family: "Source Sans Pro";
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/fonts/sourcesanspro-regular-webfont.woff2") format("woff2"),
-    url("/fonts/sourcesanspro-regular-webfont.woff") format("woff");
+  src: url("/fonts/montserrat-regular.woff2") format("woff2"),
+       url("/fonts/montserrat-regular.woff") format("woff");
 }
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("/fonts/sourcesanspro-semibold-webfont.woff2") format("woff2"),
-    url("/fonts/sourcesanspro-semibold-webfont.woff") format("woff");
+  src: url("/fonts/montserrat-medium.woff2") format("woff2"),
+       url("/fonts/montserrat-medium.woff") format("woff");
 }
 @font-face {
-  font-family: "Source Sans Pro";
+  font-family: "Montserrat";
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/fonts/sourcesanspro-bold-webfont.woff2") format("woff2"),
-    url("/fonts/sourcesanspro-bold-webfont.woff") format("woff");
+  src: url("/fonts/montserrat-bold.woff2") format("woff2"),
+       url("/fonts/montserrat-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/notosanstc-regular.woff2") format("woff2"),
+       url("/fonts/notosanstc-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/notosanstc-medium.woff2") format("woff2"),
+       url("/fonts/notosanstc-medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Noto Sans TC";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/notosanstc-bold.woff2") format("woff2"),
+       url("/fonts/notosanstc-bold.woff") format("woff");
 }

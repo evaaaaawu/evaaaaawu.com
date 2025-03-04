@@ -39,11 +39,13 @@ featuredArticles.sort(
 >
   <article class="full-article | container flow" data-type="narrow">
     <div class="meta">
-      <div class="flex-group align-center">
+      <p>
         <Tag tag={article.data.tags[0]} />
+      </p>
+      <p class="margin-block-start-3">
         creation date:<FormattedDate date={article.data.creationDate} />
         update date:<FormattedDate date={article.data.updateDate} />
-      </div>
+      </p>
     </div>
     <h1 transition:name={article.data.title} class="heading-2">
       {article.data.title}
