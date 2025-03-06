@@ -1,0 +1,46 @@
+---
+const { currentPath, currentLocale } = Astro.props;
+
+const pathSegments = currentPath.split("/").filter(Boolean);
+const pathWithoutLocale =
+  pathSegments.length > 1
+    ? `/${pathSegments.slice(1).join("/")}`
+    : "/";
+
+const targetLocale = currentLocale === "en" ? "zh-tw" : "en";
+const targetPath = `/${targetLocale}${pathWithoutLocale}`;
+
+const localeNames = {
+  "en": "English",
+  "zh-tw": "繁體中文",
+};
+---
+
+<div class="language-switcher">
+  <a href={targetPath} class="lang-link">
+    {localeNames[targetLocale]}
+  </a>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts" as *;
+
+  .language-switcher {
+    display: flex;
+    align-items: center;
+  }
+
+  .lang-link {
+    padding: 0.25rem 0.5rem;
+    border-radius: $border-radius-1;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+  }
+</style>

@@ -2,28 +2,41 @@
 import LogoLink from "./LogoLink.astro";
 import PrimaryNavigation from "./PrimaryNavigation.astro";
 import SocialLinks from "./SocialLinks.astro";
-const { skipTo = "#main" } = Astro.props;
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { useTranslations } from "../utils/translations";
+
+const { locale, skipTo = "#main" } = Astro.props;
+const { t } = useTranslations(locale);
 ---
 
 <header class="site-header" transition:persist>
-  <a href={skipTo} class="skip-navigation">Skip to content</a>
+  <a href={skipTo} class="skip-navigation">{t("common.skipToContent")}</a>
 
   <div class="container">
     <div class="site-header__inner">
       <LogoLink />
       <button aria-controls="main-menu" aria-expanded="false">
-        <span class="visually-hidden">Menu</span>
+        <span class="visually-hidden">{t("common.menu")}</span>
         <img class="menu-icon" src="/images/menu.svg" alt="" />
         <img class="close-menu-icon" src="/images/close-menu.svg" alt="" />
       </button>
       <div class="nav-grid">
-        <PrimaryNavigation id="main-menu" label="primary navigation">
-          <li><a href="/">Home</a></li>
-          <li><a href="/tags">Tags</a></li>
-          <li><a href="/articles">Articles</a></li>
-          <li><a href="/about">About</a></li>
+        <PrimaryNavigation
+          id="main-menu"
+          label="primary navigation"
+          locale={locale}
+        >
+          <li><a href={`/${locale}/`}>{t("nav.home")}</a></li>
+          <li><a href={`/${locale}/tags/`}>{t("nav.tags")}</a></li>
+          <li><a href={`/${locale}/articles/`}>{t("nav.articles")}</a></li>
+          <li><a href={`/${locale}/about/`}>{t("nav.about")}</a></li>
         </PrimaryNavigation>
         <SocialLinks class="socials" />
+        <LanguageSwitcher
+          class="language-switcher"
+          currentPath={Astro.url.pathname}
+          currentLocale={locale}
+        />
       </div>
     </div>
   </div>
@@ -86,8 +99,8 @@ const { skipTo = "#main" } = Astro.props;
         /* display: grid is turned on lower down */
         gap: 3rem;
         grid-template-areas:
-          "nav"
-          "socials";
+          "nav nav nav nav nav nav nav nav"
+          "socials socials socials socials socials socials socials language-switcher";
         position: absolute;
         left: 0;
         padding: $sticky-nav-padding;
@@ -138,8 +151,8 @@ const { skipTo = "#main" } = Astro.props;
       .nav-grid {
         gap: 3rem;
         grid-template-areas:
-          "nav"
-          "socials";
+          "nav nav nav nav nav"
+          "socials socials socials socials language-switcher";
       }
     }
 

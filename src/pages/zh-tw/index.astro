@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticlePreview from "../../components/ArticlePreview.astro";
+import { getCollection } from "astro:content";
+import { useTranslations } from "../../utils/translations";
+
+const locale = "zh-tw";
+const { t } = useTranslations(locale);
+
+const allArticles = await getCollection("zh-tw");
+allArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+
+const featuredArticles = await getCollection("zh-tw", ({ data }) => data.featured);
+featuredArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+---
+
+<BaseLayout withGradient title="Eva Wu's Tech Blog" locale={locale}>
+  <div class="container flow">
+    <section class="section">
+      <h1 class="heading-1">{t("site.title")}</h1>
+      <p class="fs-600 margin-block-start-6">
+        {t("site.description")}
+        <ul>
+          <li>{t("site.info1")}</li>
+          <li>{t("site.info2")}</li>
+          <li>{t("site.info3")}</li>
+          <li>{t("site.info4")}</li>
+        </ul>
+      </p>
+    </section>
+
+    <section class="section flow">
+      <h2 class="heading-2">{t("common.featured")}</h2>
+      <div class="grid-auto-fit">
+        {
+          featuredArticles
+            .slice(0, 8)
+            .map((article) => <ArticlePreview {article} locale={locale} />)
+        }
+      </div>
+    </section>
+  </div>
+</BaseLayout>

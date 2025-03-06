@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-const allArticles = await getCollection("articles");
+const allArticles = await getCollection("zh-tw");
 allArticles.sort(
   (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
 );
@@ -22,7 +22,7 @@ uniqueTags.sort();
           const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
           return (
             <p>
-              <a href={`/tags/${slugFriendlyTag}`}>{tag}</a>
+              <a href={`/zh-tw/tags/${slugFriendlyTag}`}>{tag}</a>
             </p>
           );
         })
@@ -32,7 +32,7 @@ uniqueTags.sort();
 </BaseLayout>
 
 <style lang="scss">
-  @use "../../styles/abstracts" as *;
+  @use "../../../styles/abstracts" as *;
 
   .flex-group {
     --flex-row-gap: 2rem;
