@@ -1,11 +1,16 @@
 ---
-const { date } = Astro.props;
+const { date, locale } = Astro.props;
+const localeForDate = locale === "en" ? "en-GB" : "zh-TW";
 ---
 
 <time datetime={new Date(date).toISOString()}>
-  {new Date(date).toLocaleDateString("en-GB", { day: "numeric" })}
-  {new Date(date).toLocaleDateString("en-GB", { month: "short" })},
-  {new Date(date).getFullYear()}
+  {
+    new Date(date).toLocaleDateString(localeForDate, {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    })
+  }
 </time>
 
 <style lang="scss">

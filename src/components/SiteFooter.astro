@@ -1,12 +1,16 @@
 ---
 import SocialLinks from "./SocialLinks.astro";
+import { useTranslations } from "../utils/translations";
+
+const { locale } = Astro.props;
+const { t } = useTranslations(locale);
 ---
 
 <footer class="site-footer">
   <div class="container margin-block-start-8">
     <div class="space-between">
       <SocialLinks />
-      <p class="ml-auto fs-400">© 2025 Eva Wu's Tech Blog</p>
+      <p class="ml-auto fs-400">{t("footer.copyright")}</p>
     </div>
   </div>
 </footer>

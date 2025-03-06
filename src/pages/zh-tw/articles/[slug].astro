@@ -1,0 +1,65 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Tag from "../../../components/Tag.astro";
+import FormattedDate from "../../../components/FormattedDate.astro";
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection("zh-tw");
+
+  return allArticles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await article.render();
+const locale = "zh-tw";
+
+const featuredArticles = await getCollection(
+  "zh-tw",
+  ({ data }) => data.featured
+);
+featuredArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+---
+
+<BaseLayout
+  title={article.data.title}
+  description={article.data.subtitle}
+  author={article.data.author}
+  image={article.data.imageSrc}
+  ogimage={`/open-graph/${article.slug}.png`}
+  locale={locale}
+>
+  <article class="full-article | container flow" data-type="narrow">
+    <div class="meta">
+      <div class="flex-group align-center">
+        <Tag tag={article.data.tags[0]} locale={locale} />
+        creation date:<FormattedDate
+          date={article.data.creationDate}
+          locale={locale}
+        />
+        update date:<FormattedDate
+          date={article.data.updateDate}
+          locale={locale}
+        />
+      </div>
+    </div>
+    <h1 transition:name={article.data.title} class="heading-2">
+      {article.data.title}
+    </h1>
+    <Content />
+  </article>
+</BaseLayout>
+
+<style lang="scss">
+  @use "../../../styles/abstracts" as *;
+
+  .featured {
+    margin-top: $section-padding-block;
+    border-top: $divider;
+  }
+</style>

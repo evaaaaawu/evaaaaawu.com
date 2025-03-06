@@ -2,8 +2,21 @@
 import BaseHead from "../components/BaseHead.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+
 const { title, description, author, ogimage, withGradient } = Astro.props;
+const currentLocale = Astro.url.pathname.split("/")[1];
 ---
+
+<html lang={currentLocale}>
+  <BaseHead {title} {description} {author} {ogimage} />
+  <body class={withGradient && "with-gradient"}>
+    <SiteHeader locale={currentLocale} />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter locale={currentLocale} />
+  </body>
+</html>
 
 <style lang="scss">
   @use "../styles/abstracts" as *;
@@ -20,14 +33,3 @@ const { title, description, author, ogimage, withGradient } = Astro.props;
     grid-template-rows: auto 1fr auto;
   }
 </style>
-
-<html lang="en">
-  <BaseHead {title} {description} {author} {ogimage} />
-  <body class={withGradient && "with-gradient"}>
-    <SiteHeader />
-    <main id="main">
-      <slot />
-    </main>
-    <SiteFooter />
-  </body>
-</html>

@@ -12,18 +12,10 @@ const articlesCollection = defineCollection({
     updateDate: z.date(),
     tags: z.array(z.string()),
     featured: z.boolean()
-  })
-});
-
-const authorsCollection = defineCollection({
-  schema: z.object({
-    name: z.string(),
-    image: z.string(),
-    description: z.string()
-  })
+  }),
 });
 
 export const collections = {
-  articles: articlesCollection,
-  authors: authorsCollection
+  "en": articlesCollection,
+  "zh-tw": articlesCollection,
 };

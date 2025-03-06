@@ -1,54 +1,15 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import ArticlePreview from "../components/ArticlePreview.astro";
-
-const allArticles = await getCollection("articles");
-allArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
-);
-
-const featuredArticles = await getCollection("articles", ({ data }) => {
-  return data.featured;
-});
-featuredArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
-);
+// Redirect page to default locale or user's preferred locale
+const defaultLocale = "en";
 ---
 
-<BaseLayout withGradient title="Eva Wu's Tech Blog">
-  <div class="container flow">
-    <section class="section">
-      <h1 class="heading-1">Eva Wu's<br />Tech Blog</h1>
-      <p class="fs-600 margin-block-start-6">
-        歡迎來到我的個人部落格，目前這裡主要會分享我的程式/技術學習筆記。
-        <br />
-        長期規劃上，我也會撰寫其他更廣泛的軟體/數位相關內容和分享我的個人生活。
-        <ul>
-          <li>繼續往下滑可以看到我推薦的精選文章。</li>
-          <li>如果想要依主題選擇文章，可以點擊 <a href="/tags">Tags</a> 頁面。</li>
-          <li>如果想要瀏覽我的所有文章，可以點擊 <a href="/articles">Articles</a> 頁面。</li>
-          <li>如果想要了解關於我的資訊，歡迎點擊 <a href="/about">About</a> 頁面。</li>
-        </ul>
-      </p>
-    </section>
-
-    <section class="section flow">
-      <h2 class="heading-2">Featured articles</h2>
-      <div class="grid-auto-fit">
-        {
-          featuredArticles
-            .slice(0, 8)
-            .map((article) => <ArticlePreview {article} />)
-        }
-      </div>
-    </section>
-
-    <!-- <section class="section flow">
-      <h2 class="heading-2">Recent articles</h2>
-      <div class="grid-auto-fit">
-        {allArticles.slice(0, 3).map((article) => <ArticlePreview {article} />)}
-      </div>
-    </section> -->
-  </div>
-</BaseLayout>
+<meta http-equiv="refresh" content={`0;url=/${defaultLocale}/`} />
+<script>
+  // Try to redirect based on browser language
+  const preferredLocale = navigator.language.split("-")[0];
+  const supportedLocales = ["en", "zh-tw"];
+  const targetLocale = supportedLocales.includes(preferredLocale)
+    ? preferredLocale
+    : "en";
+  window.location.replace(`/${targetLocale}/`);
+</script>

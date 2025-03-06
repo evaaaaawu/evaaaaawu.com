@@ -1,10 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArticlePreview from "../../components/ArticlePreview.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticlePreview from "../../../components/ArticlePreview.astro";
+import { useTranslations } from "../../../utils/translations";
+
+const { articles, tag } = Astro.props;
+const locale = "en";
+const { t } = useTranslations(locale);
 
 export async function getStaticPaths() {
-  const allArticles = await getCollection("articles");
+  const allArticles = await getCollection("en");
   allArticles.sort(
     (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
   );
@@ -18,7 +23,7 @@ export async function getStaticPaths() {
   return uniqueTags.map((tag) => {
     const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
     const filteredArticles = allArticles.filter((article) =>
-      article.data.tags.includes(tag),
+      article.data.tags.includes(tag)
     );
 
     return {
@@ -30,15 +35,13 @@ export async function getStaticPaths() {
     };
   });
 }
-
-const { articles, tag } = Astro.props;
 ---
 
 <BaseLayout>
   <div class="container flow">
-    <h1 class="heading-2 margin-block-end-8">All articles tagged with {tag}</h1>
+    <h1 class="heading-2 margin-block-end-8">{t("articles.tagged")} {tag}</h1>
     <div class="grid-auto-fit">
-      {articles.map((article) => <ArticlePreview {article} />)}
+      {articles.map((article) => <ArticlePreview {article} locale={locale} />)}
     </div>
   </div>
 </BaseLayout>

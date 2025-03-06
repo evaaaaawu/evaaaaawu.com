@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+const allArticles = await getCollection("en");
+allArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+);
+
+const uniqueTags = [
+  ...new Set(allArticles.map((article) => article.data.tags).flat()),
+];
+// sort tags alphabetically
+uniqueTags.sort();
+---
+
+<BaseLayout withGradient title="Eva Wu's Tech Blog | Tags">
+  <div class="container">
+    <div class="flex-group margin-block-10">
+      {
+        uniqueTags.map((tag) => {
+          const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
+          return (
+            <p>
+              <a href={`/en/tags/${slugFriendlyTag}`}>{tag}</a>
+            </p>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  @use "../../../styles/abstracts" as *;
+
+  .flex-group {
+    --flex-row-gap: 2rem;
+  }
+
+  // same as Tag.astro
+  a {
+    color: $tag-color;
+    background-color: $tag-background-color;
+    border: $tag-border;
+    border-radius: $tag-border-radius;
+    padding: $tag-padding;
+    text-transform: $tag-text-transform;
+    font-weight: $tag-font-weight;
+    font-size: $tag-font-size;
+    box-shadow: $tag-box-shadow;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: none;
+      color: $tag-color-hover;
+      background-color: $tag-background-color-hover;
+    }
+  }
+</style>

@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ArticlePreview from "../../../components/ArticlePreview.astro";
+import { useTranslations } from "../../../utils/translations";
+
+const { articles, tag } = Astro.props;
+const locale = "zh-tw";
+const { t } = useTranslations(locale);
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection("zh-tw");
+  allArticles.sort(
+    (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+  );
+
+  // create an array of all the tags, with no repeats
+  const uniqueTags = [
+    ...new Set(allArticles.map((article) => article.data.tags).flat()),
+  ];
+
+  // map over those to create a page for each tag
+  return uniqueTags.map((tag) => {
+    const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
+    const filteredArticles = allArticles.filter((article) =>
+      article.data.tags.includes(tag)
+    );
+
+    return {
+      params: { tag: slugFriendlyTag },
+      props: {
+        articles: filteredArticles,
+        tag: tag,
+      },
+    };
+  });
+}
+---
+
+<BaseLayout>
+  <div class="container flow">
+    <h1 class="heading-2 margin-block-end-8">{tag} {t("articles.tagged")}</h1>
+    <div class="grid-auto-fit">
+      {articles.map((article) => <ArticlePreview {article} locale={locale} />)}
+    </div>
+  </div>
+</BaseLayout>
