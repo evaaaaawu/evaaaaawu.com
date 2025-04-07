@@ -1,3 +1,16 @@
+# Redirect all English paths to English index
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+# Redirect all Chinese paths to Chinese index
+[[redirects]]
+  from = "/zh-tw/*"
+  to = "/zh-tw/index.html"
+  status = 200
+
+# Redirect root to appropriate language index
 [[redirects]]
   from = "/*"
   to = "/index.html"
