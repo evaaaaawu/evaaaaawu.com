@@ -15,7 +15,7 @@ const translations = {
       about: "About"
     },
     common: {
-      readMore: "Read more",
+      readMore: "Read Full Article",
       featured: "Featured articles",
       skipToContent: "Skip to content",
       menu: "Menu"
@@ -44,7 +44,7 @@ const translations = {
       about: "關於我"
     },
     common: {
-      readMore: "閱讀更多",
+      readMore: "閱讀全文",
       featured: "精選文章",
       skipToContent: "跳至內容",
       menu: "選單"

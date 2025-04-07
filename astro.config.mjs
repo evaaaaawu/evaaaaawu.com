@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
-
+import netlify from '@astrojs/netlify/functions';
 import metaTags from 'astro-meta-tags';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [metaTags()],
+  adapter: netlify(),
   site: "https://evaaaaawu-tech-blog.netlify.app",
   i18n: {
     defaultLocale: 'en',
