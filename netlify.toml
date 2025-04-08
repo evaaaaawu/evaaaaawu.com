@@ -5,13 +5,13 @@
 # For dynamic Chinese article routes
 [[redirects]]
   from = "/zh-tw/articles/*"
-  to = "/zh-tw/articles/index.html"
+  to = "/zh-tw/articles/:splat"
   status = 200
 
 # For dynamic Chinese tag routes
 [[redirects]]
   from = "/zh-tw/tags/*"
-  to = "/zh-tw/tags/index.html" 
+  to = "/zh-tw/tags/:splat"
   status = 200
 
 # redirect missing pages to the 404 page

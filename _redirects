@@ -1,2 +1,0 @@
-/zh-tw/articles/* /zh-tw/articles/:splat 200
-/zh-tw/tags/* /zh-tw/tags/:splat 200
