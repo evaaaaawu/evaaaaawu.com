@@ -1,17 +1,16 @@
-# Redirect all English paths to English index
+# redirect missing pages to the 404 page
 [[redirects]]
   from = "/en/*"
-  to = "/en/index.html"
-  status = 200
+  to = "/en/404.html"
+  status = 404
 
-# Redirect all Chinese paths to Chinese index
 [[redirects]]
   from = "/zh-tw/*"
-  to = "/zh-tw/index.html"
-  status = 200
+  to = "/zh-tw/404.html"
+  status = 404
 
-# Redirect root to appropriate language index
+# Handle root 404
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
