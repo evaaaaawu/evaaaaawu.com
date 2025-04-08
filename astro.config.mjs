@@ -6,7 +6,9 @@ import metaTags from 'astro-meta-tags';
 export default defineConfig({
   integrations: [metaTags()],
   output: 'static',
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true
+  }),
   site: "https://evaaaaawu-tech-blog.netlify.app",
   trailingSlash: 'always',
   i18n: {
