@@ -1,3 +1,16 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+  conditions = {Language = ["zh", "zh-tw"]}
+
+[[redirects]]
+  from = "/zh-tw/*"
+  to = "/zh-tw/index.html"
+  status = 200
+  force = false
+
 # redirect missing pages to the 404 page
 [[redirects]]
   from = "/en/*"
