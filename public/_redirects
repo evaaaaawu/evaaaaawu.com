@@ -1,6 +1,0 @@
-# Chinese dynamic routes
-/zh-tw/articles/*    /zh-tw/articles/[slug].html    200
-/zh-tw/tags/*        /zh-tw/tags/[tag].html         200
-
-# Fallback
-/*    /index.html    200 

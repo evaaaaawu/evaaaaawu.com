@@ -5,8 +5,10 @@ import metaTags from 'astro-meta-tags';
 // https://astro.build/config
 export default defineConfig({
   integrations: [metaTags()],
+  output: 'static',
   adapter: netlify(),
   site: "https://evaaaaawu-tech-blog.netlify.app",
+  trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-tw'],

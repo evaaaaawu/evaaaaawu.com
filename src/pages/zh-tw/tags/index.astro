@@ -22,7 +22,7 @@ uniqueTags.sort();
           const slugFriendlyTag = tag.toLowerCase().replace(/\s+/g, "-");
           return (
             <p>
-              <a href={`/zh-tw/tags/${slugFriendlyTag}`}>{tag}</a>
+              <a href={`/zh-tw/tags/${slugFriendlyTag}/`}>{tag}</a>
             </p>
           );
         })
