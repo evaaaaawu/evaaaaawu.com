@@ -2,19 +2,29 @@
   command = "npm run build"
   publish = "dist"
 
-# For Chinese article dynamic routes
+# For base Chinese articles page
+[[redirects]]
+  from = "/zh-tw/articles/"
+  to = "/zh-tw/articles/index.html"
+  status = 200
+
+# For dynamic Chinese article routes (must come after the more specific rule)
 [[redirects]]
   from = "/zh-tw/articles/*"
-  to = "/zh-tw/articles/[slug].html"
+  to = "/zh-tw/articles/:splat/index.html"
   status = 200
-  force = true
 
-# For Chinese tag dynamic routes
+# For base Chinese tags page
+[[redirects]]
+  from = "/zh-tw/tags/"
+  to = "/zh-tw/tags/index.html"
+  status = 200
+
+# For dynamic Chinese tag routes (must come after the more specific rule)
 [[redirects]]
   from = "/zh-tw/tags/*"
-  to = "/zh-tw/tags/[tag].html"  
+  to = "/zh-tw/tags/:splat/index.html"
   status = 200
-  force = true
 
 # redirect missing pages to the 404 page
 [[redirects]]
