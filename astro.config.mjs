@@ -18,8 +18,8 @@ export default defineConfig({
       strategy: 'prefix', // Creates URLs like /en/about, /zh-tw/about
       prefixDefaultLocale: true // Include prefix for default locale too for consistency
     },
-    fallback: {
-      'zh-tw': 'en' // Fallback to English if Chinese translation isn't available
-    }
+    // fallback: {
+    //   'zh-tw': 'en' // Fallback to English if Chinese translation isn't available
+    // }
   }
 });
