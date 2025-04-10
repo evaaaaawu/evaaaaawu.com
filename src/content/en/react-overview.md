@@ -12,7 +12,7 @@ tags:
 featured: true
 ---
 
-I've spent a considerable amount of time recently trying to understand React. I want to document my current understanding of its basic structure, so this article will attempt to provide an overview perspective, hoping to show the big picture of React. If I want to delve into more specific details, I'll write separate articles for those topics.
+I've spent a considerable amount of time recently trying to understand React. I want to document my current understanding of its basic structure, so this article will attempt to provide an overview perspective, showing the big picture of React. If I want to delve into more specific details, I'll write separate articles for those topics.
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ I've spent a considerable amount of time recently trying to understand React. I 
 
 ## Origin
 
-I don't intend to discuss the origins of React here, but if you're interested, I highly recommend watching the YouTube documentary [How A Small Team of Developers Created React at Facebook | React.js: The Documentary](https://www.youtube.com/watch?v=8pDqJVdNa44) by the [Honeypot](https://www.youtube.com/@Honeypotio/videos) channel. Alternatively, you can read the reflections on this documentary written by [ExplainThis](https://www.explainthis.io/zh-hant): [React Documentary Reflections 1 — Rethinking Best Practices](https://www.explainthis.io/zh-hant/swe/react-documentary/part1) and [React Documentary Reflections 2 — Community-Driven Innovation](https://www.explainthis.io/zh-hant/swe/react-documentary/part2).
+I don't intend to discuss the origins of React here, but if you're interested, I highly recommend watching the YouTube documentary [How A Small Team of Developers Created React at Facebook | React.js: The Documentary](https://www.youtube.com/watch?v=8pDqJVdNa44) by the [Honeypot](https://www.youtube.com/@Honeypotio/videos) channel. Alternatively, you can read the reflections on this documentary written by [ExplainThis](https://www.explainthis.io/en): [React Documentary Reflections 1 — Rethinking Best Practices](https://www.explainthis.io/zh-hant/swe/react-documentary/part1) and [React Documentary Reflections 2 — Community-Driven Innovation](https://www.explainthis.io/zh-hant/swe/react-documentary/part2).
 
 ## Two Concepts You Need to Know Before Starting
 
@@ -48,7 +48,7 @@ React is a JavaScript UI library. When writing web applications, if you want to 
 
 ### Design Pattern: Unidirectional Data Flow
 
-React uses a "unidirectional data flow" design pattern. The core concept of unidirectional data flow is "data-driven UI," meaning the UI only updates when the data changes. Since this is a one-way process, the UI won't change for any reason other than data changes. This ensures that the main factor affecting UI is limited to "data," and when data updates, the corresponding bound UI elements automatically change, thereby improving the reliability and maintainability of frontend applications.
+React uses a "unidirectional data flow" design pattern. The core concept is "data-driven UI," meaning the UI only updates when the data changes. Since this is a one-way process, the UI won't change for any reason other than data changes. This ensures that the main factor affecting UI is limited to "data," and when data updates, the corresponding bound UI elements automatically change, thereby improving the reliability and maintainability of frontend applications.
 
 ## DOM Rendering Strategy to Implement Unidirectional Data Flow
 
@@ -64,7 +64,7 @@ Another more radical approach to implementing unidirectional data flow for DOM r
 
 How does React solve the performance waste problem of complete redrawing? The answer is by using the "Virtual DOM" concept for complete redrawing.
 
-What is the Virtual DOM? The Virtual DOM is just a concept. Its essence is ordinary JavaScript object data that creates a "virtual screen structure" (think of it as a prototype for screen rendering) to simulate and correspond to the actual DOM's screen structure. The implementation process is: when the screen needs updating, first generate a new Virtual DOM structure → compare it in detail with the old Virtual DOM structure → execute DOM operations only on the differences to reduce performance costs.
+What is the Virtual DOM? The Virtual DOM is simply a concept. Its essence is ordinary JavaScript object data that creates a "virtual screen structure" (think of it as a prototype for screen rendering) to simulate and correspond to the actual DOM's screen structure. The implementation process works like this: when the screen needs updating, React first generates a new Virtual DOM structure, then compares it in detail with the old Virtual DOM structure, and finally executes DOM operations only on the differences to reduce performance costs.
 
 ### Additional Benefit of Using Virtual DOM: Separating Screen Management into Two Independent Phases - "Definition Phase" and "Actual Rendering Phase"
 
@@ -84,7 +84,7 @@ JSX syntax is "syntactic sugar" for the React.createElement method. It looks lik
 
 JSX code is transpiled at build time, with common transpilation tools being Babel and the TypeScript compiler. An optimization method for React.createElement during transpilation is calling the \_jsx method of jsx-runtime (supported since React 17). Both React.createElement() and \_jsx() are methods for creating React elements, with the difference being that the \_jsx method includes some additional optimizations. Note that the \_jsx method of jsx-runtime can only be called through JSX syntax transpilation by a transpiler and cannot be written directly like the React.createElement method.
 
-When writing JSX syntax, there are some points to note. For instance, JSX syntax can only have one node at the first level because a piece of JSX = one call to the React.createElement method, so it only returns "one React element," and one React element represents a tree data structure (which can only have one root node). Therefore, if there are multiple nodes, they need to be wrapped in a common parent element. React has created a special built-in element type for this purpose: Fragment, which can serve as a container but doesn't produce a corresponding actual DOM element. We typically use the shorthand empty tag <> to express a Fragment-type React element.
+When writing JSX syntax, there are some points to note. For instance, JSX syntax can only have one node at the first level because a piece of JSX equals one call to the React.createElement method, so it only returns "one React element," and one React element represents a tree data structure (which can only have one root node). Therefore, if there are multiple nodes, they need to be wrapped in a common parent element. React has created a special built-in element type for this purpose: Fragment, which can serve as a container but doesn't produce a corresponding actual DOM element. We typically use the shorthand empty tag <> to express a Fragment-type React element.
 
 Another point to note is how various data types are handled when used as children of React elements and converted to the DOM: strings are printed directly; numbers are converted to strings and then printed; boolean values of false, null, and undefined are ignored; arrays are flattened into multiple child elements and all printed in sequence; and be careful that objects and functions cannot be converted and will cause errors.
 
@@ -96,7 +96,7 @@ Furthermore, JSX syntax has two main ways of expressing data: literals (e.g., st
 
 To summarize what we've covered so far: React is a UI library/framework designed based on the principle of "unidirectional data flow." For its DOM rendering strategy, it uses the approach of "clearing all DOM elements of the entire screen when data updates, then completely redrawing based on the latest data" to implement unidirectional data flow. However, to solve the performance waste problem of frequently clearing and redrawing everything on the DOM, React doesn't perform these operations directly on the DOM. Instead, it introduces the Virtual DOM concept to first simulate the actual DOM's screen structure using JavaScript object format for complete redrawing. This Virtual DOM concept is implemented in React as React elements, so a React element is actually a virtual screen structure element that serves as the smallest unit for describing and composing the screen. But in practice, we usually don't write React elements directly; instead, we encapsulate them within Components.
 
-A Component can be thought of as a template or building block. It's a developer-defined UI component blueprint that receives developer-customized props data as parameters and returns a React component as the structure of a screen section.
+A Component can be thought of as a template or building block. It's a developer-defined UI component blueprint that receives developer-customized props data as parameters and returns a React element as the structure of a screen section.
 
 We can understand that a Component actually returns a React element. Besides containing React elements corresponding to actual DOM elements, a Component can also contain and call other Components as sub-Components, like assembling building blocks.
 
@@ -192,7 +192,7 @@ The update process also goes through the render phase and commit phase:
 
 - The render phase first updates the State data and re-renders the component function to generate a new version of React elements. Then it compares the structure of the new and old versions of React elements using the diffing algorithm to find the differences between them, and then enters the commit phase.
 
-- The commit phase operates to update those actual DOM elements corresponding to the differences between the new and old React elements, to complete the browser's screen update.
+- The commit phase updates those actual DOM elements corresponding to the differences between the new and old React elements, to complete the browser's screen update.
 
 Finally, although the only legal means to trigger a Component re-render is by calling the setState method to update the State value, there are actually two possible situations that can trigger a Component re-render:
 

@@ -1,5 +1,5 @@
 ---
-title: JavaScript 原型(prototype)相關
+title: JavaScript 原型(prototype) 相關
 subtitle: 在 JavaScript 中，原型(prototype)是物件導向程式語言中非常重要的概念，它們是 JavaScript 中實現繼承和屬性共享的關鍵。
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-javascript-prototype.webp

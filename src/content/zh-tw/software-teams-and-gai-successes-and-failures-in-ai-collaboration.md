@@ -1,10 +1,10 @@
 ---
-title: 軟體團隊與 GAI-與 AI 協作的成與敗
+title: 軟體團隊與 GAI - 與 AI 協作的成與敗
 subtitle: 分享 AI Your Summer 此系列活動 2023/6/13 場次的筆記。
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/software-teams-and-gai-successes-and-failures-in-ai-collaboration.webp
 imagePng: /images/articles/png/software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
-imgAlt: Software Teams and GAI-Successes and Failures in AI Collaboration
+imgAlt: Software Teams and GAI - Successes and Failures in AI Collaboration
 creationDate: 2023-07-17
 updateDate: 2023-07-17
 tags:
@@ -17,7 +17,7 @@ featured: true
 Speaker:
 
 - Mosky（Pinkoi / Architect）
-- Caesar (TransIot / Chief Technology Officer)
+- Caesar（TransIot / Chief Technology Officer）
 
 Host:
 

@@ -12,7 +12,7 @@ tags:
 featured: true
 ---
 
-"ChatGPT Prompt Engineering for Developers" is a famous course launched by [DeepLearning.AI](DeepLearning.AI) after the emergence of generative AI. Despite its name suggesting it's for developers, it's actually more like a comprehensive AI prompt guide suitable for everyone.
+"ChatGPT Prompt Engineering for Developers" is a famous course launched by [DeepLearning.AI](https://www.deeplearning.ai/) after the emergence of generative AI. Despite its name suggesting it's for developers, it serves as a comprehensive AI prompt guide suitable for everyone.
 
 Here I'm sharing my key notes from the course:
 
@@ -33,7 +33,7 @@ Here I'm sharing my key notes from the course:
 
 LLMs (Large Language Models) can be categorized into two types: Base LLMs and Instruction Tuned LLMs.
 
-- Base LLMs predict the next word based on text training data.
+- Base LLMs predict the next word based on their training data.
 
 - Instruction Tuned LLMs attempt to follow instructions.
 
@@ -87,7 +87,7 @@ LLMs (Large Language Models) can be categorized into two types: Base LLMs and In
 
 - **Specify the steps required to complete a task.**
 
-  e.g.,  
+  e.g.,
   Perform the following actions: 1…/2…/3…/4…Separate your answers with line breaks.
 
   Perform the following actions:
@@ -105,7 +105,10 @@ LLMs (Large Language Models) can be categorized into two types: Base LLMs and In
   Text:
   {text}
 
-  e.g., Perform the following actions: 1…/2…/3…/4…Use the following format: ...
+  <br>
+
+  e.g.,
+  Perform the following actions: 1…/2…/3…/4…Use the following format: ...
 
   Your task is to perform the following actions:
 
@@ -191,7 +194,10 @@ LLMs (Large Language Models) can be categorized into two types: Base LLMs and In
 
   Your task is to extract relevant information from a product review from an ecommerce site to give feedback to the Shipping department.
 
-  From the review below, delimited by triple quotes extract the information relevant to shipping and delivery. Limit to 30 words.
+  From the review below, delimited by triple quotes extract the information relevant to shipping and delivery. 
+  
+  Limit to 30 words.
+  
   Review: {prod_review}
 
 ### Inferring
@@ -300,7 +306,7 @@ LLMs (Large Language Models) can be categorized into two types: Base LLMs and In
 
   Proofread and correct the following text and rewrite the corrected version.
 
-  If you don't find and errors, just say "No errors found".
+  If you don't find any errors, just say "No errors found".
 
   <br>
 

@@ -10,7 +10,7 @@ export default defineConfig({
     edgeMiddleware: true
   }),
   site: "https://evaaaaawu-tech-blog.netlify.app",
-  trailingSlash: 'always',
+  // trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-tw'],
@@ -18,8 +18,5 @@ export default defineConfig({
       strategy: 'prefix', // Creates URLs like /en/about, /zh-tw/about
       prefixDefaultLocale: true // Include prefix for default locale too for consistency
     },
-    // fallback: {
-    //   'zh-tw': 'en' // Fallback to English if Chinese translation isn't available
-    // }
   }
 });

@@ -14,13 +14,11 @@ featured: false
 
 ## Prototype
 
-JavaScript is an object-oriented programming language based on "prototypes." In JavaScript, every object contains an internal hidden property called `[[Prototype]]`, which corresponds to the object's prototype. This value can be either null or a reference to another object.
+JavaScript is a prototype-based object-oriented programming language. In JavaScript, every object contains an internal hidden property called `[[Prototype]]`, which points to the object's prototype. This value can be either null or a reference to another object.
 
 ## `[[Prototype]]` and `__proto__`
 
-In JavaScript, every object contains an internal hidden property called `[[Prototype]]`, which corresponds to the object's prototype. This value can be either null or a reference to another object.
-
-Since `[[Prototype]]` is an internal hidden property that cannot be directly accessed, browsers provide the `__proto__` accessor method. However, it's important to note that the `__proto__` method is not part of the ECMAScript specification. In actual development, to obtain an object's prototype, we use `Object.getPrototypeOf`.
+Since `[[Prototype]]` is an internal hidden property that cannot be directly accessed, browsers provide the `__proto__` accessor method. However, it's important to note that the `__proto__` method is not part of the ECMAScript specification. In practical development, we use `Object.getPrototypeOf()` to obtain an object's prototype.
 
 Implementation examples of `prototype`, `__proto__`, and `Object.getPrototypeOf` method:
 
@@ -31,7 +29,7 @@ Implementation examples of `prototype`, `__proto__`, and `Object.getPrototypeOf`
 
 ## `__proto__` Property and `prototype` Property
 
-`__proto__` and `prototype` are different properties. `__proto__` is a hidden property of every object, through which each object can access its prototype. On the other hand, `prototype` is a property that exists in all constructor functions. A constructor function's `prototype` actually points to the same place as `__proto__`, which is called the prototype object.
+`__proto__` and `prototype` are different properties. `__proto__` is a hidden property of every object, through which each object can access its prototype. On the other hand, `prototype` is a property that exists in all constructor functions. A constructor function's `prototype` points to the same object as the `__proto__` of instances created from that constructor - this object is called the prototype object.
 
 <picture>
   <source srcset="/images/article-contents/webp/understanding-javascript-prototype/code-2.webp" type="image/webp">
@@ -40,7 +38,7 @@ Implementation examples of `prototype`, `__proto__`, and `Object.getPrototypeOf`
 
 ## Prototype Chain
 
-A prototype itself is an object, so it also has its own prototype. When we try to access a property of an object, if the object doesn't have the required property, it will look for it in its prototype. If the property is still not found in the prototype, it will continue to search up the chain until it finds the property or reaches null. This continuous path is called the prototype chain, and the end of the chain is null.
+A prototype itself is an object, so it also has its own prototype. When we try to access a property of an object, if the object doesn't have that property, JavaScript will look for it in the object's prototype. If the property is still not found in the prototype, it will continue searching up the chain until it either finds the property or reaches null. This continuous lookup path is called the prototype chain, and the end of the chain is always null.
 
 - The end value of the prototype chain is null:
 
@@ -51,11 +49,13 @@ A prototype itself is an object, so it also has its own prototype. When we try t
 
 - Implementation example of the prototype chain:
 
-  We frequently use the filter method of arrays. Suppose we have an array "list" and we use the filter method on this array. In fact, the filter method doesn't exist on the list itself; it exists on the Array constructor function. We can use the filter method today through the prototype chain.
+  We frequently use the filter method on arrays. When we have an array "list" and call the filter method on it, we're actually accessing a method that doesn't exist on the list itself. The filter method exists on the Array constructor's prototype. We can use this method through the prototype chain, as our array instance inherits from Array.prototype.
 
 ## Prototypal Inheritance
 
-Prototypal inheritance allows objects that don't have certain properties to access properties of other objects. So, suppose we have an object "animal" that has its own properties and methods. At the same time, we want to create two objects based on "animal," namely "cat" and "dog." These two objects will have some unique methods and properties, but they also need to use the methods and properties of the "animal" object. In such a scenario, we don't need to copy or reimplement; we can achieve this through prototypal inheritance.
+Prototypal inheritance allows objects to access properties and methods from other objects when they don't have those properties themselves.
+
+For example, consider an object "animal" with its own properties and methods. If we want to create "cat" and "dog" objects that need both their own unique features and the common properties of the "animal" object, we don't need to duplicate code. Instead, we can use prototypal inheritance to let "cat" and "dog" access the methods and properties of "animal" through the prototype chain.
 
 Implementation example of prototypal inheritance:
 
@@ -66,4 +66,4 @@ Implementation example of prototypal inheritance:
 
 ## Reference
 
-[Prototype, Prototype Chain, Prototypal Inheritance ｜ ExplainThis](https://www.explainthis.io/zh-hant/swe/most-common-js-prototype-questions)
+[The most common JavaScript prototype interview questions and answers (prototype, prototypal inheritance, prototype chain)｜ ExplainThis](https://www.explainthis.io/en/swe/most-common-js-prototype-questions)

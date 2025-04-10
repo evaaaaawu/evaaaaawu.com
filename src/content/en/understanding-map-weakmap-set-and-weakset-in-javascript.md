@@ -1,6 +1,6 @@
 ---
 title: Understanding Map, WeakMap, Set, and WeakSet in JavaScript
-subtitle: Map/WeakMap are data structures similar to Objects; Set/WeakSet data structures are similar to arrays.
+subtitle: Map/WeakMap are data structures similar to Objects, while Set/WeakSet are similar to arrays.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-map-weakmap-set-and-weakset-in-javascript.webp
 imagePng: /images/articles/png/understanding-map-weakmap-set-and-weakset-in-javascript.png
@@ -16,70 +16,61 @@ featured: false
 
 ### Map vs. WeakMap
 
-Map is a data structure similar to Object, both store data in key-value pair format; WeakMap is similar to Map in usage, but has two main differences: it only allows Objects as keys and the objects referenced by keys can be garbage collected.
+Map is a data structure similar to Object; both store data in key-value pairs. WeakMap is similar to Map in usage, but with two main differences: it only accepts Objects as keys, and these objects can be garbage collected.
 
 ### Set vs. WeakSet
 
-Set is a data structure similar to an array, but all elements inside are unique with no duplicates; WeakSet is similar to Set in usage, but has two main differences: elements can only be Objects and elements can be garbage collected.
+Set is a data structure similar to an array, but all elements inside are unique with no duplicates. WeakSet is similar to Set in usage, but with two main differences: elements can only be Objects and these objects can be garbage collected.
 
 ## Map
 
 ### Introduction
 
-Map is a data structure similar to Object, both store data in key-value pair format. In JavaScript, Map itself is a constructor function used to generate the Map data structure, specifically by using `new Map()` to create instances.
+Map is a data structure similar to Object; both store data in key-value pairs. In JavaScript, Map is a constructor function that creates Map instances using `new Map()`.
 
 ### Common Operations
 
-- get(key): Query a specific element through its key and return the value
+- get(key): Retrieves a value using its key
+- set(key, value): Adds or updates a key-value pair in the Map
+- delete(key): Removes an element from the Map by its key
+- has(key): Determines if a certain key exists in the Map
+- size property: Returns the number of elements
 
-- set(key, value): Add elements to a Map
+### Common Iteration Methods
 
-- delete(key): Remove a specific element from the Map through its key
-
-- has(key): Determine if a certain key exists in the Map
-
-- size property: Get the number of elements
-
-### Common Iteration Methods (iteration order will be the order in which elements were placed in the Map)
+The iteration order corresponds to the insertion order of elements.
 
 - values(): Returns all element values in the Map
-
 - keys(): Returns all element keys in the Map
-
-- entries(): Returns all elements in the Map in the form of [key, value] pairs
+- entries(): Returns all elements in the Map as [key, value] pairs
 
 ## WeakMap
 
 Similar to Map in usage, but with two main differences:
 
-- WeakMap only allows Objects as keys, with the exception of `null`.
-
-- Keys in WeakMap are "weak references," meaning the objects referenced by keys can be garbage collected, at which point the keys become invalid.
+- WeakMap only accepts Objects as keys (excluding `null`).
+- Keys in WeakMap are "weak references," meaning the objects referenced by keys can be garbage collected when there are no other references to them, at which point their associated entries are automatically removed.
 
 ## Set
 
 ### Introduction
 
-Set is a data structure similar to an array, but all elements inside are unique with no duplicates. In JavaScript, Set itself is a constructor function used to generate the Set data structure, specifically by using `new Set()` to create instances.
+Set is a data structure similar to an array, but all elements inside are unique with no duplicates. In JavaScript, Set is a constructor function that creates Set instances using `new Set()`.
 
 ### Common Operations
 
-- add(value): Used to add values
-
-- delete(value): Used to delete values from the Set
-
-- has(value): Determine if a certain value exists in the Set
-
-- size property: Get the number of elements
+- add(value): Adds a value to the Set
+- delete(value): Removes a value from the Set
+- has(value): Determines if a certain value exists in the Set
+- size property: Returns the number of elements
 
 ## WeakSet
 
 Similar to Set in usage, but with two main differences:
 
-- Elements in WeakSet can only be Objects (Set can accept values of various data types).
+- Elements in WeakSet can only be Objects (while Set can accept values of various data types).
+- Elements in WeakSet are "weak references," meaning they can be garbage collected when there are no other references to them.
 
-- Elements in WeakSet are "weak references," meaning they can be reclaimed by the garbage collection mechanism.
+## References
 
-## Reference
-
-[Please explain the differences between Set, Map, WeakSet, and WeakMap? | ExplainThis](https://www.explainthis.io/zh-hant/swe/set-map-weakset-weakmap)
+[What Is the Difference Between Set, Map, WeakSet, and WeakMap in JavaScript?｜ ExplainThis](https://www.explainthis.io/en/swe/set-map-weakset-weakmap)

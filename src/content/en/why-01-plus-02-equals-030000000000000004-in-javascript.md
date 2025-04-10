@@ -14,9 +14,11 @@ featured: false
 
 In JavaScript, 0.1 + 0.2 doesn't equal exactly 0.3. This isn't unique to JavaScript but is a common issue in all programming languages that use binary floating-point arithmetic.
 
-In everyday life, we mostly use the decimal system, where only fractions like 1/2, 1/4, 1/5, 1/8, and 1/10 can be precisely represented as decimals. Fractions like 1/3, 1/6, 1/7, and 1/9 cannot. For example, 1/3 is 0.33333333... continuing infinitely. Similarly, in binary, only fractions like 1/2, 1/4, 1/8, etc. can be precisely represented, while others extend infinitely. Since computer memory is limited, programming languages allocate finite memory to numbers, restricting precision. This limitation causes JavaScript to calculate 0.1 + 0.2 as 0.30000000000000004.
+In everyday life, we mostly use the decimal system, where fractions like 1/2, 1/4, 1/5, 1/8, and 1/10 can be precisely represented as decimals. However, fractions like 1/3, 1/6, 1/7, and 1/9 cannot. For example, 1/3 is 0.33333333... continuing infinitely.
 
-To avoid this issue, JavaScript provides methods like `toFixed` and `toPrecision` for number operations, allowing us to set our desired precision level, such as rounding to one decimal place. Therefore:
+Similarly, in binary, only fractions like 1/2, 1/4, 1/8, etc. can be precisely represented, while others like 1/10 (0.1 in decimal) cannot be exactly represented and extend infinitely. Since computer memory is limited, programming languages allocate finite memory to numbers, restricting precision. This limitation causes JavaScript to calculate 0.1 + 0.2 as 0.30000000000000004.
+
+To avoid this issue in practical applications, JavaScript provides methods like `toFixed` and `toPrecision` for number operations, allowing us to set our desired precision level, such as rounding to one decimal place.
 
 <!-- ```js
 console.log((0.1 + 0.2).toFixed(1)); // 0.3
@@ -30,4 +32,4 @@ console.log((0.1 + 0.2).toPrecision(1)); // 0.3
 
 ## Reference
 
-[What is 0.1 + 0.2 in JavaScript? Why? How to avoid related issues? | ExplainThis](https://www.explainthis.io/zh-hant/swe/js-zero-point-one-plus-zero-point-two)
+[What Will 0.1 + 0.2 Be in JavaScript? Why?｜ ExplainThis](https://www.explainthis.io/en/swe/js-zero-point-one-plus-zero-point-two)

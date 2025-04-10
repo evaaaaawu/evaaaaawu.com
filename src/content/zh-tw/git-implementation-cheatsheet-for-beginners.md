@@ -33,7 +33,7 @@ featured: true
 - [其他小知識](#其他小知識)
 - [其他指令](#其他指令)
 
-### **基本流程**
+## **基本流程**
 
 1. `git init`
 
@@ -54,15 +54,15 @@ featured: true
    **git commit message 推薦寫法
    (我是參考這篇：[git commit message 推薦寫法](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html))：**
 
-   1. feat: 新增/修改功能 (feature)。
-   2. fix: 修補 bug (bug fix)。
-   3. docs: 文件 (documentation)。
-   4. style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。
-   5. refactor: 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。
-   6. perf: 改善效能 (A code change that improves performance)。
-   7. test: 增加測試 (when adding missing tests)。
-   8. chore: 建構程序或輔助工具的變動 (maintain)。
-   9. revert: 撤銷回覆先前的 commit 例如：revert: type(scope): subject (回覆版本：xxxx)。
+   - feat: 新增/修改功能 (feature)。
+   - fix: 修補 bug (bug fix)。
+   - docs: 文件 (documentation)。
+   - style: 格式 (不影響程式碼運行的變動 white-space, formatting, missing semi colons, etc)。
+   - refactor: 重構 (既不是新增功能，也不是修補 bug 的程式碼變動)。
+   - perf: 改善效能 (A code change that improves performance)。
+   - test: 增加測試 (when adding missing tests)。
+   - chore: 建構程序或輔助工具的變動 (maintain)。
+   - revert: 撤銷回覆先前的 commit。
 
 步驟 3 & 4 會一直重複
 
@@ -76,11 +76,11 @@ featured: true
 
 只要你想更新 GitHub 上的程式碼到最新狀況，就執行一次步驟 6
 
-### **補充：(在還沒上傳到 GitHub 前) commit 完後悔想還原怎麼辦？**
+## **補充：(在還沒上傳到 GitHub 前) commit 完後悔想還原怎麼辦？**
 
 (詳細版本可參考 [【狀況題】剛才的 Commit 後悔了，想要拆掉重做… - 為你自己學 Git | 高見龍](https://gitbook.tw/chapters/using-git/reset-commit))
 
-#### 狀況一：你不小心 commit 錯了(還原後你想要讓修改/更新的程式碼仍保留在本地的工作區)
+### 狀況一：你不小心 commit 錯了(還原後你想要讓修改/更新的程式碼仍保留在本地的工作區)
 
 - `git log --oneline`
 
@@ -89,7 +89,7 @@ featured: true
 - `git reset b339b8d^` (編號需自行更換)
   恢復到 b339b8d 的上一個版本(但 code 還在)
 
-#### 狀況二：你把程式改壞了(你想要真的整個還原)
+### 狀況二：你把程式改壞了(你想要真的整個還原)
 
 - `git reset --hard HEAD`
 
@@ -98,7 +98,7 @@ featured: true
 - `git reset --hard HEAD~1`
   恢復到上一個提交版本(要退回到更前面的版本以此類推: ~2, ~3, ~4…)
 
-### **多人協作**
+## **多人協作**
 
 1. `git checkout -b [branch 名稱]`
 
@@ -132,7 +132,7 @@ featured: true
 
    把最新的改動拉下來
 
-   分開寫法
+   分開寫法：
 
    1. `git fetch origin`
 
@@ -146,7 +146,7 @@ featured: true
 
 多人協作和自己寫程式最大的差異之一就是需要解衝突，這方面還需要再有更多經驗。
 
-### **補充：review 別人的 PR**
+## **補充：review 別人的 PR**
 
 若想要在本地端 review 可使用步驟 1 + 2：
 
@@ -177,7 +177,7 @@ featured: true
 
      照理來說是 review 的人檢查 OK 後直接 merge 進主幹，但如果遇到有衝突的情況，其實發 PR 的人才是比較了解 code 的人 (因為 code 是他寫的)，這樣是否應該由發 PR 的人去解衝突？
 
-### **其他小知識**
+## **其他小知識**
 
 (我是參考 [mentor-program-5th/examples/week1](https://github.com/Lidemy/mentor-program-5th/tree/master/examples/week1))
 
@@ -187,7 +187,7 @@ featured: true
 
 - 發 PR 時，如果有東西你想改，其實你可以自己在電腦上改完以後 commit 再 push，GitHub 上的 PR 就會自動更新了，你什麼都不用做，更不用把 PR 關掉再開起來。因為 PR 的主體是「branch」，所以 branch 更新了，PR 的內容自然也會一起更新。
 
-### **其他指令**
+## **其他指令**
 
 - `git clone 網址`
 

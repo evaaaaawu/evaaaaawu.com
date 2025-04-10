@@ -1,5 +1,5 @@
 ---
-title: JavaScript 中 ==、=== 與 Object.is()的區別
+title: JavaScript 中 ==、=== 與 Object.is() 的區別
 subtitle: == 會強制轉換型別與值；=== 不會強制轉換型別與值；Object.is()會比較兩個值是不是相等。
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/differences-between-equals-strict-equals-and-objectis-in-javascript.webp
@@ -32,7 +32,7 @@ featured: false
 
 ## Object.is() 同值比較(same-value equality)
 
-顧名思義是在比較兩個值是不是相等(雖然是 Object 開頭，但比較的可以是任意的兩個值)。上面提到的兩種在  ===  時遇到的問題，可以透過  Object.is  有效分辨：
+顧名思義是在比較兩個值是不是相等(雖然是 Object 開頭，但比較的可以是任意的兩個值)。上面提到的兩種在  ===  時遇到的問題，可以透過 Object.is 有效分辨：
 
 - `console.log(Object.is(+0, -0));` // false
 

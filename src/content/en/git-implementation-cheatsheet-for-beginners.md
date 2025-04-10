@@ -1,6 +1,6 @@
 ---
 title: Git Implementation Cheatsheet for Beginners
-subtitle: Git is a distributed version control system primarily used to manage and track code changes, particularly suitable for collaborative development projects.
+subtitle: Git is a distributed version control system mainly used to manage and track code changes, particularly suitable for collaborative development projects.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/git-implementation-cheatsheet-for-beginners.webp
 imagePng: /images/articles/png/git-implementation-cheatsheet-for-beginners.png
@@ -12,13 +12,13 @@ tags:
 featured: true
 ---
 
-The first time I encountered Git, I immediately fell in love with it. Before I started learning programming, I never imagined that files could be managed in such a systematic way, clearly showing the differences between versions and who wrote what. If you regret making changes, you can easily revert to previous versions.
+The first time I encountered Git, I immediately loved it. Before learning programming, I never imagined that files could be managed in such a systematic way, clearly showing the differences between versions and who wrote what. If you regret making changes, you can easily revert to previous versions.
 
-With Git, version control and collaboration become much easier and clearer. I even think all non-engineers should learn to use version control systems like this for file management.
+With Git, version control and collaboration become much easier and clearer. I even think all non-engineers should learn to use such a version control system for file management.
 
-So in this article, I want to organize my current Git usage habits (workflow).
+This article aims to organize my current Git habits (workflows).
 
-Although there are still many Git features I don't know how to use, I can share my typical usage patterns as a personal implementation cheat sheet, helping beginners to quickly get started!
+Although there are still many Git functionalities I don't know how to use, I can share my typical usage patterns as a personal implementation cheat sheet, helping beginners quickly get started!
 
 The content is mainly divided into two parts: **[Basic Workflow](#basic-workflow)** and **[Collaboration](#collaboration)**, with some additional explanations at the end.
 
@@ -26,70 +26,70 @@ The content is mainly divided into two parts: **[Basic Workflow](#basic-workflow
 
 - [Basic Workflow](#basic-workflow)
 - [Additional: What if you regret after committing (before pushing to GitHub)?](#additional-what-if-you-regret-after-committing-before-pushing-to-github)
-  - [Scenario 1: You committed by mistake (you want to keep your code changes in the working directory)](#scenario-1-you-committed-by-mistake-you-want-to-keep-your-code-changes-in-the-working-directory)
-  - [Scenario 2: You broke your code (you want to completely revert)](#scenario-2-you-broke-your-code-you-want-to-completely-revert)
+  - [Situation 1: You committed by mistake (but want to keep your code changes in the working directory)](#situation-1-you-committed-by-mistake-but-want-to-keep-your-code-changes-in-the-working-directory)
+  - [Situation 2: You broke your code (and want to completely revert)](#situation-2-you-broke-your-code-and-want-to-completely-revert)
 - [Collaboration](#collaboration)
-- [Additional: Reviewing Others' PRs](#additional-reviewing-others-prs)
+- [Additional: Reviewing others' PRs](#additional-reviewing-others-prs)
 - [Other Knowledge](#other-knowledge)
 - [Other Commands](#other-commands)
 
-### **Basic Workflow**
+## **Basic Workflow**
 
 1. `git init`
 
-   Initialize a project (start version control for this folder)
+   Initialize a project (start version control in this folder)
 
 2. `touch .gitignore`
 
-   Create a file to specify which files to ignore
+   Create a file for ignored files
 
 3. `git add .`
 
-   When code changes are complete, add all files to the version control system
+   After finishing a segment of code changes, add all files to the version control system
 
 4. `git commit -m "[commit message]"`
 
-   Submit a change and write your change message (commit content)
+   Submit a change and write your commit message
 
    **Recommended git commit message format
-   (I referenced this article: [git commit message recommended format](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)):**
+   (I referenced this article: [Recommended git commit message format](https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html)):**
 
-   1. feat: Add/modify features.
-   2. fix: Fix bugs.
-   3. docs: Documentation.
-   4. style: Formatting (changes that don't affect code execution like white-space, formatting, missing semi-colons, etc).
-   5. refactor: Refactoring (code changes that are neither new features nor bug fixes).
-   6. perf: Performance improvements (A code change that improves performance).
-   7. test: Adding tests (when adding missing tests).
-   8. chore: Changes to build processes or auxiliary tools (maintain).
-   9. revert: Undo previous commits, e.g., revert: type(scope): subject (reverting version: xxxx).
+   - feat: Add/modify features
+   - fix: Fix bugs
+   - docs: Documentation
+   - style: Formatting (changes that don't affect code execution: white-space, formatting, missing semi-colons, etc.)
+   - refactor: Refactoring (code changes that neither add features nor fix bugs)
+   - perf: Improve performance
+   - test: Add tests
+   - chore: Changes to build processes or auxiliary tools
+   - revert: Revert previous commits
 
-Steps 3 & 4 will be repeated continuously
+Repeat steps 3 & 4 continuously
 
 5. GitHub + new repository
 
-   Upload your project to GitHub (follow the instructions provided by GitHub)
+   Upload the project to GitHub (follow the instructions provided by GitHub)
 
 6. `git push origin [branch name]`
 
-   After committing, you can push this branch to GitHub
+   After committing, push this branch to GitHub
 
-Whenever you want to update your code on GitHub to the latest status, execute step 6
+Any time you want to update your code on GitHub to the latest version, execute step 6
 
-### **Additional: What if you regret after committing (before pushing to GitHub)?**
+## **Additional: What if you regret after committing (before pushing to GitHub)?**
 
-(For detailed version, refer to [What if I regret my recent commit and want to undo it... - Learn Git for Yourself | Kang-Chung Kao](https://gitbook.tw/chapters/using-git/reset-commit))
+(For detailed information, see [What if I regret my commit and want to undo it... - Learn Git for Yourself | Kaiying Lung](https://gitbook.tw/chapters/using-git/reset-commit))
 
-#### Scenario 1: You committed by mistake (you want to keep your code changes in the working directory)
+### Situation 1: You committed by mistake (but want to keep your code changes in the working directory)
 
 - `git log --oneline`
 
-  View a summary of version history
+  View a summary of the commit history
 
-- `git reset b339b8d^` (replace the number as needed)
-  Restore to the version before b339b8d (but the code changes remain)
+- `git reset b339b8d^` (replace the ID as needed)
+  Restore to the version before b339b8d (while keeping your code changes)
 
-#### Scenario 2: You broke your code (you want to completely revert)
+### Situation 2: You broke your code (and want to completely revert)
 
 - `git reset --hard HEAD`
 
@@ -98,7 +98,7 @@ Whenever you want to update your code on GitHub to the latest status, execute st
 - `git reset --hard HEAD~1`
   Restore to the previous committed version (to go back further: ~2, ~3, ~4...)
 
-### **Collaboration**
+## **Collaboration**
 
 1. `git checkout -b [branch name]`
 
@@ -114,23 +114,23 @@ Whenever you want to update your code on GitHub to the latest status, execute st
 
       Switch to the branch
 
-2. (Write code... repeat basic workflow steps 3 & 4)
+2. (Write code...repeating steps 3 & 4 of the basic workflow)
 
 3. `git push origin [branch name]`
 
    Push to GitHub
 
-4. Go to your repo and write & create a PR (Pull Request)
+4. Go to your repo, write & create a PR (Pull Request)
 
-5. Copy the PR link and give it to your partners (like managers, colleagues, etc.)
+5. Copy the PR link and give it to your colleagues (such as supervisors, coworkers, etc.)
 
-6. (After your partner reviews and merges) `git checkout main`
+6. (After your colleagues review and merge) `git checkout main`
 
    Switch to main
 
 7. `git pull origin main`
 
-   Pull down the latest changes
+   Pull the latest changes
 
    Alternative approach:
 
@@ -142,11 +142,11 @@ Whenever you want to update your code on GitHub to the latest status, execute st
 
       Merge remote updates
 
-After developing or updating a feature, before creating a PR, it's best to execute steps 6 & 7, then merge the latest main into your branch that's ready for PR. If conflicts occur, resolving them locally before creating the PR is a better approach.
+After developing or updating a feature, before creating a PR, it's best to execute steps 6 & 7, then merge the latest main into your branch. If conflicts occur, it's better to resolve them locally before creating the PR.
 
-One of the biggest differences between collaboration and coding alone is the need to resolve conflicts, which requires more experience.
+One of the biggest differences between collaboration and solo coding is the need to resolve conflicts, which requires more experience.
 
-### **Additional: Reviewing Others' PRs**
+## **Additional: Reviewing others' PRs**
 
 If you want to review locally, use steps 1 + 2:
 
@@ -160,38 +160,38 @@ If you want to review locally, use steps 1 + 2:
 
 3. (After checking and approving) `git checkout main`
 
-   Switch back to the main branch first
+   Switch back to the main branch
 
 4. `git merge [branch name]`
 
-   Merge on the main branch
+   Merge the branch into main
 
-5. If there are no conflicts, you can smoothly merge into the main branch, but if there are conflicts, you need to resolve them before merging
+5. If there are no conflicts, the merge into main will proceed smoothly; if there are conflicts, they must be resolved before merging
 
-   - How to reduce the need to resolve conflicts?
+   - How to reduce conflict situations?
 
      1. The art of work distribution
      2. Merge the latest main into your branch before creating a PR
 
    - Topic for future collaboration discussions: If there are conflicts, should the reviewer merge or the PR creator merge?
 
-     Theoretically, the reviewer should merge into the main branch after checking and approving, but in case of conflicts, the PR creator actually understands the code better (since they wrote it). Should the PR creator resolve the conflicts in this case?
+     Theoretically, the reviewer should merge into the main branch after checking. However, in case of conflicts, the PR creator might understand the code better (since they wrote it). Should the PR creator resolve conflicts in this case?
 
-### **Other Knowledge**
+## **Other Knowledge**
 
 (I referenced [mentor-program-5th/examples/week1](https://github.com/Lidemy/mentor-program-5th/tree/master/examples/week1))
 
-- When doing version control, the clever Git actually stores "file differences," not creating a folder for each branch or copying files for each commit. Additionally, Git has its own compression algorithm for each file, so it's normal that Git repositories are smaller than your actual files.
+- In version control, Git intelligently stores "file differences" rather than creating a new folder for each branch or copying files for each commit. Additionally, Git uses its own compression algorithms for each file, so it's normal for the repository to be smaller than your files.
 
-- main/master is just the "default branch," or usually the main branch, but this doesn't mean it's the "latest branch." For example, you can create a branch called "test" and keep adding to it without ever merging back to main/master, making "test" the latest branch in your project. So master is just a default branch, and the latest content isn't necessarily there.
+- Master is just the "default branch" or typically the main branch, but this doesn't mean it's the "latest branch." For example, you could create a branch called "test" and continuously add to it without ever merging back to main/master, making test the latest branch in your project. The latest content isn't necessarily in the master branch.
 
-- When creating a PR, if you want to change something, you can make changes on your computer, commit, and push again. The PR on GitHub will update automatically - you don't need to do anything else, and certainly don't need to close and reopen the PR. Since a PR is based on a "branch," when the branch updates, the PR content naturally updates with it.
+- When creating a PR, if you want to change something, you can make changes locally, commit, and push. The PR on GitHub will automatically update; you don't need to do anything else, certainly not close and reopen the PR. Since the PR's core is the "branch," when the branch updates, the PR content naturally updates with it.
 
-### **Other Commands**
+## **Other Commands**
 
 - `git clone URL`
 
-  Copy a GitHub project to your local machine
+  Clone a GitHub project to your local machine
 
 - `git status`
 
@@ -203,15 +203,15 @@ If you want to review locally, use steps 1 + 2:
 
 - `git diff`
 
-  Compare differences (if no parameters are added after the command, it directly compares your working code with the latest version; in this case, looking at the GUI is clearer)
+  Compare differences (if no parameters are added after the command, it directly compares your working code with the latest version; in this case, viewing in a GUI is clearer)
 
 - `git diff [SHA-1] [SHA-1]`
 
-  What code changes occurred from version A to version B
+  See code changes from version A to version B
 
 - `git branch`
 
-  List all current branch names (only local branches)
+  List all current branch names (local branches only)
 
 - `git branch -v`
 
@@ -233,11 +233,11 @@ If you want to review locally, use steps 1 + 2:
 
   1. `git checkout [branch name]`
   2. `git rebase main`
-  3. If there are conflicts, start resolving them. After resolving a conflict, use `git add .`
+  3. If conflicts occur, resolve them; after resolving a conflict, use `git add .`
 
      -`git rebase --continue`
 
-     - A vi editor will appear; you can directly save the default commit by pressing :wq, which means save & exit
+     - A vi editor will appear; you can directly save the default commit by pressing :wq (save & exit)
 
 - `git rebase squash`
-  Combine multiple commits into one (too detailed; when needed, refer to [How to Combine Multiple Commits into One Commit - Learn Git for Yourself | Kang-Chung Kao](https://gitbook.tw/chapters/rewrite-history/merge-multiple-commits-to-one-commit))
+  Combine multiple commits into one (too complex; when needed, refer to [How to Combine Multiple Commits into One Commit - Learn Git for Yourself | Kaiying Lung](https://gitbook.tw/chapters/rewrite-history/merge-multiple-commits-to-one-commit))

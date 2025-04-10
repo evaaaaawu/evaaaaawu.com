@@ -12,11 +12,11 @@ tags:
 featured: false
 ---
 
-In JavaScript, the value of `this` is dynamic and typically determined by how a function is called. Therefore, what affects the value of `this` is not when it's declared, but where it's invoked.
+In JavaScript, the value of `this` is dynamic and typically determined by how a function is called. This means that what affects the value of `this` is not when it's declared, but where it's invoked.
 
 There are 5 ways to determine the value of `this`:
 
-1. In a regular function call, `this` refers to the global object. In non-strict mode in browsers, this defaults to the `Window` object; in strict mode, `this` is `undefined`.
+1. In a regular function call, `this` refers to the global object (the `Window` object in browsers in non-strict mode, or `undefined` in strict mode).
 
 2. When a function is called as a method of an object, `this` refers to that object.
 
@@ -24,8 +24,8 @@ There are 5 ways to determine the value of `this`:
 
 4. We can also use the `apply`, `call`, and `bind` methods to explicitly specify which object `this` should refer to.
 
-5. Arrow functions, introduced in ES6, don't have their own `this` value. Instead, they inherit `this` from the nearest outer function. If that outer function is also an arrow function, it will continue looking up until it finds the default `this` value in the global environment (e.g., `window` in browsers).
+5. Arrow functions, introduced in ES6, don't have their own `this` value. Instead, they inherit `this` from the nearest outer function. If that outer function is also an arrow function, it will continue looking up the scope chain. This process continues until it finds the default `this` value in the global environment (e.g., `window` in browsers).
 
 ## Reference
 
-[Explaining the value of 'this' in JavaScript | ExplainThis](https://www.explainthis.io/zh-hant/swe/what-is-this)
+[What Is "this" in JavaScript?｜ ExplainThis](https://www.explainthis.io/en/swe/what-is-this)

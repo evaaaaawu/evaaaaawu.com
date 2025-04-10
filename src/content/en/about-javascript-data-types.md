@@ -12,11 +12,19 @@ tags:
 featured: false
 ---
 
-JavaScript has two main data types: primitives and objects. Primitives include String, Boolean, Number, BigInt, Undefined, Null, and Symbol. They are immutable, meaning we cannot change the value itself. When you want to update data, you can only "create a new value to replace the old one." Objects include Array, Function, and Objects. They are mutable and exist as references. So when we mutate an object or array in a variable, the reference of that variable doesn't change, only the content is modified. Therefore, when you want to change a variable's reference or avoid modifying the content of an existing object or array, you should create a brand new object or array to replace the old one.
+## JavaScript Has Two Main Data Types: "Primitive Values" and "Objects"
 
-To identify a variable's data type, you can use the typeof method. However, there's one exception: typeof null returns "object," which is a historical artifact in JavaScript. Because the cost of fixing this bug was too high, this error still exists today. Another thing to note is that typeof function () { } returns "function," but typeof [ ] returns "object." So to determine whether a variable is an object or an array, you should use the Array.isArray() or Object.prototype.toString.call() method.
+Primitive values include String, Boolean, Number, BigInt, Undefined, Null, and Symbol. They are immutable, meaning we cannot change the value itself. When you want to update the data, you can only create a new value to replace the old one.
 
-Here are examples of Array.isArray() and Object.prototype.toString.call() methods:
+Objects include Array, Function, and Objects. They are mutable and exist as references. When we mutate an object or array in a variable, the reference itself doesn't change—only the content is modified. Therefore, when you want to change a variable's reference or prevent existing object or array content from being modified, you should create an entirely new object or array to replace the existing one.
+
+## To Identify a Variable's Data Type, You Can Use the typeof Operator
+
+However, there's one exception: typeof null returns "object". This is a historical artifact in JavaScript. Because the cost of fixing this bug would be too high, this error still persists to this day.
+
+Note that typeof function () { } returns "function", but typeof [ ] returns "object". So to determine whether a variable is an object or an array, you should use Array.isArray() or Object.prototype.toString.call() methods.
+
+Below are examples of Array.isArray() and Object.prototype.toString.call() methods:
 
 <picture>
   <source srcset="/images/article-contents/webp/about-javascript-data-types/code-1.webp" type="image/webp">
@@ -30,4 +38,4 @@ Here are examples of Array.isArray() and Object.prototype.toString.call() method
 
 ## Reference
 
-[JavaScript 有哪些資料型別 (data types)? 該怎麼辨別一個變數的資料型別?｜ ExplainThis](https://www.explainthis.io/zh-hant/swe/js-data-types)
+[What Are the Primitive Types in JavaScript? How To Check the Type of a Variable?｜ ExplainThis](https://www.explainthis.io/en/swe/js-data-types)

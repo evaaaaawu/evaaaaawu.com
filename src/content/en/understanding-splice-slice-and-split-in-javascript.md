@@ -12,14 +12,14 @@ tags:
 featured: true
 ---
 
-Before we begin, here's a summary table I've prepared:
+<!-- Before we begin, here's a summary table I've prepared:
 
 <picture>
   <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/summary-table.webp" type="image/webp">
   <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/summary-table.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
-</picture>
+</picture> -->
 
-When looking at splice, slice, and split individually, they might not seem confusing. However, once you've encountered all three, they start to feel familiar yet distinct, making it difficult to differentiate between them. They're like the "Dango Three Brothers" - if you don't carefully examine and analyze them, you won't know which one to use in different situations.
+When looking at splice, slice, and split individually, they might not seem confusing. However, once you've encountered all three, they start to feel familiar yet distinct, making it difficult to differentiate between them. They're like the "Dango Three Brothers" - without careful examination, it's easy to confuse which one to use in different situations.
 
 <iframe 
   width="560" 
@@ -54,7 +54,7 @@ For example, does it return an "array" or a "string"? Does it return "a new arra
 
 Let's get started!
 
-**splice can do 2 things in the original "array": 1. Insert elements 2. Delete elements, or do both simultaneously → It modifies the original "array" and you can define a new variable name to capture the "deleted elements". If no elements are deleted, it returns an empty array.**
+**splice can perform two operations on the original array: 1. Insert elements, and 2. Delete elements—or do both simultaneously → It modifies the original array and you can define a new variable name to capture the "deleted elements". If no elements are deleted, it returns an empty array.**
 
 Let's look at some examples:
 
@@ -179,7 +179,7 @@ I've only provided examples of extracting from "arrays" above. For extracting fr
 
 The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.
 
-**split's function is to "divide a string into an array". When using it, you must specify what character in the original string you want to use as a separator → It returns a new "array", while the original "string" remains unchanged.**
+**split's function is to "divide a string into an array". When using it, you specify which character(s) in the original string to use as a separator → It returns a new "array", while the original "string" remains unchanged.**
 
 Let me explain with the following example:
 
@@ -259,9 +259,9 @@ Well, our "spot the difference" game ends here for now. There are probably many 
 
 This was a question that came to mind after playing the "spot the difference" game. My current understanding is that functions that can operate on arrays should typically also be able to operate on strings, as this would be a win-win situation. But why can splice only operate on arrays?
 
-This is because in JavaScript, variables of Primitive Types (including strings) have an Immutable characteristic, meaning you cannot directly modify the content of variables of Primitive Types. Note that this refers to not being able to directly call any built-in functions to make modifications, but you can still reassign values to change the content. Here's a simple example to illustrate:
+This is because in JavaScript, primitive types (including strings) are immutable, meaning you cannot directly modify the content of primitive type variables. Note that this refers to not being able to directly call any built-in functions to make modifications, but you can still reassign values to change the content. Here's a simple example to illustrate:
 
-If a variable is of Primitive Type, calling any built-in function alone won't change the variable's value, e.g.,
+If a variable is of primitive type, calling any built-in function alone won't change the variable's value, e.g.,
 
 <!-- ```js
 let a = "hello";
@@ -287,7 +287,7 @@ console.log(a); // HELLO
   <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/code-12.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-Back to the original question, we know that the splice function itself is designed to directly change the original value, which would contradict JavaScript's Immutable characteristic. This is why the splice function cannot operate on strings. It's similar to how in law, there are constitutional principles that take precedence - if civil or criminal laws contradict the constitution, they become inapplicable. However, since arrays in JavaScript are of Object type, which doesn't have the Immutable characteristic, directly manipulating the original value isn't problematic. Here's a simple example to illustrate:
+Back to the original question, we know that the splice function itself is designed to directly change the original value, which would contradict JavaScript's immutability principle for primitive types. This is why the splice function cannot operate on strings. Arrays in JavaScript are objects, which don't have the immutability restriction, so directly manipulating the original value is possible. Here's a simple example to illustrate:
 
 <!-- ```js
 let arr = [1, 2, 3];
@@ -304,9 +304,9 @@ From the example above, we can see that if a variable is of Object type, directl
 
 As for the slice function, since its functionality doesn't change the original value, there's no contradiction as mentioned above, so it works fine for both array and string operations.
 
-Finally, let me share my summary table again. I hope it helps you easily distinguish between these three "Dango Brothers" and never confuse them again.
+<!-- Finally, let me share my summary table again. I hope it helps you easily distinguish between these three "Dango Brothers" and never confuse them again.
 
 <picture>
   <source srcset="/images/article-contents/webp/understanding-splice-slice-and-split-in-javascript/summary-table.webp" type="image/webp">
   <img src="/images/article-contents/png/understanding-splice-slice-and-split-in-javascript/summary-table.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
-</picture>
+</picture> -->

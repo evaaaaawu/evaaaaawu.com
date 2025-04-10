@@ -12,9 +12,9 @@ tags:
 featured: true
 ---
 
-RWD = Responsive Web Design, a design approach that allows websites to adapt and display appropriately across various devices and screen sizes.
+RWD stands for Responsive Web Design, a design approach that allows websites to adapt and display appropriately across various devices and screen sizes.
 
-This means that regardless of whether users are on desktop computers, laptops, tablets, or mobile phones, the website will adjust according to the device's screen size, presenting content in an optimized way.
+Regardless of whether users are on desktop computers, laptops, tablets, or mobile phones, a responsive website will adjust according to the device's screen size, presenting content in an optimized way.
 
 The core goal of RWD is to provide a consistent and excellent user experience without needing to develop multiple versions of a website for different devices.
 
@@ -24,7 +24,7 @@ After taking the course [Conquering Responsive Layouts](https://courses.kevinpow
 
 - Avoid setting fixed widths, as they prevent automatic adjustment across multiple screens. **Use percentages instead**.
 
-- Avoid using heights whenever possible, as they can disrupt layouts across different screen sizes.
+- Avoid setting explicit heights whenever possible, as they can disrupt layouts across different screen sizes.
 
 - When setting font-size, using rem as a relative unit references the font-size of the html element (default is 16px); using em as a relative unit references the font-size of the parent element (default is 16px).
 
@@ -32,9 +32,7 @@ After taking the course [Conquering Responsive Layouts](https://courses.kevinpow
 
 - In most cases, rem is more suitable for setting font-size, while em is better for setting margin and padding.
 
-- Using relative units makes implementing responsive layouts much simpler.
-
-  e.g., Simply changing the font-size of the html element in a media query can easily scale the entire webpage on larger screens.
+- Using relative units makes implementing responsive layouts much simpler. For example, simply changing the font-size of the html element in a media query can easily scale the entire webpage on larger screens.
 
   <!-- ```css
   @media (min-width: 700px) {
@@ -107,9 +105,9 @@ After taking the course [Conquering Responsive Layouts](https://courses.kevinpow
     <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-4.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
   </picture>
 
-- Additional notes: min(), max() and clamp()
+- Additional notes: min(), max() and clamp() functions provide powerful tools for creating responsive designs without media queries:
 
-  - min() syntax:
+  - min() syntax allows you to set a value that will choose the smaller of two options:
 
     <!-- ```css
     .content {
@@ -136,17 +134,7 @@ After taking the course [Conquering Responsive Layouts](https://courses.kevinpow
       <img src="/images/article-contents/png/mastering-responsive-web-design-rwd/code-6.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
     </picture>
 
-  - clamp() syntax:
-
-    <!-- ```css
-    .title {
-      font-size: clamp(2rem, 5vw, 5rem);
-    }
-
-    .p {
-      font-size: clamp(1rem, 1.25vw, 1.25rem);
-    }
-    ``` -->
+  - clamp() syntax allows you to define a size that scales within a range, setting minimum and maximum values with a preferred value in between:
 
     <picture>
       <source srcset="/images/article-contents/webp/mastering-responsive-web-design-rwd/code-7.webp" type="image/webp">

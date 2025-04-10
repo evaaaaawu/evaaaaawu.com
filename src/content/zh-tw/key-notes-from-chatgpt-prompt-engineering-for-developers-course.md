@@ -87,7 +87,8 @@ LLM（大型語言模型）可以分為兩種類型：基礎型 LLM（Base LLM�
 
 - **指定完成任務所需的步驟。**
 
-  e.g.,  
+  e.g.,
+
   Perform the following actions: 1…/2…/3…/4…Separate your answers with line breaks.
 
   Perform the following actions:
@@ -105,7 +106,11 @@ LLM（大型語言模型）可以分為兩種類型：基礎型 LLM（Base LLM�
   Text:
   {text}
 
-  e.g., Perform the following actions: 1…/2…/3…/4…Use the following format: ...
+  <br>
+
+  e.g.,
+
+  Perform the following actions: 1…/2…/3…/4…Use the following format: ...
 
   Your task is to perform the following actions:
 
@@ -191,7 +196,10 @@ LLM（大型語言模型）可以分為兩種類型：基礎型 LLM（Base LLM�
 
   Your task is to extract relevant information from a product review from an ecommerce site to give feedback to the Shipping department.
 
-  From the review below, delimited by triple quotes extract the information relevant to shipping and delivery. Limit to 30 words.
+  From the review below, delimited by triple quotes extract the information relevant to shipping and delivery.
+
+  Limit to 30 words.
+
   Review: {prod_review}
 
 ### 推論
@@ -300,7 +308,7 @@ LLM（大型語言模型）可以分為兩種類型：基礎型 LLM（Base LLM�
 
   Proofread and correct the following text and rewrite the corrected version.
 
-  If you don't find and errors, just say "No errors found".
+  If you don't find any errors, just say "No errors found".
 
   <br>
 

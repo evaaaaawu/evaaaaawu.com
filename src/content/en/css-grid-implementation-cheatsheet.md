@@ -1,6 +1,6 @@
 ---
 title: CSS GRID Implementation Cheatsheet
-subtitle: CSS Grid is a powerful two-dimensional layout system that helps us control the arrangement and size of web elements more flexibly.
+subtitle: CSS Grid is a powerful two-dimensional layout system that helps you control the arrangement and size of web elements more flexibly.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/css-grid-implementation-cheatsheet.webp
 imagePng: /images/articles/png/css-grid-implementation-cheatsheet.png
@@ -12,11 +12,11 @@ tags:
 featured: true
 ---
 
-CSS Grid is a powerful two-dimensional layout system that helps us control the arrangement and size of web elements more flexibly.
+CSS Grid is a powerful two-dimensional layout system that helps you control the arrangement and size of web elements more flexibly.
 
-It allows designers to have precise control over rows and columns, creating complex layouts without relying on traditional techniques like floats or positioning.
+It allows you to have precise control over rows and columns, creating complex layouts without relying on traditional techniques like floats or positioning.
 
-Here I'm sharing my implementation notes on CSS GRID after reading the article [CSS Grid Layout Guide](https://css-tricks.com/snippets/css/complete-guide-grid/).
+This cheatsheet compiles key implementation notes for CSS Grid based on the comprehensive guide from [CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/).
 
 ## Table of Contents
 
@@ -50,11 +50,13 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
 
 ## Properties for the Parent (Grid Container)
 
+These properties apply to the container element that establishes the grid context.
+
 ### **Declaration**
 
 #### **display**
 
-- Declaring that I want to use grid
+- Establishes a grid formatting context for the container
 
 <!-- ```css
 .container {
@@ -71,8 +73,8 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
 
 #### **grid-template-columns / grid-template-rows**
 
-- Grid line length & intersection point names
-- Can directly write width / height numbers, or add \[custom names\] to name the grid lines
+- Defines the size and names of grid lines and tracks
+- You can specify width/height values or add \[custom names\] to label the grid lines
 
 <!-- ```css
 .container {
@@ -91,7 +93,7 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(2).png" alt="" loading="lazy" style="width: 70%; margin: 0 auto; border-radius: 10px;">
 </picture>
 
-- A single grid line can have multiple names
+- A single grid line can have multiple names for more semantic references
 
 <!-- ```css
 .container {
@@ -104,7 +106,7 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-template-columns+grid-template-rows(3).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-- You can use repeat() to simplify content
+- You can use the repeat() function to simplify repetitive patterns
 
 <!-- ```css
 .container {
@@ -119,7 +121,8 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
 
 #### **grid-template-areas**
 
-- Grid area layout (to be used with grid-area)
+- Defines named grid areas for creating visual layouts
+- Works in conjunction with the grid-area property on child elements
 
 <!-- ```css
 .item-a {
@@ -158,8 +161,8 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
 
 #### **grid-auto-rows / grid-auto-columns**
 
-- Implicit grid line length
-- Specifies the length of any automatically generated implicit grid lines. We can understand how grid-auto-rows / grid-auto-columns are created based on the following process:
+- Controls the size of implicitly created grid tracks
+- These properties define dimensions for tracks created when content overflows the explicitly defined grid
 
 <!-- ```css
 .container {
@@ -217,8 +220,8 @@ Here I'm sharing my implementation notes on CSS GRID after reading the article [
 
 #### **grid-auto-flow**
 
-- Flow direction for unpositioned items
-- If we have items that are not explicitly positioned on the grid, the auto-placement algorithm will automatically place these items on the grid. This property controls how the auto-placement algorithm works, determining the flow direction of unpositioned items.
+- Controls how the auto-placement algorithm works for items not explicitly positioned
+- Determines whether new items are placed by filling rows or columns first
 
 Here's an example:
 
@@ -237,7 +240,7 @@ Here's an example:
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(1).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-We defined a grid with five columns and two rows, and set grid-auto-flow to row (which is also the default value):
+We define a grid with five columns and two rows, and set grid-auto-flow to row (which is also the default value):
 
 <!-- ```css
 .container {
@@ -253,7 +256,7 @@ We defined a grid with five columns and two rows, and set grid-auto-flow to row 
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-auto-flow(2).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-When placing items on the grid, we only specified positions for two of the items:
+When placing items on the grid, we only specify positions for two of the items:
 
 <!-- ```css
 .item-a {
@@ -301,9 +304,12 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 ### **Container Overall**
 
+These properties control the alignment and positioning of the grid as a whole.
+
 #### **align-content**
 
-- Vertical alignment of the entire container
+- Controls the vertical alignment of the entire grid within its container
+- Applicable when the grid's total size is less than the container's size
 
 <!-- ```css
 .container {
@@ -318,7 +324,8 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **justify-content**
 
-- Horizontal alignment of the entire container
+- Controls the horizontal alignment of the entire grid within its container
+- Applicable when the grid's total size is less than the container's size
 
 <!-- ```css
 .container {
@@ -333,8 +340,9 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **place-content**
 
-- Vertical + horizontal alignment of the entire container
-- Usage: place-content: align-content justify-content; You can also set just one value, which means align-content = justify-content
+- Shorthand property that combines align-content and justify-content
+- Usage: place-content: <align-content> <justify-content>
+- If only one value is provided, it applies to both properties
 
 <!-- ```css
 .center {
@@ -350,9 +358,12 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 ### **Within Container**
 
+These properties control the alignment of grid items within their grid cells.
+
 #### **align-items**
 
-- Vertical alignment of content within each grid cell
+- Controls the vertical alignment of content within each grid cell
+- Affects all grid items unless overridden by align-self
 
 <!-- ```css
 .container {
@@ -367,7 +378,8 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **justify-items**
 
-- Horizontal alignment of content within each grid cell
+- Controls the horizontal alignment of content within each grid cell
+- Affects all grid items unless overridden by justify-self
 
 <!-- ```css
 .container {
@@ -382,8 +394,9 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **place-items**
 
-- Vertical + horizontal alignment of content within each grid cell
-- Usage: place-items: align-items justify-items; You can also set just one value, which means align-items = justify-items
+- Shorthand property that combines align-items and justify-items
+- Usage: place-items: <align-items> <justify-items>
+- If only one value is provided, it applies to both properties
 
 <!-- ```css
 .center {
@@ -399,9 +412,12 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 ### **Grid Gaps**
 
+These properties control the spacing between grid cells.
+
 #### **row-gap / column-gap**
 
-- Gaps between grid cells
+- Sets the size of gaps between grid rows and columns
+- Creates gutters between cells without affecting the grid tracks
 
 <!-- ```css
 .container {
@@ -424,8 +440,9 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **gap**
 
-- Gaps between grid cells
-- Usage: gap: row-gap column-gap; You can also set just one value, which means row-gap = column-gap
+- Shorthand property that combines row-gap and column-gap
+- Usage: gap: <row-gap> <column-gap>
+- If only one value is provided, it applies to both row and column gaps
 
 <!-- ```css
 .container {
@@ -440,11 +457,14 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/gap.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-## Properties for the Children(Grid Items)
+## Properties for the Children (Grid Items)
+
+These properties control how individual grid items are placed and aligned within the grid.
 
 #### **grid-column-start / grid-column-end / grid-row-start / grid-row-end**
 
-- Determines which grid cell the item starts and ends at
+- Determines the grid cell placement and span of an item
+- References grid lines by number or name
 
 <!-- ```css
 .item-a {
@@ -490,7 +510,8 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **grid-column / grid-row**
 
-- Determines which grid cell the item starts and ends at
+- Shorthand properties for grid-column-start/end and grid-row-start/end
+- Format: <start-line> / <end-line> or <start-line> / span <value>
 
 <!-- ```css
 .item-c {
@@ -519,7 +540,9 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **grid-area**
 
-- Determines which grid cell the item starts and ends at
+- Multi-purpose property that can be used in two ways:
+  1. As a reference to a named grid area from grid-template-areas
+  2. As a shorthand for grid positioning properties
 
 <!-- ```css
 .item {
@@ -545,7 +568,7 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
   <img src="/images/article-contents/png/css-grid-implementation-cheatsheet/grid-area(2).png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
-- As a shorthand (short-shorthand) to set grid-row-start + grid-column-start + grid-row-end + grid-column-end simultaneously:
+- As a shorthand to set grid-row-start + grid-column-start + grid-row-end + grid-column-end simultaneously:
 
 <!-- ```css
 .item-d {
@@ -570,7 +593,8 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **align-self**
 
-- Vertical alignment of this grid content
+- Controls the vertical alignment of an individual grid item within its cell
+- Overrides the align-items value from the container
 
 <!-- ```css
 .item {
@@ -585,7 +609,8 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **justify-self**
 
-- Horizontal alignment of this grid content
+- Controls the horizontal alignment of an individual grid item within its cell
+- Overrides the justify-items value from the container
 
 <!-- ```css
 .item {
@@ -600,8 +625,9 @@ If we change grid-auto-flow to column, then item-b, item-c, and item-d will flow
 
 #### **place-self**
 
-- Vertical + horizontal alignment of this grid content
-- Usage: place-self: align-self justify-self; You can also set just one value, which means align-self = justify-self
+- Shorthand property that combines align-self and justify-self
+- Usage: place-self: <align-self> <justify-self>
+- If only one value is provided, it applies to both properties
 
 <!-- ```css
 .item-a {

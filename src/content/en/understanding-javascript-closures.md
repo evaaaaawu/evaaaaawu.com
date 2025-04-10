@@ -20,7 +20,7 @@ A closure is when an inner function can access variables from an outer function 
 
 ### State Preservation
 
-When programming, we often need to remember certain states. The React library provides a useState hook that allows developers to manage state.
+In programming, we often need to maintain state information. The React library provides a useState hook that allows developers to manage state.
 
 Simplified implementation example of useState:
 
@@ -53,10 +53,10 @@ Example implementation of simulated private variables:
 
 ## Drawback of Closures: Memory Leaks
 
-Although closures are useful, they cause inner functions to remember external variables. When closures maintain references to variables that are no longer needed, these variables cannot be released by the garbage collection mechanism. This causes variables to remain in memory, and excessive use may lead to memory leaks, so they should be used with caution.
+While closures are useful, they can lead to memory leaks when they maintain references to variables that are no longer needed. When this happens, these variables cannot be released by JavaScript's garbage collection mechanism, causing them to remain in memory unnecessarily.
 
-The garbage collection mechanism mentioned above is provided by JavaScript to help developers manage memory without having to manually release it. In JavaScript, the garbage collection algorithm is called Mark-and-sweep. It starts from the root (i.e., global objects), finds all objects referenced from the root, then finds all objects referenced by those objects, and so on. If an object cannot be reached through this algorithm, it will be garbage collected. Whether an object is still reachable from the root is key to determining whether it will be garbage collected. Memory leaks occur when you no longer use an object, but it is still reachable. Specifically, when you no longer need something, but references to it still exist, so it won't be garbage collected, leading to memory leaks.
+JavaScript's garbage collection algorithm (Mark-and-sweep) starts from global objects (roots), identifies all referenced objects, and then collects anything unreachable. Memory leaks occur when objects are still reachable through references but are no longer needed by your program. Specifically, when you no longer need something, but references to it still exist, it won't be garbage collected, leading to memory leaks. For this reason, closures should be used with caution.
 
 ## Reference
 
-[什麼是閉包 (Closure)？｜ ExplainThis](https://www.explainthis.io/zh-hant/swe/what-is-closure)
+[What is JavaScript Closures?｜ ExplainThis](https://www.explainthis.io/en/swe/what-is-closure)

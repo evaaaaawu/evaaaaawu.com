@@ -14,7 +14,7 @@ featured: false
 
 ## == Loose Equality
 
-Before comparing two values, it performs type coercion and value conversion
+The == operator performs type coercion before comparing values
 
 - `console.log(1 == "1");` // true
 
@@ -24,7 +24,7 @@ Before comparing two values, it performs type coercion and value conversion
 
 ## === Strict Equality
 
-It doesn't perform type coercion or value conversion, but there are two exceptions:
+It doesn't perform type coercion or value conversion, but there are two notable behaviors to be aware of:
 
 - `console.log(+0 === -0);` // true
 
@@ -32,7 +32,9 @@ It doesn't perform type coercion or value conversion, but there are two exceptio
 
 ## Object.is() Same-Value Equality
 
-As the name suggests, it compares if two values are the same (despite starting with "Object", it can compare any two values). The two issues encountered with === mentioned above can be effectively distinguished using Object.is:
+As the name suggests, it compares if two values are the same. Despite starting with "Object", it can compare any two values.
+
+Unlike ===, Object.is() handles the special cases of zero and NaN differently:
 
 - `console.log(Object.is(+0, -0));` // false
 
@@ -40,4 +42,4 @@ As the name suggests, it compares if two values are the same (despite starting w
 
 ## Reference
 
-[Differences between ==, === and Object.is() in JavaScript | ExplainThis](https://www.explainthis.io/zh-hant/swe/js-equality)
+[What Is the Difference Between ==, === and Object.is in JavaScript?｜ ExplainThis](https://www.explainthis.io/en/swe/js-equality)

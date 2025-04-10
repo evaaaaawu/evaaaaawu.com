@@ -12,30 +12,30 @@ tags:
 featured: false
 ---
 
-### display: block
+## display: block
 
 By default, it occupies the entire width of the container, pushing adjacent elements to the next line.
 
-### display: inline
+## display: inline
 
-Similar to naturally flowing text, it occupies space determined by its content, with subsequent elements positioned immediately after it. You cannot arbitrarily control the width and height of inline elements.
+Similar to naturally flowing text, it occupies space determined by its content, with subsequent elements positioned immediately after. Note that you cannot arbitrarily control the width and height of inline elements.
 
-### display: inline-block
+## display: inline-block
 
-Laid out as inline, but with block properties meaning you have absolute control over its dimensions. However, it doesn't occupy the entire horizontal space, allowing elements to be adjacent to each other.
+This property creates elements that are laid out as inline, but with block properties, meaning you have absolute control over their dimensions. However, they don't occupy the entire horizontal space, allowing elements to be adjacent to each other.
 
-### display: flex
+## display: flex
 
-Please refer to my article [CSS Flexbox Implementation Cheatsheet](/articles/css-flexbox-implementation-cheatsheet)
+Please refer to my article [CSS Flexbox Implementation Cheatsheet](/en/articles/css-flexbox-implementation-cheatsheet/)
 
-### display: grid
+## display: grid
 
-Please refer to my article [CSS GRID Implementation Cheatsheet](/articles/css-grid-implementation-cheatsheet)
+Please refer to my article [CSS Grid Implementation Cheatsheet](/en/articles/css-grid-implementation-cheatsheet/)
 
-### display: none
+## display: none
 
-This setting makes the element disappear.
+This setting makes the element disappear from the page entirely.
 
-### Others
+## Others
 
-The website [htmlreference.io](https://htmlreference.io) allows you to quickly view elements and their display properties.
+The website [htmlreference.io](https://htmlreference.io) allows you to quickly look up HTML elements and their display properties.

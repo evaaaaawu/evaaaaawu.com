@@ -1,6 +1,6 @@
 ---
 title: JavaScript Scope and Scope Chain Explained
-subtitle: Scope is like a concept of range, which can be divided into global, function scope, and block scope.
+subtitle: Scope is the concept that determines where variables are accessible within your code, including global, function, and block scopes.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/javascript-scope-and-scope-chain-explained.webp
 imagePng: /images/articles/png/javascript-scope-and-scope-chain-explained.png
@@ -12,19 +12,19 @@ tags:
 featured: false
 ---
 
-Scope is like a concept of range, defining the area where a value or an expression can be used and found.
+Scope determines where variables are accessible and can be referenced within your code.
 
-In JavaScript, scope can be divided into global, function scope, and block scope.
+In JavaScript, scope can be divided into three types: global, function, and block scope.
 
-- Global scope refers to the global execution environment created when JavaScript code begins execution. Variables defined outside of functions or blocks belong to the global scope. These variables are also called global variables and can be accessed from anywhere in the code.
+- Global scope refers to the execution environment created when JavaScript code begins running. Variables defined outside of any function or block belong to the global scope. These global variables can be accessed from anywhere in your code.
 
-- Function scope refers to the scope created by a function.
+- Function scope refers to the environment created by a function declaration. Variables defined inside a function are only accessible within that function and any nested functions. They cannot be accessed from outside the function where they're declared.
 
-- Block scope appeared after ES6 and is defined within a pair of curly braces. It's important to note that only variables defined with `let` and `const` belong to block scope. Variables defined with `var` only have function scope.
+- Block scope was introduced in ES6 and is defined within a pair of curly braces `{}`. Note that only variables declared with `let` and `const` respect block scope. Variables declared with `var` only have function scope and ignore block boundaries.
 
-The scope chain refers to how JavaScript looks up variables. When JavaScript uses a variable, it first tries to find it in the current scope. If the variable isn't found in the current scope, it continues searching up through parent scopes until it reaches the global scope. If the variable still isn't found in the global scope, an error is thrown. This layer-by-layer relationship is called the scope chain.
+The scope chain describes how JavaScript looks up variables during execution. When code references a variable, JavaScript first searches for it in the current scope. If not found, it continues searching upward through parent scopes until reaching the global scope. If the variable isn't found in the global scope, JavaScript throws a reference error. This hierarchical lookup process forms the scope chain.
 
-The scope chain can be understood through the following code:
+You can see the scope chain in action through this example:
 
 <!-- ```js
 let a = 100;
@@ -39,6 +39,8 @@ find();
   <img src="/images/article-contents/png/javascript-scope-and-scope-chain-explained/code.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
 </picture>
 
+In this example, when the `find()` function tries to access variable `a`, it doesn't find it in its local scope. JavaScript then looks up the scope chain and finds `a` in the global scope, successfully logging the value `100`.
+
 ## Reference
 
-[Javascript 的作用域 (Scope) 與作用域鏈 (Scope Chain) 是什麼?｜ ExplainThis](https://www.explainthis.io/zh-hant/swe/what-is-scope-and-scope-chain)
+[What Is the Scope and Scope Chain of JavaScript?｜ ExplainThis](https://www.explainthis.io/en/swe/what-is-scope-and-scope-chain)

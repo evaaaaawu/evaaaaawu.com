@@ -14,9 +14,9 @@ featured: true
 
 CSS Flexbox is a powerful layout model that helps us simplify and make webpage element layouts more flexible.
 
-It's particularly suitable for responsive design scenarios, automatically adjusting element sizes and arrangements to adapt to different devices and screen dimensions.
+It's particularly suitable for responsive design scenarios. The model automatically adjusts element sizes and arrangements to adapt to different devices and screen dimensions.
 
-Here I'm sharing my implementation notes on CSS Flexbox after reading the article [CSS Flexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+This article provides implementation notes on CSS Flexbox based on the comprehensive guide [CSS Flexbox Layout Guide](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
 
 ## Table of Contents
 
@@ -199,7 +199,7 @@ Here I'm sharing my implementation notes on CSS Flexbox after reading the articl
 
 #### **flex-grow / flex-shrink / flex-basis and their shorthand flex**
 
-I feel like I don't fully understand this part yet, and I'm also questioning whether these properties are commonly used in implementation. I've decided to learn more about them when I actually need to use them.
+These properties involve more complex behaviors and will be covered in a future update.
 
 <!-- NOTE: Save the picture temporarily -->
 <!-- <picture>
@@ -222,7 +222,7 @@ I feel like I don't fully understand this part yet, and I'm also questioning whe
 
 ## Other Recommendations
 
-You can test the actual effects at the [Flexbox Playground](https://flexiting.com/playground/) website.
+The Flexbox Playground website allows for testing these properties in real-time: [Flexbox Playground](https://flexiting.com/playground/).
 
 ## Reference
 
