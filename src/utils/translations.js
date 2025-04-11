@@ -2,7 +2,7 @@ const translations = {
   "en": {
     site: {
       title: "Eva Wu's Tech Blog",
-      description: "This is my personal tech blog, primarily dedicated to programming study notes and software/digital-related content. In the long term, I will also write other broader software/digital content and share my personal life.",
+      description: "This is my personal tech blog, primarily dedicated to programming study notes and software/digital-related content. I will also cover broader software and digital topics in the future.",
       info1: "Continue scrolling down to see my recommended articles.",
       info2: "If you want to choose articles by topic, click the \"Tags\" page.",
       info3: "If you want to browse all of my articles, click the \"Articles\" page.",
@@ -31,7 +31,7 @@ const translations = {
   "zh-tw": {
     site: {
       title: "Eva Wu 的技術部落格",
-      description: "歡迎來到我的個人部落格，目前這裡主要會分享我的程式/技術學習筆記。長期規劃上，我也會撰寫其他更廣泛的軟體/數位相關內容和分享我的個人生活。",
+      description: "歡迎來到我的個人部落格，目前這裡主要會分享我的程式/技術學習筆記。長期規劃上，我也會撰寫其他更廣泛的軟體和數位相關內容。",
       info1: "繼續往下滑可以看到我推薦的精選文章。",
       info2: "如果想要依主題選擇文章，可以點擊「主題文章」頁面。",
       info3: "如果想要瀏覽我的所有文章，可以點擊「所有文章」頁面。",
