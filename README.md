@@ -5,8 +5,8 @@
 </p>
 
 ### Here is the URL:
-- English Version: evaaaaawu.com/en/
-- 中文版: evaaaaawu.com/zh-tw/
+- English Version: https://evaaaaawu.com/en/
+- 中文版: https://evaaaaawu.com/zh-tw/
 
 ### Built With:
 - Astro
