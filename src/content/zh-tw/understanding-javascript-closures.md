@@ -5,8 +5,8 @@ author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-javascript-closures.webp
 imagePng: /images/articles/png/understanding-javascript-closures.png
 imgAlt: Understanding JavaScript Closures
-creationDate: 2024-12-08
-updateDate: 2024-12-08
+creationDate: 2024-12-15
+updateDate: 2024-12-15
 tags:
   - JavaScript
 featured: false
