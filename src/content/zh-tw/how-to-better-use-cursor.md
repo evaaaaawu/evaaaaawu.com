@@ -4,7 +4,7 @@ subtitle: 分享我的 Cursor 學習筆記和目前的使用方法。
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/how-to-better-use-cursor.webp
 imagePng: /images/articles/png/how-to-better-use-cursor.png
-imgAlt: Use Cursor like a pro
+imgAlt: How to Better Use Cursor
 creationDate: 2025-04-30
 updateDate: 2025-04-30
 tags:
@@ -30,12 +30,12 @@ featured: true
 
 ### Cursor Rules
 
-#### 全域 Cursor Rules
+1. 全域 Cursor Rules
 
 點開 Cursor Settings 並進到 Rules 頁面，在 User Rules 標題下寫下你的 Rules。
 我目前使用的是 Cursor 員工分享的 Rules 如下([參考來源連結](https://x.com/kayladotdev/status/1853272891023872450))：
 
-```
+<div style="color: rgba(101, 98, 90, 1);">
 DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL CODE OR EXPLANATION!!! I DON'T WANT "Here's how you can blablabla"
 
 - Be casual unless otherwise specified
@@ -57,9 +57,9 @@ DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL C
 - Split into multiple responses if one response isn't enough to answer the question.
 
 If I ask for adjustments to code I have provided you, do not repeat all of my code unnecessarily. Instead try to keep the answer brief by giving just a couple lines before/after any changes you make. Multiple code blocks are ok.
-```
+</div>
 
-#### 專案相關的 Cursor Rules
+2. 專案相關的 Cursor Rules
 
 除了全域設置，Cursor 還支援專案層級的 Prompt。具體做法是在專案中創建一個 `.cursor` 資料夾。然後在 `.cursor` 資料夾內創建子資料夾 `rules`，並設置不同的 Prompt 檔案。
 
@@ -107,77 +107,73 @@ Open AI 共同創辦人 Greg Brockman 曾推薦一種 Prompt 寫法，在 X 上�
 
    - 可以在 prompts 的最後加上：
 
-     ```
-     If you need clarification or have any questions, feel free to ask.
-     ```
+     <span style="color: rgba(101, 98, 90, 1);">If you need clarification or have any questions, feel free to ask.</span>
 
      這樣可以讓 Cursor 主動提問，幫助你補充更多脈絡，進而提升回覆品質或改動結果。([參考來源連結](https://x.com/PrajwalTomar_/status/1886060043163906404))
 
    - 當想要保留對話串的重點內容，可以在原本的長對話視窗中，輸入以下的 prompts：
 
-     ```
-     Summarize what you did and output in Markdown format that I can copy directly.
-     ```
+     <span style="color: rgba(101, 98, 90, 1);">Summarize what you did and output in Markdown format that I can copy directly.</span>
 
 ## 進階實戰
 
 以下會舉出專案各個階段中會有的一些可以請 AI 來幫助我們的情境，並附上範例 prompts：
 
-### 設計階段
+### 1. 設計階段
 
 這裡很推薦可以將技術設計文件直接存放在程式碼庫中。
 
 #### 情境：修改技術設計文件
 
-```
-在這份聊天系統的技術設計文件中，原本只有純文字訊息，但 PM 希望增加多媒體訊息傳送功能，例如圖片或影音。請基於原本的技術設計，提供幾個不同的技術設計方案，以支援多媒體訊息傳送。
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 在這份聊天系統的技術設計文件中，原本只有純文字訊息，但 PM 希望增加多媒體訊息傳送功能，例如圖片或影音。請基於原本的技術設計，提供幾個不同的技術設計方案，以支援多媒體訊息傳送。
+</div>
 
-```
-現在的群組聊天設計在擴展性上有局限，群組人數一多就難以支援。請提出設計上的不同觀點，來突破這個限制。
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 現在的群組聊天設計在擴展性上有局限，群組人數一多就難以支援。請提出設計上的不同觀點，來突破這個限制。
+</div>
 
 #### 情境：為文字內容製作圖片
 
-```
-這段內容純文字很難讀，請加上 ASCII 圖示來協助說明。
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 這段內容純文字很難讀，請加上 ASCII 圖示來協助說明。
+</div>
 
-```
-請基於這段內容生成 Mermaid 圖。
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 請基於這段內容生成 Mermaid 圖。
+</div>
 
 #### 情境：快速上手程式碼庫
 
-```
-我剛加入這個團隊，對程式碼庫還不熟悉，請協助我理解目前程式碼庫的架構。
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 我剛加入這個團隊，對程式碼庫還不熟悉，請協助我理解目前程式碼庫的架構。
+</div>
 
-```
-我想處理語言模型回傳的 Markdown 格式，確保呈現給使用者的是精美格式，目前程式碼庫有沒有相關的轉換或呈現方法？
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 我想處理語言模型回傳的 Markdown 格式，確保呈現給使用者的是精美格式，目前程式碼庫有沒有相關的轉換或呈現方法？
+</div>
 
-### 實作階段
+### 2. 實作階段
 
 #### 情境：實作測試驅動開發(TDD)的開發流程
 
-```
-我需要實作一個把 HTML 格式轉換成 Markdown 格式的函式，請用 TypeScript 來實作，在實作前先根據 @fyi_test.mdc @test_jest.mdc 來先寫測試，新增函式到...中，如果要驗證測試，請根據 @code_command.mdc
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 我需要實作一個把 HTML 格式轉換成 Markdown 格式的函式，請用 TypeScript 來實作，在實作前先根據 @fyi_test.mdc @test_jest.mdc 來先寫測試，新增函式到...中，如果要驗證測試，請根據 @code_command.mdc
+</div>
 
 #### 情境：檢查程式碼
 
-```
-這段程式碼把所有的處理都混在一起，相對比較難閱請跟維護，請把程式碼寫更乾淨一點
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., 這段程式碼把所有的處理都混在一起，相對比較難閱請跟維護，請把程式碼寫更乾淨一點
+</div>
 
 #### 情境：撰寫 commit message
 
 Cursor 的 commit 欄位本生有「Generate Commit Message」的按鈕可以使用，推薦可以設定全域的 Cursor Rules 來確保 Cursor 生成的訊息遵循 [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)，例如可以這樣寫：
 
-```
+<div style="color: rgba(101, 98, 90, 1);">
 when generating commit message, follow conventional commit and start with a category such as `feat:`, `chore:`, or `fix:`, and then only give one line commit message
-```
+</div>
 
 #### 情境：撰寫 PR message
 

@@ -30,12 +30,12 @@ featured: true
 
 ### Cursor Rules
 
-#### Global Cursor Rules
+1. Global Cursor Rules
 
 Open Cursor Settings, navigate to the Rules page, and write your Rules under the User Rules title.
 I currently use Rules shared by Cursor employees as follows ([reference link](https://x.com/kayladotdev/status/1853272891023872450)):
 
-```
+<div style="color: rgba(101, 98, 90, 1);">
 DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL CODE OR EXPLANATION!!! I DON'T WANT "Here's how you can blablabla"
 
 - Be casual unless otherwise specified
@@ -57,9 +57,10 @@ DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL C
 - Split into multiple responses if one response isn't enough to answer the question.
 
 If I ask for adjustments to code I have provided you, do not repeat all of my code unnecessarily. Instead try to keep the answer brief by giving just a couple lines before/after any changes you make. Multiple code blocks are ok.
-```
 
-#### Project-Specific Cursor Rules
+</div>
+
+2. Project-Specific Cursor Rules
 
 Beyond global settings, Cursor also supports project-level prompts. To implement this, create a `.cursor` folder in your project. Then create a subfolder called `rules` inside the `.cursor` folder, and set up different prompt files.
 
@@ -107,77 +108,73 @@ For better context writing in Cursor, utilize these five key components:
 
    - Add the following at the end of your prompts:
 
-     ```
-     If you need clarification or have any questions, feel free to ask.
-     ```
+     <span style="color: rgba(101, 98, 90, 1);">If you need clarification or have any questions, feel free to ask.</span>
 
      This encourages Cursor to proactively ask questions, helping you provide more context and improving response quality. ([reference link](https://x.com/PrajwalTomar_/status/1886060043163906404))
 
    - To preserve key points from a lengthy conversation thread, use this prompt:
 
-     ```
-     Summarize what you did and output in Markdown format that I can copy directly.
-     ```
+     <span style="color: rgba(101, 98, 90, 1);">Summarize what you did and output in Markdown format that I can copy directly.</span>
 
 ## Advanced Practical Applications
 
 Below are scenarios where AI can assist during different project phases, with example prompts:
 
-### Design Phase
+### 1. Design Phase
 
 I strongly recommend storing technical design documents directly in your code repository.
 
 #### Scenario: Modifying Technical Design Documents
 
-```
-In this technical design document for the chat system, there's currently only text messaging, but the PM wants to add multimedia message sending capabilities, such as images or video. Based on the original technical design, please provide several different technical design options to support multimedia messaging.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., In this technical design document for the chat system, there's currently only text messaging, but the PM wants to add multimedia message sending capabilities, such as images or video. Based on the original technical design, please provide several different technical design options to support multimedia messaging.
+</div>
 
-```
-The current group chat design has limitations in scalability, making it difficult to support large groups. Please provide different design perspectives to overcome this limitation.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., The current group chat design has limitations in scalability, making it difficult to support large groups. Please provide different design perspectives to overcome this limitation.
+</div>
 
 #### Scenario: Creating Visual Aids for Text Content
 
-```
-This text content is difficult to read. Please add ASCII diagrams to help explain it.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., This text content is difficult to read. Please add ASCII diagrams to help explain it.
+</div>
 
-```
-Please generate a Mermaid diagram based on this content.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., Please generate a Mermaid diagram based on this content.
+</div>
 
 #### Scenario: Quickly Understanding a Codebase
 
-```
-I just joined this team and am not familiar with the codebase yet. Please help me understand the current architecture of the codebase.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., I just joined this team and am not familiar with the codebase yet. Please help me understand the current architecture of the codebase.
+</div>
 
-```
-I want to handle Markdown format returned by language models, ensuring that what is presented to users is beautifully formatted. Does the current codebase have any relevant conversion or presentation methods?
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., I want to handle Markdown format returned by language models, ensuring that what is presented to users is beautifully formatted. Does the current codebase have any relevant conversion or presentation methods?
+</div>
 
-### Implementation Phase
+### 2. Implementation Phase
 
 #### Scenario: Implementing Test-Driven Development (TDD) Workflow
 
-```
-I need to implement a function that converts HTML format to Markdown format. Please implement it using TypeScript. Before implementation, first write tests based on @fyi_test.mdc @test_jest.mdc, add the function to... If you need to validate the tests, please refer to @code_command.mdc
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., I need to implement a function that converts HTML format to Markdown format. Please implement it using TypeScript. Before implementation, first write tests based on @fyi_test.mdc @test_jest.mdc, add the function to... If you need to validate the tests, please refer to @code_command.mdc
+</div>
 
 #### Scenario: Code Review
 
-```
-This code mixes all the processing together, making it relatively difficult to read and maintain. Please make the code cleaner.
-```
+<div style="color: rgba(101, 98, 90, 1);">
+e.g., This code mixes all the processing together, making it relatively difficult to read and maintain. Please make the code cleaner.
+</div>
 
 #### Scenario: Writing Commit Messages
 
 Cursor's commit field has a "Generate Commit Message" button. I recommend setting global Cursor Rules to ensure that Cursor generates messages following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). For example:
 
-```
+<div style="color: rgba(101, 98, 90, 1);">
 When generating commit message, follow conventional commit and start with a category such as `feat:`, `chore:`, or `fix:`, and then only give one line commit message.
-```
+</div>
 
 #### Scenario: Writing PR Messages
 
