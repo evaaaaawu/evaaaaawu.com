@@ -3,7 +3,7 @@ export async function GET() {
     User-agent: *
     Allow: /
 
-    Sitemap: ${new URL('sitemap-index.xml', 'https://evaaaaawu-tech-blog.netlify.app').href}
+    Sitemap: ${new URL('sitemap-index.xml', 'https://evaaaaawu.com/en/').href}
   `, 
   { 
     headers: { 'Content-Type': 'text/plain' } 

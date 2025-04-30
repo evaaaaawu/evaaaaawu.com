@@ -9,7 +9,7 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true
   }),
-  site: "https://evaaaaawu-tech-blog.netlify.app",
+  site: "https://evaaaaawu.com/en/",
   // trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
