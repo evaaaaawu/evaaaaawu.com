@@ -231,4 +231,4 @@ With this PR template and Cursor's `@git` feature, you can use prompts like "Use
 
 ## Reference
 
-[Cursor from Beginner to Practical — Guide ｜ ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide)
+[Cursor 入門到實戰 — 導覽｜ ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide)
