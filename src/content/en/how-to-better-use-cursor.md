@@ -98,7 +98,7 @@ For better context writing in Cursor, utilize these five key components:
 
 4. Ensure high-quality responses through the "Single Context Principle"
 
-   The single context principle (single purpose composers) concept was shared by Cursor team member Eric Zakariasson on X ([reference link](https://x.com/ericzakariasson/status/1890018010926055578))
+   The single context principle (single purpose composers) concept was shared by Cursor team member Eric Zakariasson on X ([reference link](https://x.com/ericzakariasson/status/1890018010926055578)).
 
    My understanding is that each conversation thread should focus on "solving one specific purpose." When I open a New chat to solve "Purpose A," but encounter unrelated issues during the conversation, I open another New chat to address those separately, then return to the original conversation to continue with "Purpose A."
 

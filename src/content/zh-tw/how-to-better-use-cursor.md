@@ -97,7 +97,7 @@ Open AI 共同創辦人 Greg Brockman 曾推薦一種 Prompt 寫法，在 X 上�
 
 4. 透過「單一脈絡原則」，確保高品質的回覆
 
-   單一脈絡原則(single purpose composers)這個概念源自 Cursor 團隊的 Eric Zakariasson 在 X 上分享過的概念([參考來源連結](https://x.com/ericzakariasson/status/1890018010926055578))
+   單一脈絡原則(single purpose composers)這個概念源自 Cursor 團隊的 Eric Zakariasson 在 X 上分享過的概念([參考來源連結](https://x.com/ericzakariasson/status/1890018010926055578))。
 
    這邊我的理解是，要讓每個對話串只為了「解決一個特定的目的」。所以當我開啟一個為了解決「目的 A」的 New chat，但是在對話過程中有其他和這個「目的 A」不相關的問題或改動要解決，就直接再開一個 New chat 去提問，之後再回到原本的對話串繼續解決「目的 A」即可。
 
