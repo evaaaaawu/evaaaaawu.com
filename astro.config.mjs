@@ -9,14 +9,14 @@ export default defineConfig({
   adapter: netlify({
     edgeMiddleware: true
   }),
-  site: "https://evaaaaawu.com/en/",
+  site: "https://evaaaaawu.com/",
   // trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'zh-tw'],
     routing: {
-      strategy: 'prefix', // Creates URLs like /en/about, /zh-tw/about
-      prefixDefaultLocale: true // Include prefix for default locale too for consistency
+      strategy: 'prefix', // Creates URLs like /about, /zh-tw/about
+      prefixDefaultLocale: false // English doesn't need /en/ prefix
     },
   }
 });
