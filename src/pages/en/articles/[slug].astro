@@ -35,14 +35,8 @@ featuredArticles.sort(
     <div class="meta">
       <div class="flex-group align-center">
         <Tag tag={article.data.tags[0]} locale={locale} />
-        creation date:<FormattedDate
-          date={article.data.creationDate}
-          locale={locale}
-        />
-        update date:<FormattedDate
-          date={article.data.updateDate}
-          locale={locale}
-        />
+        PUBLISHED <FormattedDate date={article.data.creationDate} locale={locale} />
+        UPDATED <FormattedDate date={article.data.updateDate} locale={locale} />
       </div>
     </div>
     <h1 transition:name={article.data.title} class="heading-2">
