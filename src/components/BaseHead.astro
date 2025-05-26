@@ -16,6 +16,14 @@ const {
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
+  
+  <!-- Open Graph tags -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${Astro.url.origin}${ogimage}`} />
+  <meta property="og:url" content={Astro.url.toString()} />
+  <meta property="og:type" content="website" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
