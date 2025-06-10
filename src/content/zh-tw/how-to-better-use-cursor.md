@@ -9,6 +9,7 @@ creationDate: 2025-04-30
 updateDate: 2025-06-10
 tags:
   - AI
+  - Digital Workflow
 featured: true
 ---
 
