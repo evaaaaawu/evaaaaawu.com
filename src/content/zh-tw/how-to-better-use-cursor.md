@@ -21,6 +21,27 @@ featured: true
 
 - 本篇目前沒有包含如何在 Cursor 使用 MCP 的部分，因為雖然我有表層的理解 MCP 了，但並沒有真正的實作在自己的專案上過，可能會等我有實戰經驗後再更新本篇文章或是另外寫一篇新文章。
 
+## Table of Contents
+
+- [Cursor 最常用的快捷鍵](#cursor-最常用的快捷鍵)
+  - [Tab](#tab)
+  - [Chat](#chat)
+  - [Apply](#apply)
+- [Cursor 你可能不知道的好用功能](#cursor-你可能不知道的好用功能)
+  - [Cursor Chat 的應用](#cursor-chat-的應用)
+  - [Generate Commit Message](#generate-commit-message)
+- [Cursor 注意事項](#cursor-注意事項)
+- [我的 Cursor 的 User Rules](#我的-cursor-的-user-rules)
+- [我的 Cursor 的 Project Rules](#我的-cursor-的-project-rules)
+- [Prompts 撰寫技巧](#prompts-撰寫技巧)
+  - [1. 每當開啟一個新的對話時，都從 Goal、Return Format、Warnings、Context 這個架構開始問起。](#1-每當開啟一個新的對話時都從-goalreturn-formatwarningscontext-這個架構開始問起)
+  - [2. 透過「單一脈絡原則」，確保高品質的回覆](#2-透過單一脈絡原則確保高品質的回覆)
+  - [3. 當問題較為模糊或複雜時，可以在 prompts 的最後加上：If you need clarification or have any questions, feel free to ask.](#3-當問題較為模糊或複雜時可以在-prompts-的最後加上if-you-need-clarification-or-have-any-questions-feel-free-to-ask)
+  - [4. 當想要保留對話串的重點內容，可以在原本的長對話視窗中，輸入以下的 prompts：Summarize what you did and output in Markdown format that I can copy directly.](#4-當想要保留對話串的重點內容可以在原本的長對話視窗中輸入以下的-promptssummarize-what-you-did-and-output-in-markdown-format-that-i-can-copy-directly)
+  - [5. 一些撰寫文件的推薦 prompts](#5-一些撰寫文件的推薦-prompts)
+  - [6. 根據軟體開發的不同階段和情境，提供範例 prompts 作為靈感。](#6-根據軟體開發的不同階段和情境提供範例-prompts-作為靈感)
+- [Reference](#reference)
+
 ## Cursor 最常用的快捷鍵
 
 (如果是使用 Mac，請自行將 Control 替換成 Command)
@@ -200,13 +221,13 @@ cursor 在一般模式中讀取檔案最多只能讀 250 行；max 模式最多�
 
 **情境：撰寫 commit message**
 
-如同前面 Cursor 你可能不知道的好用功能段落中有提到的，Cursor 的 commit 欄位本生有「Generate Commit Message」的按鈕可以使用，推薦可以設定全域的 Cursor Rules 來確保 Cursor 生成的訊息遵循 **[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)**，例如可以這樣寫：
+如同前面 [Cursor 你可能不知道的好用功能](#cursor-你可能不知道的好用功能)段落中有提到的，Cursor 的 commit 欄位本生有「Generate Commit Message」的按鈕可以使用，推薦可以設定全域的 Cursor Rules 來確保 Cursor 生成的訊息遵循 **[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)**，例如可以這樣寫：
 
 When generating commit messages, follow conventional commit format, starting with a category such as: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `chore:`, `revert:`, etc., then only give one line commit message.
 
 **情境：撰寫 PR message**
 
-如同上一段落我的 Cursor 的 Project Rules 中有提到的，推薦可以在專案相關的 Cursor Rules 中加入撰寫 PR message 的模板(可放在 .cursor/rules/pr_generation.mdc 中)。有了撰寫 PR message 的模板和 Cursor 本身提供的 `@git` 功能後，就可以使用類似「使用 PR Generation 提示詞為這兩個 commit 撰寫描述」的語句來請 Cursor 幫忙生成 PR message。模板和詳細的說明可以參考 [3-6 透過 Cursor 協助生成 PR 描述｜ ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide/3-6-pr-description)。
+如同上一段落[我的 Cursor 的 Project Rules](#我的-cursor-的-project-rules) 中有提到的，推薦可以在專案相關的 Cursor Rules 中加入撰寫 PR message 的模板(可放在 .cursor/rules/pr_generation.mdc 中)。有了撰寫 PR message 的模板和 Cursor 本身提供的 `@git` 功能後，就可以使用類似「使用 PR Generation 提示詞為這兩個 commit 撰寫描述」的語句來請 Cursor 幫忙生成 PR message。模板和詳細的說明可以參考 [3-6 透過 Cursor 協助生成 PR 描述｜ ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide/3-6-pr-description)。
 
 **情境：協助 Code Review**
 

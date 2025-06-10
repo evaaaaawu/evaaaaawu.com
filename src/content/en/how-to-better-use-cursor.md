@@ -6,230 +6,217 @@ imageWebp: /images/articles/webp/how-to-better-use-cursor.webp
 imagePng: /images/articles/png/how-to-better-use-cursor.png
 imgAlt: How to Better Use Cursor
 creationDate: 2025-04-30
-updateDate: 2025-04-30
+updateDate: 2025-06-10
 tags:
   - AI
   - Digital Workflow
 featured: true
 ---
 
-## Basic Knowledge
+## Before You Start Reading
 
-### Three Most Essential Shortcuts
+- This article is primarily a curated collection of key insights from ExplainThis's [Cursor Guide](https://www.explainthis.io/zh-hant/ai/cursor-guide) and [Cursor's official documentation](https://docs.cursor.com/welcome).
 
-(If you're using a Mac, replace Control with Command)
+- After reading this, you'll not only get up to speed with Cursor quickly, but also learn how to craft better AI prompts, especially for software development scenarios.
 
-- Control + K: Directly edit code or ask questions about selected code.
-- Control + L: Open the AI chat assistant dialog box for interaction.
-- Control + I: Activate the AI agent to automatically complete specific tasks.
+- Currently, this article doesn't cover how to use MCP (Model Context Protocol) with Cursor. While I have a surface-level understanding of MCP, I haven't actually implemented it in my own projects yet. I might update this article or write a new one once I gain hands-on experience.
 
-### Useful Features You Might Not Know
+## Table of Contents
 
-- Cursor's Chat supports image uploads, which is extremely useful for quickly generating UI components.
+- [Most Essential Cursor Shortcuts](#most-essential-cursor-shortcuts)
+  - [Tab](#tab)
+  - [Chat](#chat)
+  - [Apply](#apply)
+- [Cursor Features You Might Not Know About](#cursor-features-you-might-not-know-about)
+  - [Cursor Chat Applications](#cursor-chat-applications)
+  - [Generate Commit Message](#generate-commit-message)
+- [Important Cursor Considerations](#important-cursor-considerations)
+- [My Cursor User Rules](#my-cursor-user-rules)
+- [My Cursor Project Rules](#my-cursor-project-rules)
+- [Prompt Writing Techniques](#prompt-writing-techniques)
+  - [1. Start every new conversation with the Goal, Return Format, Warnings, Context framework](#1-start-every-new-conversation-with-the-goal-return-format-warnings-context-framework)
+  - [2. Ensure high-quality responses through the "Single Context Principle"](#2-ensure-high-quality-responses-through-the-single-context-principle)
+  - [3. For ambiguous or complex questions, add this at the end of your prompts: "If you need clarification or have any questions, feel free to ask."](#3-for-ambiguous-or-complex-questions-add-this-at-the-end-of-your-prompts-if-you-need-clarification-or-have-any-questions-feel-free-to-ask)
+  - [4. To preserve key points from lengthy conversation threads, use this prompt: "Summarize what you did and output in Markdown format that I can copy directly."](#4-to-preserve-key-points-from-lengthy-conversation-threads-use-this-prompt-summarize-what-you-did-and-output-in-markdown-format-that-i-can-copy-directly)
+  - [5. Recommended prompts for documentation writing](#5-recommended-prompts-for-documentation-writing)
+  - [6. Example prompts for different software development phases and scenarios](#6-example-prompts-for-different-software-development-phases-and-scenarios)
+- [Reference](#reference)
 
-## Methods to Improve Response Quality
+## Most Essential Cursor Shortcuts
 
-### Cursor Rules
+(If you're using Mac, replace Control with Command)
 
-1. Global Cursor Rules
+### Tab
 
-Open Cursor Settings, navigate to the Rules page, and write your Rules under the User Rules title.
-I currently use Rules shared by Cursor employees as follows ([reference link](https://x.com/kayladotdev/status/1853272891023872450)):
+When dealing with Cursor's code auto-completion, use these shortcuts:
 
-<div style="color: rgba(101, 98, 90, 1);">
-DO NOT GIVE ME HIGH LEVEL SHIT, IF I ASK FOR FIX OR EXPLANATION, I WANT ACTUAL CODE OR EXPLANATION!!! I DON'T WANT "Here's how you can blablabla"
+- **Tab**: Accept everything
+- **Esc**: Reject everything
+- **Control + →**: Accept one piece at a time
 
-- Be casual unless otherwise specified
-- Be terse
-- Suggest solutions that I didn't think about—anticipate my needs
-- Treat me as an expert
-- Be accurate and thorough
-- Give the answer immediately. Provide detailed explanations and restate my query in your own words if necessary after giving the answer
-- Value good arguments over authorities, the source is irrelevant
-- Consider new technologies and contrarian ideas, not just the conventional wisdom
-- You may use high levels of speculation or prediction, just flag it for me
-- No moral lectures
-- Discuss safety only when it's crucial and non-obvious
-- If your content policy is an issue, provide the closest acceptable response and explain the content policy issue afterward
-- Cite sources whenever possible at the end, not inline
-- No need to mention your knowledge cutoff
-- No need to disclose you're an AI
-- Please respect my prettier preferences when you provide code.
-- Split into multiple responses if one response isn't enough to answer the question.
+### Chat
 
-If I ask for adjustments to code I have provided you, do not repeat all of my code unnecessarily. Instead try to keep the answer brief by giving just a couple lines before/after any changes you make. Multiple code blocks are ok.
+- **Control + K**: Edit code directly or ask questions about selected code.
+- **Control + L**: Open the AI chat assistant dialog for interaction.
+- **Control + I**: Activate the AI agent to automatically complete specific tasks.
+- **Control + N**: Start a new conversation.
 
-</div>
+### Apply
 
-2. Project-Specific Cursor Rules
+- **Control + Enter**: Accept
+- **Control + Backspace**: Reject
 
-Beyond global settings, Cursor also supports project-level prompts. To implement this, create a `.cursor` folder in your project. Then create a subfolder called `rules` inside the `.cursor` folder, and set up different prompt files.
+## Cursor Features You Might Not Know About
 
-Note: If I develop more insights after implementation, I'll update this section with additional details.
+### Cursor Chat Applications
 
-### Recommended Prompt Structure
+- Cursor Chat supports image uploads, which is incredibly useful for quickly generating UI components.
+- Use **Control + T** to open and run multiple conversation threads simultaneously.
 
-OpenAI co-founder Greg Brockman once recommended a prompt writing approach that became widely shared on X ([reference link](https://x.com/daniel_mac8/status/1878283032215408886)):
+### Generate Commit Message
 
-- Goal: Clearly state what task you want the AI to complete.
-- Return Format: Explicitly define the expected output format.
-- Warnings: Remind AI about specific considerations when handling the task.
-- Context: Provide relevant background information.
+Cursor's commit field has a built-in "Generate Commit Message" button. I recommend setting up global Cursor Rules to ensure Cursor generates messages following **[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)**.
 
-The most critical element is describing your goals and requirements with clarity.
+For example:
 
-For better context writing in Cursor, utilize these five key components:
+When generating commit messages, follow conventional commit format, starting with a category such as: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `chore:`, `revert:`, etc., then only give one line commit message.
 
-1. Write the Cursor Rules as explained in the previous section
-2. Leverage Cursor's useful indexing features to import relevant context:
-   - `@file`: Reference an entire file as context.
-   - `@code`: Reference specific code segments (avoiding irrelevant content).
-   - `@git`: Reference Git records (such as commits, PR diffs) for convenient code reviews.
-   - `@docs`: Reference technical documentation (such as Next.js official docs) to avoid outdated information.
-   - `@web`: Have Cursor conduct a web search first, then answer based on the latest content (ideal for new technologies without official documentation).
-3. Use "decision context" to avoid AI memory issues
+## Important Cursor Considerations
 
-   When AI output doesn't meet your expectations:
+Cursor can read a maximum of 250 lines in normal mode and up to 750 lines in max mode.
 
-   1. Ask AI to adjust, then ask AI to summarize what should be done
-   2. Put that summary in fyi.md
-   3. Include fyi.md in future prompts
+## My Cursor User Rules
 
-   Note: If I develop more insights after implementation, I'll update this section with additional details.
+Open Cursor Settings, navigate to the Rules page, and write your Rules under the User Rules section.
 
-4. Ensure high-quality responses through the "Single Context Principle"
+<picture>
+  <source srcset="/images/article-contents/webp/how-to-better-use-cursor/cursor-user-rules.webp" type="image/webp">
+  <img src="/images/article-contents/png/how-to-better-use-cursor/cursor-user-rules.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
-   The single context principle (single purpose composers) concept was shared by Cursor team member Eric Zakariasson on X ([reference link](https://x.com/ericzakariasson/status/1890018010926055578)).
+I've modified the Rules shared by Cursor employees (**[reference link](https://x.com/kayladotdev/status/1853272891023872450)**) to create my own User Rules as follows (text version available [here](https://raw.githubusercontent.com/evaaaaawu/quick-share/refs/heads/main/my-cursor-user-rules.md)):
 
-   My understanding is that each conversation thread should focus on "solving one specific purpose." When I open a New chat to solve "Purpose A," but encounter unrelated issues during the conversation, I open another New chat to address those separately, then return to the original conversation to continue with "Purpose A."
+<picture>
+  <source srcset="/images/article-contents/webp/how-to-better-use-cursor/my-cursor-user-rules.webp" type="image/webp">
+  <img src="/images/article-contents/png/how-to-better-use-cursor/my-cursor-user-rules.png" alt="" loading="lazy" style="width: 100%; border-radius: 10px;">
+</picture>
 
-   After discovering this concept, I realized I've been instinctively using this approach. I mentally categorize it as "main quest" and "side quests," creating conversation threads that branch like a tree.
+## My Cursor Project Rules
 
-5. Additional recommended tips
+Beyond global settings, Cursor also supports project-level prompts. To implement this, create a `.cursor` folder in your project, then create a `rules` subfolder within `.cursor` and set up different prompt files.
 
-   - Add the following at the end of your prompts:
+I think this needs some experimentation and hands-on experience before I can share best practices. However, I've found some excellent examples worth trying in your own projects:
 
-     <span style="color: rgba(101, 98, 90, 1);">If you need clarification or have any questions, feel free to ask.</span>
+- **Decision Context Project Rules**: These aim to prevent AI "amnesia" through decision context. The basic approach is: whenever AI output doesn't meet expectations:
 
-     This encourages Cursor to proactively ask questions, helping you provide more context and improving response quality. ([reference link](https://x.com/PrajwalTomar_/status/1886060043163906404))
+  1. Ask AI to adjust, then ask AI to summarize what should be done
+  2. Put that summary in `fyi.md`
+  3. Include `fyi.md` in future prompts
 
-   - To preserve key points from a lengthy conversation thread, use this prompt:
+  For a detailed explanation, see [AddyOsmani.com - Automated Decision Logs in AI-Assisted Coding](https://addyosmani.com/blog/automated-decision-logs/) and [ExplainThis Guide 2-6](https://www.explainthis.io/zh-hant/ai/cursor-guide/2-6-avoiding-hallucinations).
 
-     <span style="color: rgba(101, 98, 90, 1);">Summarize what you did and output in Markdown format that I can copy directly.</span>
+- **PR Message Project Rules**: I recommend adding a PR message template to your project-specific Cursor Rules (place it in `.cursor/rules/pr_generation.mdc`). Combined with Cursor's `@git` feature, you can use prompts like "Use the PR Generation prompt to write a description for these two commits" to generate comprehensive PR messages. For templates and detailed instructions, see [ExplainThis Guide 3-6](https://www.explainthis.io/zh-hant/ai/cursor-guide/3-6-pr-description).
 
-## Advanced Practical Applications
+- **TypeScript Project Rules**: Matt Pocock provides downloadable TypeScript project rules in [Cursor Rules for Better AI Development | Total TypeScript](https://www.totaltypescript.com/cursor-rules-for-better-ai-development).
 
-Below are scenarios where AI can assist during different project phases, with example prompts:
+## Prompt Writing Techniques
 
-### 1. Design Phase
+This section isn't specifically about Cursor, but to use Cursor effectively, the fundamental principle is understanding how to craft better AI prompts.
+
+### 1. Start every new conversation with the Goal, Return Format, Warnings, Context framework
+
+This prompt writing approach was recommended by OpenAI co-founder Greg Brockman and became widely shared on X (**[reference link](https://x.com/daniel_mac8/status/1878283032215408886)**):
+
+- **Goal**: Clearly state what task you want the AI to complete
+- **Return Format**: Explicitly define the expected output format
+- **Warnings**: Remind AI about specific considerations when handling the task
+- **Context**: Provide relevant background information
+
+By leveraging Cursor's features effectively, you can provide rich context to AI models. The most important aspect of prompting is describing your goals and requirements with crystal clarity.
+
+### 2. Ensure high-quality responses through the "Single Context Principle"
+
+The single context principle (single purpose composers) concept was shared by Cursor team member Eric Zakariasson on X (**[reference link](https://x.com/ericzakariasson/status/1890018010926055578)**).
+
+My understanding is that each conversation thread should focus on "solving one specific purpose." When I open a New chat to solve "Purpose A," but encounter unrelated issues during the conversation, I open another New chat to address those separately, then return to the original conversation to continue with "Purpose A."
+
+After discovering this concept, I realized I've been instinctively using this approach. I mentally categorize it as "main quests" and "side quests," creating conversation threads that branch like a tree.
+
+### 3. For ambiguous or complex questions, add this at the end of your prompts: "If you need clarification or have any questions, feel free to ask."
+
+This encourages Cursor to proactively ask questions, helping you provide more context and improving response quality (**[reference link](https://x.com/PrajwalTomar_/status/1886060043163906404)**).
+
+### 4. To preserve key points from lengthy conversation threads, use this prompt: "Summarize what you did and output in Markdown format that I can copy directly."
+
+### 5. Recommended prompts for documentation writing
+
+**From existing code**
+
+- **API Documentation**: Generate API documentation for this Express router, including all endpoints, parameters, and response formats
+- **JSDoc Comments**: Add comprehensive JSDoc comments to this class, documenting all methods and their parameters
+- **README Creation**: Create a README for this project that includes setup instructions, usage examples, and API overview
+
+**From chat sessions**
+
+- **Problem Solving**: Summarize our conversation about setting up authentication into a step-by-step guide for the team wiki
+- **Architecture**: Create documentation explaining why we chose this database design, including the trade-offs we discussed
+- **Debugging**: Write a troubleshooting guide based on this bug we just fixed, including symptoms and resolution steps
+
+### 6. Example prompts for different software development phases and scenarios
+
+**[Design Phase]**
 
 I strongly recommend storing technical design documents directly in your code repository.
 
-#### Scenario: Modifying Technical Design Documents
+**Scenario: Modifying Technical Design Documents**
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., In this technical design document for the chat system, there's currently only text messaging, but the PM wants to add multimedia message sending capabilities, such as images or video. Based on the original technical design, please provide several different technical design options to support multimedia messaging.
-</div>
+- e.g., "In this chat system technical design document, there's currently only text messaging, but the PM wants to add multimedia message capabilities like images or videos. Based on the original technical design, please provide several different technical design options to support multimedia messaging."
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., The current group chat design has limitations in scalability, making it difficult to support large groups. Please provide different design perspectives to overcome this limitation.
-</div>
+- e.g., "The current group chat design has scalability limitations, making it difficult to support large groups. Please provide different design perspectives to overcome this limitation."
 
-#### Scenario: Creating Visual Aids for Text Content
+**Scenario: Creating Visual Aids for Text Content**
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., This text content is difficult to read. Please add ASCII diagrams to help explain it.
-</div>
+When you want to create visual aids for text content, you can choose to generate ASCII or Mermaid diagrams.
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., Please generate a Mermaid diagram based on this content.
-</div>
+- e.g., "This pure text content is hard to read, please add ASCII diagrams to help explain it."
+- e.g., "Please generate a Mermaid diagram based on this content."
 
-#### Scenario: Quickly Understanding a Codebase
+**Scenario: Quickly Understanding a Codebase**
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., I just joined this team and am not familiar with the codebase yet. Please help me understand the current architecture of the codebase.
-</div>
+- e.g., "I just joined this team and am not familiar with the codebase yet. Please help me understand the current architecture of the codebase."
+- e.g., "I want to handle Markdown format returned by language models, ensuring that what's presented to users is beautifully formatted. Does the current codebase have any relevant conversion or presentation methods?"
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., I want to handle Markdown format returned by language models, ensuring that what is presented to users is beautifully formatted. Does the current codebase have any relevant conversion or presentation methods?
-</div>
+**[Implementation Phase]**
 
-### 2. Implementation Phase
+**Scenario: Implementing Test-Driven Development (TDD) Workflow**
 
-#### Scenario: Implementing Test-Driven Development (TDD) Workflow
+- e.g., "I need to implement a function that converts HTML format to Markdown format. Please implement it using TypeScript. Before implementation, first write tests based on @fyi_test.mdc @test_jest.mdc, add the function to... If you need to validate the tests, please refer to @code_command.mdc"
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., I need to implement a function that converts HTML format to Markdown format. Please implement it using TypeScript. Before implementation, first write tests based on @fyi_test.mdc @test_jest.mdc, add the function to... If you need to validate the tests, please refer to @code_command.mdc
-</div>
+**Scenario: Code Review**
 
-#### Scenario: Code Review
+- e.g., "This code mixes all the processing together, making it relatively difficult to read and maintain. Please make the code cleaner."
 
-<div style="color: rgba(101, 98, 90, 1);">
-e.g., This code mixes all the processing together, making it relatively difficult to read and maintain. Please make the code cleaner.
-</div>
+**Scenario: Writing Commit Messages**
 
-#### Scenario: Writing Commit Messages
+As mentioned in the [Cursor Features You Might Not Know About](#cursor-features-you-might-not-know-about) section, Cursor's commit field has a built-in "Generate Commit Message" button. I recommend setting up global Cursor Rules to ensure Cursor generates messages following **[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)**.
 
-Cursor's commit field has a "Generate Commit Message" button. I recommend setting global Cursor Rules to ensure that Cursor generates messages following [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/). For example:
+For example:
 
-<div style="color: rgba(101, 98, 90, 1);">
-When generating commit message, follow conventional commit and start with a category such as `feat:`, `chore:`, or `fix:`, and then only give one line commit message.
-</div>
+When generating commit messages, follow conventional commit format, starting with a category such as: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `chore:`, `revert:`, etc., then only give one line commit message.
 
-#### Scenario: Writing PR Messages
+**Scenario: Writing PR Messages**
 
-I recommend adding a template for PR messages in your project-specific Cursor Rules (place it in .cursor/rules/pr_generation.mdc):
+As mentioned in the [My Cursor Project Rules](#my-cursor-project-rules) section above, I recommend adding a PR message template to your project-specific Cursor Rules (place it in `.cursor/rules/pr_generation.mdc`). Combined with Cursor's `@git` feature, you can use prompts like "Use the PR Generation prompt to write a description for these two commits" to generate comprehensive PR messages. For templates and detailed instructions, see [ExplainThis Guide 3-6](https://www.explainthis.io/zh-hant/ai/cursor-guide/3-6-pr-description).
 
-```
-## Background (Why)
+**Scenario: Assisting with Code Review**
 
-<!-- Describe the background of this PR. Why is this PR needed? What problem does it solve? -->
+- I recommend maintaining a Style Guide in Cursor's Docs. Combined with Cursor's `@git` feature, you can use prompts like "Review this PR using the JavaScript Style Guide" to assist with code reviews.
 
-## Implementation Method (How)
+- In addition to the style guide, the decision context records mentioned earlier can also be useful during code reviews depending on the situation.
 
-<!-- Describe the implementation method and architectural decisions made. -->
-
-## Actual Changes (What)
-
-<!-- Highlight the main changes implemented in this merge request. Specifically explain what you changed and why. -->
-
-- [ ] Feature/Change 1
-- [ ] Feature/Change 2
-
-### Screenshots or Video References
-
-<!-- If applicable, add design references (links), screenshots, or screen recordings -->
-
-### Test Verification
-
-<!-- List the test cases that have been verified. Include edge cases. -->
-
-- [ ] Test scenario 1
-- [ ] Test scenario 2
-- [ ] Test scenario 3
-
-<!-- Add any other test notes for reviewers -->
-
-## Additional Notes
-
-<!-- Any information that would help PR reviewers (e.g., known limitations, future todos) -->
-
-## Related Links
-
-<!-- Links related to the PR -->
-```
-
-With this PR template and Cursor's `@git` feature, you can use prompts like "Use the PR Generation prompt to write a description for these two commits" to generate comprehensive PR messages.
-
-#### Scenario: Assisting with Code Review
-
-- I recommend maintaining a Style Guide in Cursor's Docs. Combined with the `@git` feature, you can use prompts like "Review this PR using the JavaScript Style Guide" to assist with code reviews.
-
-- In addition to the style guide, the decision context records mentioned earlier can also be useful during code reviews.
-
-- Beyond using `@git`, you don't need to focus only on entire PRs; you can target specific files or code snippets for review. For example, import a React component file and have Cursor suggest improvements based on React best practices.
+- Beyond using `@git`, when reviewing code with Cursor, you don't need to focus only on entire PRs; you can target specific files or code snippets for review. For example, import a React component file and have Cursor suggest improvements based on React best practices.
 
 ## Reference
 
-[Cursor 入門到實戰 — 導覽｜ ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide)
+- [Cursor Guide | ExplainThis](https://www.explainthis.io/zh-hant/ai/cursor-guide)
+- [Cursor Docs](https://docs.cursor.com/welcome)
