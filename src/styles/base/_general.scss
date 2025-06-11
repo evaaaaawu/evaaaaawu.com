@@ -45,3 +45,8 @@ code {
   border-radius: 10px;
   overflow-x: auto;
 }
+
+code {
+  color: $color-accent-200;
+  font-weight: $font-weight-semi-bold;
+}
