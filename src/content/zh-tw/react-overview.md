@@ -26,7 +26,7 @@ featured: true
 - [建立 React element 方法的「語法糖」：JSX 語法](#建立-react-element-方法的語法糖jsx-語法)
 - [開發者自定義的畫面元件藍圖：Component](#開發者自定義的畫面元件藍圖component)
   - [將特定參數從外部傳遞給 Component 內部的機制：Props](#將特定參數從外部傳遞給-component-內部的機制props)
-  - [僅可在 function component 內頂層作用域中呼叫的特殊函式 aka React 提供的 API：Hooks](#僅可在-function-component-內頂層作用域中呼叫的特殊函式-aka-react-提供的-api-hooks)
+  - [僅可在 function component 內頂層作用域中呼叫的特殊函式 aka React 提供的 API：Hooks](#僅可在-function-component-內頂層作用域中呼叫的特殊函式-aka-react-提供的-apihooks)
 - [Component 的三大生命週期](#component-的三大生命週期)
   - [mount = render](#mount--render)
   - [update = re-render = reconciliation](#update--re-render--reconciliation)
