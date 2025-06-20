@@ -4,15 +4,24 @@
   font-size: $article-body-font-size-sm-screen;
 
   > h2 {
-    font-size: $article-h2-font-size-sm-screen;
+    font-size: $font-size-700;
     font-weight: $article-h2-font-weight;
+  }
+
+  > h3 {
+    font-size: $font-size-600;
+    font-weight: $font-weight-semi-bold;
   }
 
   @include mq(medium) {
     font-size: $article-body-font-size-lg-screen;
 
     > h2 {
-      font-size: $article-h2-font-size-lg-screen;
+      font-size: $font-size-700;
+    }
+
+    > h3 {
+      font-size: $font-size-600;
     }
   }
 

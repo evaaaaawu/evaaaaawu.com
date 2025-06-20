@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 
-h3 {
+// 只對非文章內容的 h3 套用樣式
+:not(.full-article) > h3 {
   font-size: $font-size-500;
   font-weight: $font-weight-semi-bold;
 }
