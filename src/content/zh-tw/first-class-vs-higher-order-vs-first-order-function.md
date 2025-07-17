@@ -14,7 +14,7 @@ featured: true
 
 First-Class Function(一級函式)、Higher-Order Function(高階函式) 與 First-Order Function(一階函式) 這三個專有名詞看起來很像，非常容易造成混淆，因此這篇文章要來好好的介紹這三個專有名詞是什麼，以及比較它們之間的關係。
 
-## First-Class Function**(一級函式)**：函式即是值
+## First-Class Function(一級函式)：函式即是值
 
 First-Class Function(一級函式) 是程式語言設計中的一個重要概念，指的是程式語言將函式當作「第一等公民」來對待，具有與其他資料型別相同的權利和能力。
 
@@ -64,7 +64,7 @@ const operations = {
 
 而大多數的現代程式語言都有支持一級函式，例如 JavaScript，Python 等。這讓函式變得極其靈活，開啟了 Higher-Order Functions(高階函式)、Callbacks(回調函式)、Closures(閉包) 等強大的程式設計模式。
 
-## **Higher-Order Function(高階函式)**：操作函式的函式
+## Higher-Order Function(高階函式)：操作函式的函式
 
 Higher-Order Function(高階函式) 簡單來說就是：以函式為參數或回傳函式的函式。
 
