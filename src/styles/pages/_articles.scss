@@ -13,6 +13,32 @@
     font-weight: $font-weight-semi-bold;
   }
 
+  // Inline math ($...$)
+  .katex {
+    font-size: 1.1em;
+
+    @media (max-width: 640px) {
+      font-size: 1.05em;
+    }
+  }
+
+  // Display math ($$...$$)
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 1.5em 0;
+    padding: 0 0.5rem;
+
+    @media (max-width: 640px) {
+      font-size: 0.9em;
+    }
+  }
+
+  // Ensure math symbols don't affect line height
+  .katex-html {
+    white-space: nowrap;
+  }
+
   @include mq(medium) {
     font-size: $article-body-font-size-lg-screen;
 
@@ -22,6 +48,16 @@
 
     > h3 {
       font-size: $font-size-600;
+    }
+
+    // Medium and large screen math adjustments
+    .katex {
+      font-size: 1.15em;
+    }
+
+    .katex-display {
+      font-size: 1em;
+      padding: 0;
     }
   }
 
