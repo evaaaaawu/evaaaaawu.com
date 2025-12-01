@@ -15,7 +15,10 @@
     "astro": "^5.0.2",
     "astro-meta-tags": "^0.3.1",
     "astro-og-canvas": "^0.5.6",
-    "astro-seo-metadata": "^0.6.0"
+    "astro-seo-metadata": "^0.6.0",
+    "katex": "^0.16.25",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",
