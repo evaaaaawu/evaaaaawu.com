@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import netlify from '@astrojs/netlify/functions';
 import metaTags from 'astro-meta-tags';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,5 +20,9 @@ export default defineConfig({
       strategy: 'prefix', // Creates URLs like /about, /zh-tw/about
       prefixDefaultLocale: false // English doesn't need /en/ prefix
     },
-  }
+  },
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
+  },
 });
