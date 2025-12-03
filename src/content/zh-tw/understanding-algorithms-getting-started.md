@@ -121,3 +121,17 @@ RAM model 的全名是 Random-Access Machine model（隨機存取機器模型）
 - **相似性**：它們往往與某些已知存在高效解法的問題極為相似，問題描述上的微小差異就可能導致它的難度從「容易」驟升至「困難」。
 
 了解NP完備問題的現實意義在於：當我們遇到的問題被證明是NP完備時，就不該再浪費時間去尋找完美的最佳解。此時，更務實的策略是轉而開發「近似演算法」(Approximation Algorithm)，這種演算法雖然無法保證找到最佳解，但能在合理的時間內給出一個足夠好的答案。
+
+## 參考資料
+
+[Introduction to Algorithms, fourth edition](https://www.amazon.com/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X)
+
+## 附錄
+
+本文為系列文章，目前寫了五篇:
+
+1. [認識演算法：啟程](../understanding-algorithms-getting-started/)
+2. [認識演算法：常用資料結構](../understanding-algorithms-common-data-structures/)
+3. [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/)
+4. [認識演算法：各種線性時間排序](../understanding-algorithms-linear-time-sorting/)
+5. [認識演算法：選擇問題](../understanding-algorithms-selection-problem/)

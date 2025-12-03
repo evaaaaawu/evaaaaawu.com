@@ -12,7 +12,7 @@ tags:
 featured: false
 ---
 
-在 [認識演算法：啟程.md](./認識演算法：啟程.md) 這篇文章中，我們初步了解了什麼是演算法，以及如何好的設計演算法和評估它的效率等，接下來我們需要深入細節去認識和分析各種常見的演算法。本篇會聚焦在認識常見的「比較排序」相關演算法。
+在 [認識演算法：啟程](../understanding-algorithms-getting-started/) 這篇文章中，我們初步了解了什麼是演算法，以及如何好的設計演算法和評估它的效率等，接下來我們需要深入細節去認識和分析各種常見的演算法。本篇會聚焦在認識常見的「比較排序」相關演算法。
 
 比較排序這一類型的演算法有一個共同特點是，它們完全依賴比較兩個元素（$a_i$ 和 $a_j$）的相對大小（例如 $a_i \leq a_j$ 或 $a_i > a_j$）來獲得排序資訊。演算法不能「偷看」元素的實際數值，也不能用任何其他方式來獲取順序。
 
@@ -1129,3 +1129,17 @@ function swap(arr, i, j) {
 這個問題已經有被證明過比較排序存在一個**無法逾越的理論障礙**。不論你設計的演算法多麼巧妙，只要它遵循「兩兩比較」的規則，那麼在最壞情況下，它的時間複雜度**絕對不可能**優於 $O(n \log n)$。
 
 這也解釋了為什麼像**合併排序(Merge Sort)** 和**堆積排序(Heapsort)** 這麼重要。它們的最壞情況下的時間複雜度都是 $O(n \log n)$，正好達到了我們證明的理論下限。因此，我們稱它們是**漸進最佳(asymptotically optimal)** 的比較排序演算法。換句話說，你無法發明出在根本上更快的比較排序法了。
+
+## 參考資料
+
+[Introduction to Algorithms, fourth edition](https://www.amazon.com/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X)
+
+## 附錄
+
+本文為系列文章，目前寫了五篇:
+
+1. [認識演算法：啟程](../understanding-algorithms-getting-started/)
+2. [認識演算法：常用資料結構](../understanding-algorithms-common-data-structures/)
+3. [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/)
+4. [認識演算法：各種線性時間排序](../understanding-algorithms-linear-time-sorting/)
+5. [認識演算法：選擇問題](../understanding-algorithms-selection-problem/)

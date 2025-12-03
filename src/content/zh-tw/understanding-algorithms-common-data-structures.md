@@ -12,7 +12,7 @@ tags:
 featured: false
 ---
 
-在 [認識演算法：啟程.md](./認識演算法：啟程.md) 這篇文章中，我們提到可以幫助更好的設計演算法的其中一個策略是使用**資料結構**。
+在 [認識演算法：啟程](../understanding-algorithms-getting-started/) 這篇文章中，我們提到可以幫助更好的設計演算法的其中一個策略是使用**資料結構**。
 
 我們也有提到資料結構是一種儲存和組織資料的方式，目的是為了讓資料的存取和修改更加方便。並且，資料結構有很多類型，為特定問題選擇合適的資料結構是演算法設計中的重要一環。
 
@@ -122,7 +122,7 @@ featured: false
 
    - 與陣列不同，鏈結串列的線性順序是由節點內的指標決定的。在一個雙向鏈結串列(doubly linked list) 中，每個節點 `x` 會有：
 
-      - `[x.next](x.next)`：指向其後繼節點。
+      - `x.next`：指向其後繼節點。
 
       - `x.prev`：指向其前驅節點。
 
@@ -186,15 +186,15 @@ featured: false
 
    堆疊可以透過陣列來實現，我們將此陣列表示為 `S[1:n]` 來做以下說明。這個實現有幾個關鍵屬性：
 
-  - `[S.top](S.top)`: 這是一個索引值，永遠指向堆疊中「最頂端」——也就是最近插入——的元素。
+  - `S.top`: 這是一個索引值，永遠指向堆疊中「最頂端」——也就是最近插入——的元素。
 
   - `S.size`: 這代表用來儲存堆疊的陣列大小，也就是堆疊的容量上限。
 
-  - 堆疊中的實際元素儲存在 `S[1...``[S.top](S.top)``]` 的範圍內。`S[1]` 是堆疊底部的元素，而 `S[``[S.top](S.top)``]` 則是頂部的元素。當 `[S.top](S.top)` 為 0 時，代表堆疊是空的。
+  - 堆疊中的實際元素儲存在 `S[1...S.top]` 的範圍內。`S[1]` 是堆疊底部的元素，而 `S[S.top]` 則是頂部的元素。當 `S.top` 為 0 時，代表堆疊是空的。
 
 - **邊界條件：溢位(Overflow) 與下溢(Underflow)**
 
-  - **溢位(Overflow)**：如果我們試圖對一個已經滿的堆疊——也就是 `[S.top](S.top)` 已經等於陣列大小 `S.size`——執行 PUSH 操作，就會發生錯誤，因為沒有空間可以存放新元素了。
+  - **溢位(Overflow)**：如果我們試圖對一個已經滿的堆疊——也就是 `S.top` 已經等於陣列大小 `S.size`——執行 PUSH 操作，就會發生錯誤，因為沒有空間可以存放新元素了。
 
   - **下溢(Underflow)**：如果我們試圖對一個空的堆疊執行 POP 操作時，也會發生錯誤，因為裡面已經沒有元素可以移除了。
 
@@ -497,3 +497,17 @@ featured: false
 - **對負載因子敏感**：特別是對於開放定址法，當負載因子 $\alpha$ 升高——也就是表格變滿——時，效能會顯著下降。
 
 - **無序性**：雜湊表中的元素是根據它的雜湊值存放的，這通常是無序的。因此，雜湊表不適合需要範圍查詢、或需要快速找到最大/最小值、前驅/後繼元素的應用。這些操作在如二元搜尋樹等有序的資料結構中更有效率。
+
+## 參考資料
+
+[Introduction to Algorithms, fourth edition](https://www.amazon.com/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X)
+
+## 附錄
+
+本文為系列文章，目前寫了五篇:
+
+1. [認識演算法：啟程](../understanding-algorithms-getting-started/)
+2. [認識演算法：常用資料結構](../understanding-algorithms-common-data-structures/)
+3. [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/)
+4. [認識演算法：各種線性時間排序](../understanding-algorithms-linear-time-sorting/)
+5. [認識演算法：選擇問題](../understanding-algorithms-selection-problem/)

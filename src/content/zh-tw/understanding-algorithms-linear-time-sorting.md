@@ -12,7 +12,7 @@ tags:
 featured: false
 ---
 
-在 [認識演算法：各種比較排序.md](./認識演算法：各種比較排序.md) 這篇文章的結尾中，我們談到了比較排序演算法在時間效率上有一個無法突破的理論極限，也就是在最壞情況下，它的時間複雜度**絕對不可能**優於 $O(n \log n)$。
+在 [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/) 這篇文章的結尾中，我們談到了比較排序演算法在時間效率上有一個無法突破的理論極限，也就是在最壞情況下，它的時間複雜度**絕對不可能**優於 $O(n \log n)$。
 
 接下來我們要問的問題就是：**若不用「兩兩比較」的方式來排序，我們還可以找到其他方式來進行排序嗎？若可以，這個方法的時間效率能否超越比較排序的速度極限——也就是** $O(n \log n)$**？**
 
@@ -534,3 +534,17 @@ function bucketSort(arr) {
 理想情況下，每個桶正好分到一個元素，這樣我們根本不需要對桶內部進行排序。即使不那麼理想，平均來看，每個桶也只會分到常數個元素。對一個只有兩三個元素的列表進行排序，幾乎不花時間。因此，整個演算法最耗時的部分就變成了那一次「將 $n$ 個元素逐一放入對應桶中」的過程，這個過程的複雜度顯然是 $\Theta(n)$。
 
 然而，當所有元素都「不聽話」，全部擠進同一個桶時——也就是最差情況，這個演算法就退化成了對這 $n$ 個元素只使用插入排序，效率自然就掉到了 $\Theta(n^2)$。
+
+## 參考資料
+
+[Introduction to Algorithms, fourth edition](https://www.amazon.com/Introduction-Algorithms-fourth-Thomas-Cormen/dp/026204630X)
+
+## 附錄
+
+本文為系列文章，目前寫了五篇:
+
+1. [認識演算法：啟程](../understanding-algorithms-getting-started/)
+2. [認識演算法：常用資料結構](../understanding-algorithms-common-data-structures/)
+3. [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/)
+4. [認識演算法：各種線性時間排序](../understanding-algorithms-linear-time-sorting/)
+5. [認識演算法：選擇問題](../understanding-algorithms-selection-problem/)
