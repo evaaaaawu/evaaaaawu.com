@@ -1,5 +1,5 @@
 ---
-title: Understanding Algorithms: The Selection Problem
+title: "Understanding Algorithms: The Selection Problem"
 subtitle: Learn how to efficiently find the i-th smallest element in a set, mastering the essence of RANDOMIZED-SELECT and SELECT algorithms.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-algorithms-selection-problem.webp

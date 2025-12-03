@@ -1,5 +1,5 @@
 ---
-title: Understanding Algorithms: Linear-Time Sorting
+title: "Understanding Algorithms: Linear-Time Sorting"
 subtitle: Explore counting sort, radix sort, bucket sort and other linear-time sorting algorithms that break through the limits of comparison-based sorting.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-algorithms-linear-time-sorting.webp

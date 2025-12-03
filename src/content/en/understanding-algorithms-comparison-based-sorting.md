@@ -1,5 +1,5 @@
 ---
-title: Understanding Algorithms: Comparison-Based Sorting
+title: "Understanding Algorithms: Comparison-Based Sorting"
 subtitle: In-depth analysis of the principles, implementation, and efficiency of comparison-based sorting algorithms including insertion sort, merge sort, heapsort, and quicksort.
 author: src/content/authors/eva.json
 imageWebp: /images/articles/webp/understanding-algorithms-comparison-based-sorting.webp
