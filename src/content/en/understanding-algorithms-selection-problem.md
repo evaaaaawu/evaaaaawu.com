@@ -110,7 +110,8 @@ function randomizedSelect(arr, p, r, i) {
 /**
  * Auxiliary function: Randomized partitioning.
  * This is one of the core steps of RANDOMIZED-SELECT.
- * It randomly selects a pivot and rearranges the array so all elements less than or equal to the pivot are on the left, greater ones on the right.
+ * It randomly selects a pivot and rearranges the array so all elements less than or equal to the pivot are on the left,
+ * greater ones on the right.
  * @param {Array<number>} arr - Target array.
  * @param {number} p - Starting index of the subarray.
  * @param {number} r - Ending index of the subarray.

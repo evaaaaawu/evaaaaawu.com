@@ -97,14 +97,16 @@ function countingSort(A, k) {
   const C = new Array(k + 1).fill(0);
 
   // Step 2: Calculate the number of occurrences of each element
-  // Traverse input array A, using each element's value as an index, incrementing the corresponding position in C array
+  // Traverse input array A, using each element's value as an index,
+  // incrementing the corresponding position in C array
   for (let j = 0; j < n; j++) {
     C[A[j]]++;
   }
   // At this point, C[i] represents the number of times number i appears in A.
 
   // Step 3: Calculate cumulative counts
-  // Traverse counting array C, updating each position's value to the sum of itself and the previous position's value
+  // Traverse counting array C,
+  // updating each position's value to the sum of itself and the previous position's value
   for (let i = 1; i <= k; i++) {
     C[i] = C[i] + C[i - 1];
   }
@@ -310,7 +312,7 @@ function radixSort(nums) {
     }
 
     // 5. Retrieve all numbers from buckets in order (bucket 0 to bucket 9), recombining into a new array
-    //    This step completes sorting for the k-th digit
+    // This step completes sorting for the k-th digit
     nums = [].concat(...digitBuckets);
   }
 
@@ -480,7 +482,8 @@ function bucketSort(arr) {
   // Step 3: Sort elements in each bucket.
   // Traverse all buckets.
   for (let i = 0; i < n; i++) {
-    // Insertion sort could be used here since we expect few elements in each bucket, but in JavaScript, directly using the built-in .sort() method is more convenient and efficient.
+    // Insertion sort could be used here since we expect few elements in each bucket,
+    // but in JavaScript, directly using the built-in .sort() method is more convenient and efficient.
     // For number sorting, need to provide a comparison function (a, b) => a - b.
     buckets[i].sort((a, b) => a - b);
   }
