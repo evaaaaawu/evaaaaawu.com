@@ -61,6 +61,11 @@
     }
   }
 
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   > img {
     width: 100%;
     max-height: 40vmin;
