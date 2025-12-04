@@ -32,4 +32,9 @@ const currentLocale = Astro.url.pathname.split("/")[1];
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
   }
+
+  // Prevent grid items from expanding beyond viewport width
+  main {
+    min-width: 0;
+  }
 </style>
