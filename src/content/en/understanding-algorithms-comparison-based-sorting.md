@@ -155,7 +155,7 @@ Below we'll explain using a more intuitive understanding:
 
 ## Merge Sort
 
-Merge sort is a **divide-and-conquer** algorithm (regarding divide-and-conquer, the Algorithm Design Strategies section of the article [Understanding Algorithms: Getting Started](./Understanding Algorithms: Getting Started.md) provides relevant explanations). It recursively divides the sequence to be sorted in half until each subsequence has only one element, then merges these sorted subsequences two by two, ultimately combining them into a completely sorted sequence.
+Merge sort is a **divide-and-conquer** algorithm (regarding divide-and-conquer, the Algorithm Design Strategies section of the article [Understanding Algorithms: Getting Started](../understanding-algorithms-getting-started/) provides relevant explanations). It recursively divides the sequence to be sorted in half until each subsequence has only one element, then merges these sorted subsequences two by two, ultimately combining them into a completely sorted sequence.
 
 In algorithm design, there are multiple problem-solving strategies, and the "divide-and-conquer" used by merge sort is a very powerful design technique. Compared to the "incremental method" used by insertion sort, divide-and-conquer provides a completely different approach. Algorithms designed with this approach typically have significant improvements in efficiency, especially when dealing with large-scale data.
 
