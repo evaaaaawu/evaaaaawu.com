@@ -4,7 +4,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 const allArticles = await getCollection("zh-tw");
 allArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate)
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
 );
 
 const uniqueTags = [
@@ -14,7 +14,7 @@ const uniqueTags = [
 uniqueTags.sort();
 ---
 
-<BaseLayout withGradient title="Eva Wu's Tech Blog | Tags">
+<BaseLayout withGradient title="Eva Wu's Personal Website | Tags">
   <div class="container">
     <div class="flex-group margin-block-10">
       {

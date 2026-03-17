@@ -1,7 +1,7 @@
-# Eva Wu's Tech Blog
+# Eva Wu's Personal Website
 
 <p>
-  This is my personal tech blog, primarily dedicated to programming study notes and software/digital-related content. I will also cover broader software and digital topics in the future.
+  This is my personal website.
 </p>
 
 ### Here is the URL:
