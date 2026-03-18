@@ -1,7 +1,6 @@
 ---
 import LogoLink from "./LogoLink.astro";
 import PrimaryNavigation from "./PrimaryNavigation.astro";
-import SocialLinks from "./SocialLinks.astro";
 import LanguageSwitcher from "./LanguageSwitcher.astro";
 import { useTranslations } from "../utils/translations";
 
@@ -30,7 +29,6 @@ const { t } = useTranslations(locale);
           <li><a href={`/${locale}/tags/`}>{t("nav.tags")}</a></li>
           <li><a href={`/${locale}/articles/`}>{t("nav.articles")}</a></li>
         </PrimaryNavigation>
-        <SocialLinks class="socials" />
         <LanguageSwitcher
           class="language-switcher"
           currentPath={Astro.url.pathname}
@@ -99,7 +97,7 @@ const { t } = useTranslations(locale);
         gap: 3rem;
         grid-template-areas:
           "nav nav nav nav nav nav nav nav"
-          "socials socials socials socials socials socials socials language-switcher";
+          "language-switcher language-switcher language-switcher language-switcher language-switcher language-switcher language-switcher language-switcher";
         position: absolute;
         left: 0;
         padding: $sticky-nav-padding;
@@ -112,12 +110,6 @@ const { t } = useTranslations(locale);
 
         [aria-label="primary navigation"] {
           grid-area: nav;
-        }
-
-        .socials {
-          grid-area: socials;
-          align-self: start;
-          margin-left: 1.3rem;
         }
 
         .nav {
@@ -151,7 +143,7 @@ const { t } = useTranslations(locale);
         gap: 3rem;
         grid-template-areas:
           "nav nav nav nav nav"
-          "socials socials socials socials language-switcher";
+          "language-switcher language-switcher language-switcher language-switcher language-switcher";
       }
     }
 
