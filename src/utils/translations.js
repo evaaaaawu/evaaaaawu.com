@@ -3,25 +3,29 @@ const translations = {
     site: {
       title: "Eva Wu's Personal Website",
       description: "",
-      info1: "Continue scrolling down to see my recommended articles.",
-      info2: 'If you want to choose articles by topic, click the "Tags" page.',
-      info3:
-        'If you want to browse all of my articles, click the "Articles" page.',
     },
     nav: {
       home: "Home",
-      tags: "Tags",
-      articles: "Articles",
+      writing: "Writing",
+      stream: "Stream",
     },
     common: {
-      readMore: "Read Full Article",
-      featured: "Featured articles",
+      featured: "Featured",
+      outdated: "Outdated",
+      allTopics: "All",
+      sortBy: "Sort by",
+      sortByUpdated: "Updated date",
+      sortByPublished: "Published date",
+      newestFirst: "Newest first",
+      oldestFirst: "Oldest first",
+      published: "PUBLISHED",
+      updated: "UPDATED",
       skipToContent: "Skip to content",
       menu: "Menu",
     },
-    articles: {
-      all: "All articles",
-      tagged: "All articles tagged with",
+    stream: {
+      comingSoon:
+        "This page is under construction. Stay tuned!",
     },
     footer: {
       copyright: "© 2026 Eva Wu's Personal Website",
@@ -31,24 +35,28 @@ const translations = {
     site: {
       title: "Eva Wu 的個人網站",
       description: "",
-      info1: "繼續往下滑可以看到我推薦的精選文章。",
-      info2: "如果想要依主題選擇文章，可以點擊「主題文章」頁面。",
-      info3: "如果想要瀏覽我的所有文章，可以點擊「所有文章」頁面。",
     },
     nav: {
       home: "首頁",
-      tags: "主題文章",
-      articles: "所有文章",
+      writing: "我的文章",
+      stream: "短分享",
     },
     common: {
-      readMore: "閱讀全文",
-      featured: "精選文章",
+      featured: "Featured",
+      outdated: "Outdated",
+      allTopics: "All",
+      sortBy: "Sort by",
+      sortByUpdated: "Updated date",
+      sortByPublished: "Published date",
+      newestFirst: "Newest first",
+      oldestFirst: "Oldest first",
+      published: "PUBLISHED",
+      updated: "UPDATED",
       skipToContent: "跳至內容",
       menu: "選單",
     },
-    articles: {
-      all: "所有文章",
-      tagged: "的所有主題文章",
+    stream: {
+      comingSoon: "頁面製作中，敬請期待！",
     },
     footer: {
       copyright: "© 2026 Eva Wu 的個人網站",
