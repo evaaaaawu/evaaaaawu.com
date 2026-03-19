@@ -19,4 +19,5 @@ pnpm-debug.log*
 .env.production
 
 # claude
+.claude
 CLAUDE.md
