@@ -1,46 +1,37 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArticlePreview from "../../components/ArticlePreview.astro";
-import { getCollection } from "astro:content";
 import { useTranslations } from "../../utils/translations";
 
 const locale = "en";
 const { t } = useTranslations(locale);
-
-const allArticles = await getCollection("en");
-allArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
-);
-
-const featuredArticles = await getCollection("en", ({ data }) => data.featured);
-featuredArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
-);
 ---
 
 <BaseLayout withGradient title="Eva Wu's Personal Website" locale={locale}>
   <div class="container flow">
     <section class="section">
       <h1 class="heading-1">{t("site.title")}</h1>
-      <p class="fs-600 margin-block-start-6">
-        {t("site.description")}
+      <div class="fs-600 margin-block-start-6 homepage-description">
+        <p>Welcome to my personal website. Currently, the site has two main pages:</p>
         <ul>
-          <li>{t("site.info1")}</li>
-          <li>{t("site.info2")}</li>
-          <li>{t("site.info3")}</li>
+          <li>
+            <a href={`/${locale}/writing/`}>Writing</a>: I try to document the things and ideas in life that are meaningful to me. Here you'll find articles I've written on a range of topics — from things I feel connected to, to learning notes.
+          </li>
+          <li>
+            <a href={`/${locale}/stream/`}>Stream</a>: Think of this as my personal X/Threads — a place for short, real-time thoughts that haven't quite grown into full articles yet.
+          </li>
         </ul>
-      </p>
-    </section>
-
-    <section class="section flow">
-      <h2 class="heading-2">{t("common.featured")}</h2>
-      <div class="grid-auto-fit">
-        {
-          featuredArticles
-            .slice(0, 8)
-            .map((article) => <ArticlePreview {article} locale={locale} />)
-        }
       </div>
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  .homepage-description ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .homepage-description li {
+    margin-bottom: 0.75rem;
+  }
+</style>

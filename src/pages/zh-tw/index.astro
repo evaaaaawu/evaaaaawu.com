@@ -1,49 +1,37 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import ArticlePreview from "../../components/ArticlePreview.astro";
-import { getCollection } from "astro:content";
 import { useTranslations } from "../../utils/translations";
 
 const locale = "zh-tw";
 const { t } = useTranslations(locale);
-
-const allArticles = await getCollection("zh-tw");
-allArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
-);
-
-const featuredArticles = await getCollection(
-  "zh-tw",
-  ({ data }) => data.featured,
-);
-featuredArticles.sort(
-  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
-);
 ---
 
-<BaseLayout withGradient title="Eva Wu's Personal Website" locale={locale}>
+<BaseLayout withGradient title="Eva Wu 的個人網站" locale={locale}>
   <div class="container flow">
     <section class="section">
       <h1 class="heading-1">{t("site.title")}</h1>
-      <p class="fs-600 margin-block-start-6">
-        {t("site.description")}
+      <div class="fs-600 margin-block-start-6 homepage-description">
+        <p>歡迎來到我的個人網站，目前這個網站主要有兩個頁面：</p>
         <ul>
-          <li>{t("site.info1")}</li>
-          <li>{t("site.info2")}</li>
-          <li>{t("site.info3")}</li>
+          <li>
+            <a href={`/${locale}/writing/`}>我的文章</a>：我想要盡可能的把人生對我來說有意義的事或想法紀錄下來。這裡收錄了我撰寫的各類文章——從我感興趣的事物到學習筆記。
+          </li>
+          <li>
+            <a href={`/${locale}/stream/`}>短分享</a>：這裡就像是我的個人 X/Threads，會收錄各種短的、即時的、還沒完整到可以成為文章的內容。
+          </li>
         </ul>
-      </p>
-    </section>
-
-    <section class="section flow">
-      <h2 class="heading-2">{t("common.featured")}</h2>
-      <div class="grid-auto-fit">
-        {
-          featuredArticles
-            .slice(0, 8)
-            .map((article) => <ArticlePreview {article} locale={locale} />)
-        }
       </div>
     </section>
   </div>
 </BaseLayout>
+
+<style>
+  .homepage-description ul {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .homepage-description li {
+    margin-bottom: 0.75rem;
+  }
+</style>
