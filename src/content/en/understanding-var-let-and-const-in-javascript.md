@@ -1,15 +1,11 @@
 ---
 title: Understanding var, let and const in JavaScript
-subtitle: var, let, and const are reserved keywords used for variable declaration in JavaScript. Initially, only var was available until ES6 introduced let and const.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-var-let-and-const-in-javascript.webp
-imagePng: /images/articles/png/understanding-var-let-and-const-in-javascript.png
-imgAlt: Understanding var, let and const in JavaScript
 creationDate: 2024-10-20
 updateDate: 2024-10-20
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 var, let, and const are reserved keywords used for variable declaration in JavaScript. Initially, only var was available until ES6 introduced let and const.

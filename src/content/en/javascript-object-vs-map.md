@@ -1,15 +1,11 @@
 ---
 title: JavaScript Object vs. Map
-subtitle: Map was introduced in ES6, while Object was traditionally used as a Map before ES6.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/javascript-object-vs-map.webp
-imagePng: /images/articles/png/javascript-object-vs-map.png
-imgAlt: JavaScript Object vs. Map
 creationDate: 2024-11-10
 updateDate: 2024-11-10
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 Map was introduced in ES6, while Object was traditionally used as a Map before ES6. The newly introduced Map has several key differences compared to the original Object:

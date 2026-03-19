@@ -10,7 +10,6 @@ export async function GET(context) {
     site: context.site,
     items: articles.map((article) => ({
       title: article.data.title,
-      subtitle: article.data.subtitle,
       pubDate: article.data.updateDate,
       link: `/en/articles/${article.slug}/`,
     })),

@@ -1,15 +1,11 @@
 ---
 title: Why Isn't 0.1 + 0.2 Exactly 0.3 in JavaScript?
-subtitle: Due to binary representation and limited computer memory, 0.1 + 0.2 = 0.30000000000000004.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/why-01-plus-02-equals-030000000000000004-in-javascript.webp
-imagePng: /images/articles/png/why-01-plus-02-equals-030000000000000004-in-javascript.png
-imgAlt: Why 0.1 + 0.2 equals 0.30000000000000004 in JavaScript
 creationDate: 2024-11-24
 updateDate: 2024-11-24
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 In JavaScript, 0.1 + 0.2 doesn't equal exactly 0.3. This isn't unique to JavaScript but is a common issue in all programming languages that use binary floating-point arithmetic.

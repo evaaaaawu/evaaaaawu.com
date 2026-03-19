@@ -1,15 +1,11 @@
 ---
 title: 征服 RWD
-subtitle: RWD 是一種設計方式，讓網站能夠在各種設備和螢幕尺寸下進行調整，以最佳化的方式呈現內容。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-responsive-web-design-rwd.webp
-imagePng: /images/articles/png/mastering-responsive-web-design-rwd.png
-imgAlt: Mastering Responsive Web Design
 creationDate: 2024-03-10
 updateDate: 2024-03-10
-tags:
+topics:
   - CSS
 featured: true
+outdated: true
 ---
 
 RWD = Responsive Web Design = 響應式網頁設計，它是一種設計方式，讓網站能夠在各種設備和螢幕尺寸下自適應顯示。

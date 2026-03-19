@@ -1,15 +1,11 @@
 ---
 title: 使用「email 洗衣法」整理我的信箱
-subtitle: 嘗試用上線時間管理術的 email 洗衣法整理了我的 gmail，整理完的那一瞬間真的覺得身心舒暢。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/use-the-email-laundry-method-to-organize-my-inbox.webp
-imagePng: /images/articles/png/use-the-email-laundry-method-to-organize-my-inbox.png
-imgAlt: Use the "email laundry method" to organize my inbox
 creationDate: 2025-04-21
 updateDate: 2025-04-21
-tags:
+topics:
   - Digital Workflow
 featured: true
+outdated: true
 ---
 
 嘗試用[上線時間管理術](https://www.kobo.com/tw/zh/ebook/google-70?srsltid=AfmBOooJs6yhCaVHOrEe1dob3OCo9qEgM-razLwNkSSgmNI1u6Xva5Sh)的 email 洗衣法整理了我的 gmail，整理完的那一瞬間真的覺得身心舒暢。

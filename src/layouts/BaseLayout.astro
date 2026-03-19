@@ -3,12 +3,12 @@ import BaseHead from "../components/BaseHead.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
-const { title, description, author, ogimage, withGradient } = Astro.props;
+const { title, description, ogimage, withGradient } = Astro.props;
 const currentLocale = Astro.url.pathname.split("/")[1];
 ---
 
 <html lang={currentLocale}>
-  <BaseHead {title} {description} {author} {ogimage} />
+  <BaseHead {title} {description} {ogimage} />
   <body class={withGradient && "with-gradient"}>
     <SiteHeader locale={currentLocale} />
     <main id="main">

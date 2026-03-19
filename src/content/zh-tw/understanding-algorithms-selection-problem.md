@@ -1,15 +1,11 @@
 ---
 title: 認識演算法：選擇問題
-subtitle: 學習如何高效找出集合中第 i 小元素，掌握 RANDOMIZED-SELECT 與 SELECT 演算法的精髓。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-selection-problem.webp
-imagePng: /images/articles/png/understanding-algorithms-selection-problem.png
-imgAlt: Understanding Algorithms_The Selection Problem
 creationDate: 2025-12-02
 updateDate: 2025-12-02
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 在 [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/) 和 [認識演算法：各種線性時間排序](../understanding-algorithms-linear-time-sorting/) 這兩篇文章中，我們介紹了各種常見的排序演算法，接下來這篇文章我們要接著介紹和排序問題有一點相關的選擇問題。

@@ -1,15 +1,11 @@
 ---
 title: JavaScript 的 this
-subtitle: 在 JavaScript 中，this 的值是動態的，通常會由被呼叫的函式來決定。所以，影響 this 的值不是宣告的時機，關鍵在於在哪裡被調用。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/this-in-javascript.webp
-imagePng: /images/articles/png/this-in-javascript.png
-imgAlt: This in JavaScript
 creationDate: 2024-10-15
 updateDate: 2024-10-15
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 在 JavaScript 中，this  的值是動態的，通常會由被呼叫的函式來決定。所以，影響  this  的值不是宣告的時機，關鍵在於在哪裡被調用。

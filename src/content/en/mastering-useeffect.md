@@ -1,15 +1,11 @@
 ---
 title: Mastering useEffect - Summary and Understanding Notes from Dan Abramov's "A Complete Guide to useEffect"
-subtitle: Deep dive into useEffect through insights from former React team member Dan Abramov's article.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-useeffect.webp
-imagePng: /images/articles/png/mastering-useeffect.png
-imgAlt: Mastering useEffect
 creationDate: 2025-06-19
 updateDate: 2025-06-19
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 useEffect is arguably one of the most important yet challenging Hooks to understand in React. Previously, I briefly introduced useEffect in [this section](https://evaaaaawu.com/en/articles/react-overview/#special-functions-that-can-only-be-called-in-the-top-level-scope-of-function-components-aka-react-apis-hooks) article. Now, let's dive deeper into understanding useEffect through former React team member Dan Abramov's comprehensive article: [A Complete Guide to useEffect — overreacted](https://overreacted.io/a-complete-guide-to-useeffect/).

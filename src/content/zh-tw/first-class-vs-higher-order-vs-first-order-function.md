@@ -1,15 +1,11 @@
 ---
 title: First-Class、Higher-Order 與 First-Order Function
-subtitle: 介紹三個看起來很像、容易混淆的專有名詞，並比較它們之間的關係。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/first-class-vs-higher-order-vs-first-order-function.webp
-imagePng: /images/articles/png/first-class-vs-higher-order-vs-first-order-function.png
-imgAlt: First-Class v.s. Higher-Order v.s. First-Order Function
 creationDate: 2025-07-17
 updateDate: 2025-07-17
-tags:
+topics:
   - JavaScript
 featured: true
+outdated: true
 ---
 
 First-Class Function(一級函式)、Higher-Order Function(高階函式) 與 First-Order Function(一階函式) 這三個專有名詞看起來很像，非常容易造成混淆，因此這篇文章要來好好的介紹這三個專有名詞是什麼，以及比較它們之間的關係。

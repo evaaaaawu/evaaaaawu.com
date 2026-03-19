@@ -1,15 +1,11 @@
 ---
 title: Understanding JavaScript Hoisting
-subtitle: Hoisting is a concept that describes how JavaScript stores variable and function declarations in memory during the compilation phase.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-javascript-hoisting.webp
-imagePng: /images/articles/png/understanding-javascript-hoisting.png
-imgAlt: Understanding JavaScript Hoisting
 creationDate: 2024-12-08
 updateDate: 2024-12-08
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 Hoisting is a concept that describes how JavaScript stores variable and function declarations in memory during the compilation phase. For variables declared with `var`, hoisting moves these declarations to the top of their function scope during compilation. However, while variable declarations are hoisted, their values are not assigned. This means if you access such a variable before its assignment, you'll get `undefined`.

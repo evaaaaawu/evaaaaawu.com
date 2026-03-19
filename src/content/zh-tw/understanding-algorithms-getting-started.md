@@ -1,15 +1,11 @@
 ---
 title: 認識演算法：啟程
-subtitle: 深入探索演算法的本質、效率分析框架、設計策略，以及它的理論極限。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-getting-started.webp
-imagePng: /images/articles/png/understanding-algorithms-getting-started.png
-imgAlt: Understanding Algorithms_Getting Started
 creationDate: 2025-11-28
 updateDate: 2025-11-28
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 在日常生活中，我們可能常聽到以下對話：

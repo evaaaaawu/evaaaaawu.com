@@ -1,15 +1,11 @@
 ---
 title: JavaScript Scope and Scope Chain Explained
-subtitle: Scope is the concept that determines where variables are accessible within your code, including global, function, and block scopes.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/javascript-scope-and-scope-chain-explained.webp
-imagePng: /images/articles/png/javascript-scope-and-scope-chain-explained.png
-imgAlt: JavaScript Scope and Scope Chain Explained
 creationDate: 2024-12-01
 updateDate: 2024-12-01
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 Scope determines where variables are accessible and can be referenced within your code.

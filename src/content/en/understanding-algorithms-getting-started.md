@@ -1,15 +1,11 @@
 ---
 title: "Understanding Algorithms: Getting Started"
-subtitle: Deeply explore the nature of algorithms, efficiency analysis frameworks, design strategies, and their theoretical limits.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-getting-started.webp
-imagePng: /images/articles/png/understanding-algorithms-getting-started.png
-imgAlt: Understanding Algorithms_Getting Started
 creationDate: 2025-11-28
 updateDate: 2025-11-28
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 In everyday life, we might often hear conversations like these:

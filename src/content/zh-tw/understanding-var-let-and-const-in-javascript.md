@@ -1,15 +1,11 @@
 ---
 title: 關於 JavaScript 中的 var、let 和 const
-subtitle: var、let 和 const 都是在 JavaScript 用來做變數宣告的保留字，早期原本只有 var，直到 ES6 後才加入了 let 和 const。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-var-let-and-const-in-javascript.webp
-imagePng: /images/articles/png/understanding-var-let-and-const-in-javascript.png
-imgAlt: Understanding var, let and const in JavaScript
 creationDate: 2024-10-20
 updateDate: 2024-10-20
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 var、let 和 const 都是在 JavaScript 用來做變數宣告的保留字，早期原本只有 var，直到 ES6 後才加入了 let 和 const。

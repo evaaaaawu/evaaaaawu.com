@@ -1,15 +1,11 @@
 ---
 title: Using the "Email Laundry Method" to Organize My Inbox
-subtitle: I tried using the email laundry method from the book "Uptime" to organize my Gmail, and the moment I finished organizing it, I truly felt mentally and physically refreshed.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/use-the-email-laundry-method-to-organize-my-inbox.webp
-imagePng: /images/articles/png/use-the-email-laundry-method-to-organize-my-inbox.png
-imgAlt: Use the "email laundry method" to organize my inbox
 creationDate: 2025-04-21
 updateDate: 2025-04-21
-tags:
+topics:
   - Digital Workflow
 featured: true
+outdated: true
 ---
 
 I tried using the email laundry method from the book "[Uptime](https://www.amazon.com/Uptime-Practical-Personal-Productivity-Wellbeing/dp/0063317443)" to organize my Gmail, and the moment I finished organizing it, I truly felt mentally and physically refreshed.

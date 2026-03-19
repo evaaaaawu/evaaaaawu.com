@@ -1,15 +1,11 @@
 ---
 title: JavaScript 中 null、undefined 與 undeclared 的區別
-subtitle: null 可以理解為沒有；undefined 可以理解為尚未；undeclared 則是指從未被宣告過。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/the-differences-between-null-undefined-and-undeclared-in-javascript.webp
-imagePng: /images/articles/png/the-differences-between-null-undefined-and-undeclared-in-javascript.png
-imgAlt: The Differences Between null, undefined and undeclared in JavaScript
 creationDate: 2024-11-03
 updateDate: 2024-11-03
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 null 可以理解為「沒有」，代表的是一個變數的空值。

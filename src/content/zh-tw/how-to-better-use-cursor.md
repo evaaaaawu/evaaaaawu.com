@@ -1,16 +1,12 @@
 ---
 title: 如何更好的使用 Cursor
-subtitle: 分享我的 Cursor 學習筆記和目前的使用方法。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/how-to-better-use-cursor.webp
-imagePng: /images/articles/png/how-to-better-use-cursor.png
-imgAlt: How to Better Use Cursor
 creationDate: 2025-04-30
 updateDate: 2025-06-10
-tags:
+topics:
   - AI
   - Digital Workflow
 featured: true
+outdated: true
 ---
 
 ## 開始閱讀前的注意事項

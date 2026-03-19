@@ -1,15 +1,11 @@
 ---
 title: JavaScript 的作用域(Scope)與作用域鏈(Scope Chain)
-subtitle: 作用域就像是範圍的概念，可以分成全域、函式作用域和塊級作用域。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/javascript-scope-and-scope-chain-explained.webp
-imagePng: /images/articles/png/javascript-scope-and-scope-chain-explained.png
-imgAlt: JavaScript Scope and Scope Chain Explained
 creationDate: 2024-12-01
 updateDate: 2024-12-01
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 作用域就像是範圍的概念，所以一個值（value）或者一個表達式（expression）可以被使用和找到的範圍，我們就叫做作用域。

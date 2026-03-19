@@ -1,15 +1,11 @@
 ---
 title: 認識演算法：各種比較排序
-subtitle: 深入解析插入排序、合併排序、堆積排序、快速排序等比較排序演算法的原理、實作與效率。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-comparison-based-sorting.webp
-imagePng: /images/articles/png/understanding-algorithms-comparison-based-sorting.png
-imgAlt: Understanding Algorithms_Comparison-Based Sorting Algorithms
 creationDate: 2025-11-30
 updateDate: 2025-11-30
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 在 [認識演算法：啟程](../understanding-algorithms-getting-started/) 這篇文章中，我們初步了解了什麼是演算法，以及如何好的設計演算法和評估它的效率等，接下來我們需要深入細節去認識和分析各種常見的演算法。本篇會聚焦在認識常見的「比較排序」相關演算法。

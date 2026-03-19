@@ -1,15 +1,11 @@
 ---
 title: JavaScript 的閉包(Closure)
-subtitle: 閉包就是內部函式能夠取得函式外部的變數，並且記住這個變數。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-javascript-closures.webp
-imagePng: /images/articles/png/understanding-javascript-closures.png
-imgAlt: Understanding JavaScript Closures
 creationDate: 2024-12-15
 updateDate: 2024-12-15
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## 什麼是閉包?

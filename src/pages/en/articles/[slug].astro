@@ -25,16 +25,14 @@ featuredArticles.sort(
 
 <BaseLayout
   title={article.data.title}
-  description={article.data.subtitle}
-  author={article.data.author}
-  image={article.data.imageSrc}
+  description=""
   ogimage={`/open-graph/${article.slug}.png`}
   locale={locale}
 >
   <article class="full-article | container flow" data-type="narrow">
     <div class="meta">
       <div class="flex-group align-center">
-        <Tag tag={article.data.tags[0]} locale={locale} />
+        <Tag tag={article.data.topics[0]} locale={locale} />
         PUBLISHED <FormattedDate date={article.data.creationDate} locale={locale} />
         UPDATED <FormattedDate date={article.data.updateDate} locale={locale} />
       </div>

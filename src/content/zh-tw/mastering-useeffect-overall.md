@@ -1,15 +1,11 @@
 ---
 title: 攻克 useEffect - 統整篇
-subtitle: 詳細介紹 React 的 useEffect 和使用策略。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-useeffect-overall.webp
-imagePng: /images/articles/png/mastering-useeffect-overall.png
-imgAlt: Mastering useEffect
 creationDate: 2025-06-25
 updateDate: 2025-06-25
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 ## Table of Contents

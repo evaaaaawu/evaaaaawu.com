@@ -1,15 +1,11 @@
 ---
 title: React 概覽
-subtitle: 參考「React 思維進化」這本書所撰寫的 React 概覽，希望可以藉此看到整個 React 的 big picture。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/react-overview.webp
-imagePng: /images/articles/png/react-overview.png
-imgAlt: React Overview
 creationDate: 2024-08-18
 updateDate: 2024-08-18
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 前陣子花了非常多的時間在理解 React，想要試著寫出自己目前對於它粗淺輪廓的認識，因此這篇文章會試著用綜覽的角度去撰寫，希望可以藉此看到整個 React 的 big picture，如果有較深入的細節想撰寫則會另外再寫成其他篇文章。

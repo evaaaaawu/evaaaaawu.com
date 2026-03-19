@@ -1,15 +1,11 @@
 ---
 title: Mastering useEffect - Complete Guide
-subtitle: A comprehensive introduction to React's useEffect and usage strategies.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-useeffect-overall.webp
-imagePng: /images/articles/png/mastering-useeffect-overall.png
-imgAlt: Mastering useEffect
 creationDate: 2025-06-25
 updateDate: 2025-06-25
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 ## Table of Contents

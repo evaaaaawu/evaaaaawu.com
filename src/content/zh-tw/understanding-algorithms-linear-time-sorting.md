@@ -1,15 +1,11 @@
 ---
 title: 認識演算法：各種線性時間排序
-subtitle: 探索計數排序、基數排序、桶排序等突破比較排序極限的線性時間排序演算法。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-linear-time-sorting.webp
-imagePng: /images/articles/png/understanding-algorithms-linear-time-sorting.png
-imgAlt: Understanding Algorithms_Linear-Time Sorting Algorithms
 creationDate: 2025-12-01
 updateDate: 2025-12-01
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 在 [認識演算法：各種比較排序](../understanding-algorithms-comparison-based-sorting/) 這篇文章的結尾中，我們談到了比較排序演算法在時間效率上有一個無法突破的理論極限，也就是在最壞情況下，它的時間複雜度**絕對不可能**優於 $O(n \log n)$。

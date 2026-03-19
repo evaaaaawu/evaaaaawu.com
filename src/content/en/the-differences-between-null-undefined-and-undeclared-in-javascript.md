@@ -1,15 +1,11 @@
 ---
 title: The Differences Between null, undefined, and undeclared in JavaScript
-subtitle: null can be understood as nothing; undefined can be understood as not yet; undeclared refers to never having been declared.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/the-differences-between-null-undefined-and-undeclared-in-javascript.webp
-imagePng: /images/articles/png/the-differences-between-null-undefined-and-undeclared-in-javascript.png
-imgAlt: The Differences Between null, undefined, and undeclared in JavaScript
 creationDate: 2024-11-03
 updateDate: 2024-11-03
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 JavaScript has three distinct ways to represent missing values. Understanding their differences is important for debugging and writing reliable code.

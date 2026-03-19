@@ -1,15 +1,11 @@
 ---
 title: CSS Flexbox 實作小抄
-subtitle: CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活化網頁元素的排版。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/css-flexbox-implementation-cheatsheet.webp
-imagePng: /images/articles/png/css-flexbox-implementation-cheatsheet.png
-imgAlt: CSS Flexbox Implementation Cheatsheet
 creationDate: 2024-02-04
 updateDate: 2024-02-04
-tags:
+topics:
   - CSS
 featured: true
+outdated: true
 ---
 
 CSS Flexbox 是一種強大的佈局模型，能夠幫助我們簡化和靈活化網頁元素的排版。

@@ -1,15 +1,11 @@
 ---
 title: This in JavaScript
-subtitle: In JavaScript, the value of 'this' is dynamic and typically determined by how a function is called. Therefore, what affects the value of 'this' is not when it's declared, but where it's invoked.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/this-in-javascript.webp
-imagePng: /images/articles/png/this-in-javascript.png
-imgAlt: This in JavaScript
 creationDate: 2024-10-15
 updateDate: 2024-10-15
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 In JavaScript, the value of `this` is dynamic and typically determined by how a function is called. This means that what affects the value of `this` is not when it's declared, but where it's invoked.

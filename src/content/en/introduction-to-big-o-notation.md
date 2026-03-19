@@ -1,15 +1,11 @@
 ---
 title: Introduction to Big O Notation
-subtitle: Big O is a mathematical notation used to describe algorithm efficiency, primarily focusing on input scale, growth patterns, and worst-case scenarios.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/introduction-to-big-o-notation.webp
-imagePng: /images/articles/png/introduction-to-big-o-notation.png
-imgAlt: Introduction to Big O Notation
 creationDate: 2024-11-05
 updateDate: 2024-11-05
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 Big O notation is a mathematical concept used to describe algorithm efficiency. Rather than focusing on precise measurements (such as actual execution time or CPU usage), it emphasizes how algorithms scale with input size, their growth patterns, and worst-case scenarios.

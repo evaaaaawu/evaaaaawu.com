@@ -1,15 +1,11 @@
 ---
 title: "Understanding Algorithms: Linear-Time Sorting"
-subtitle: Explore counting sort, radix sort, bucket sort and other linear-time sorting algorithms that break through the limits of comparison-based sorting.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-linear-time-sorting.webp
-imagePng: /images/articles/png/understanding-algorithms-linear-time-sorting.png
-imgAlt: Understanding Algorithms_Linear-Time Sorting Algorithms
 creationDate: 2025-12-01
 updateDate: 2025-12-01
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 At the end of the article [Understanding Algorithms: Comparison-Based Sorting](../understanding-algorithms-comparison-based-sorting/), we discussed that comparison-based sorting algorithms have an insurmountable theoretical limit on time efficiency—that is, in the worst case, their time complexity **absolutely cannot** be better than $O(n \log n)$.

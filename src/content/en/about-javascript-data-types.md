@@ -1,15 +1,11 @@
 ---
 title: About JavaScript Data Types
-subtitle: "JavaScript has two main data types: primitives and objects. Primitives include String, Boolean, Number, BigInt, Undefined, Null, and Symbol; objects include Array, Function, and Objects."
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/about-javascript-data-types.webp
-imagePng: /images/articles/png/about-javascript-data-types.png
-imgAlt: About JavaScript Data Types
 creationDate: 2024-11-03
 updateDate: 2024-11-03
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## JavaScript Has Two Main Data Types: "Primitive Values" and "Objects"

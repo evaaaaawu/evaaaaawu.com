@@ -1,15 +1,11 @@
 ---
 title: 在 Windows 上安裝 WSL2 經驗分享
-subtitle: 前陣子花了一些時間安裝 WSL2(Windows 子系統 Linux 版) 在我的電腦上，這裡來分享整個繁瑣的安裝筆記。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/installing-wsl2-on-windows.webp
-imagePng: /images/articles/png/installing-wsl2-on-windows.png
-imgAlt: Installing WSL2 on Windows
 creationDate: 2025-06-11
 updateDate: 2025-06-11
-tags:
+topics:
   - Linux
 featured: true
+outdated: true
 ---
 
 前一陣子因為把主力使用電腦換成了 Windows，加上看過很多人推薦過在 Windows 上使用 WSL2 環境進行開發，於是花了一些時間安裝 WSL2(Windows 子系統 Linux 版) 在我的電腦上，整個過程還蠻繁瑣複雜的，所以這裡來分享一下我的安裝筆記。

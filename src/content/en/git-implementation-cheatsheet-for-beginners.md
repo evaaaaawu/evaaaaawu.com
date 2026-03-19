@@ -1,15 +1,11 @@
 ---
 title: Git Implementation Cheatsheet for Beginners
-subtitle: Git is a distributed version control system mainly used to manage and track code changes, particularly suitable for collaborative development projects.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/git-implementation-cheatsheet-for-beginners.webp
-imagePng: /images/articles/png/git-implementation-cheatsheet-for-beginners.png
-imgAlt: Git Implementation Cheatsheet for Beginners
 creationDate: 2023-06-15
 updateDate: 2023-06-15
-tags:
+topics:
   - Git
 featured: true
+outdated: true
 ---
 
 The first time I encountered Git, I immediately loved it. Before learning programming, I never imagined that files could be managed in such a systematic way, clearly showing the differences between versions and who wrote what. If you regret making changes, you can easily revert to previous versions.

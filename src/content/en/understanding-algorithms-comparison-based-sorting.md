@@ -1,15 +1,11 @@
 ---
 title: "Understanding Algorithms: Comparison-Based Sorting"
-subtitle: In-depth analysis of the principles, implementation, and efficiency of comparison-based sorting algorithms including insertion sort, merge sort, heapsort, and quicksort.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-comparison-based-sorting.webp
-imagePng: /images/articles/png/understanding-algorithms-comparison-based-sorting.png
-imgAlt: Understanding Algorithms_Comparison-Based Sorting Algorithms
 creationDate: 2025-11-30
 updateDate: 2025-11-30
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 In the article [Understanding Algorithms: Getting Started](../understanding-algorithms-getting-started/), we gained a preliminary understanding of what algorithms are, how to design algorithms well, and how to evaluate their efficiency. Next, we need to delve into details to understand and analyze various common algorithms. This article will focus on understanding common "comparison-based sorting" algorithms.

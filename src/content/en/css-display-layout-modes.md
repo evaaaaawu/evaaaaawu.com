@@ -1,15 +1,11 @@
 ---
 title: CSS Display Layout Modes
-subtitle: The CSS display property determines how an element is arranged on a page and affects the layout of its internal and surrounding elements.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/css-display-layout-modes.webp
-imagePng: /images/articles/png/css-display-layout-modes.png
-imgAlt: CSS Display Layout Modes
 creationDate: 2023-01-22
 updateDate: 2023-01-22
-tags:
+topics:
   - CSS
 featured: false
+outdated: true
 ---
 
 ## display: block

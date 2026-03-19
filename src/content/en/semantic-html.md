@@ -1,15 +1,11 @@
 ---
 title: Semantic HTML
-subtitle: Semantic HTML means developing with HTML tags that convey meaning.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/semantic-html.webp
-imagePng: /images/articles/png/semantic-html.png
-imgAlt: Semantic HTML
 creationDate: 2024-04-07
 updateDate: 2024-04-07
-tags:
+topics:
   - HTML
 featured: false
+outdated: true
 ---
 
 Semantic HTML means developing with HTML tags that convey meaning, such as the `<form>` tag or the `<table>` tag. Unlike generic containers like `<div>` or `<span>`, semantic elements clearly indicate their purpose and the type of content they contain.

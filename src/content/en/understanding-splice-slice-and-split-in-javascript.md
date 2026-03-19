@@ -1,15 +1,11 @@
 ---
 title: Understanding splice, slice, and split in JavaScript
-subtitle: splice modifies the original array, allowing insertion, deletion, or both simultaneously; slice extracts a portion of an array or string, returning a new array or string without modifying the original; split divides a string into an array based on a specified separator, leaving the original string unchanged.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-splice-slice-and-split-in-javascript.webp
-imagePng: /images/articles/png/understanding-splice-slice-and-split-in-javascript.png
-imgAlt: Understanding splice, slice, and split in JavaScript
 creationDate: 2023-08-05
 updateDate: 2023-08-05
-tags:
+topics:
   - JavaScript
 featured: true
+outdated: true
 ---
 
 <!-- Before we begin, here's a summary table I've prepared:

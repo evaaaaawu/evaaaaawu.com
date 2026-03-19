@@ -1,15 +1,11 @@
 ---
 title: JavaScript 的 Object v.s. Map
-subtitle: Map 是 ES6 新增的語法，所以在 ES6 之前，Object 一直被當作 Map 來使用。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/javascript-object-vs-map.webp
-imagePng: /images/articles/png/javascript-object-vs-map.png
-imgAlt: JavaScript Object v.s. Map
 creationDate: 2024-11-10
 updateDate: 2024-11-10
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 Map 是 ES6 新增的語法，所以在 ES6 之前，Object 一直被當作 Map 來使用，而新增的 Map 相較於原始的 Object 有下列幾項差異：

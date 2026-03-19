@@ -1,15 +1,11 @@
 ---
 title: React Overview
-subtitle: An overview of React based on the book "React Thinking Evolution", aiming to provide a big picture of the entire React ecosystem.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/react-overview.webp
-imagePng: /images/articles/png/react-overview.png
-imgAlt: React Overview
 creationDate: 2024-08-18
 updateDate: 2024-08-18
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 I've spent a considerable amount of time recently trying to understand React. I want to document my current understanding of its basic structure, so this article will attempt to provide an overview perspective, showing the big picture of React. If I want to delve into more specific details, I'll write separate articles for those topics.

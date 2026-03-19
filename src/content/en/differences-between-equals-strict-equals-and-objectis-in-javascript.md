@@ -1,15 +1,11 @@
 ---
 title: Differences between ==, === and Object.is() in JavaScript
-subtitle: == performs type coercion and value comparison; === doesn't perform type coercion but compares values; Object.is() compares if two values are the same.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/differences-between-equals-strict-equals-and-objectis-in-javascript.webp
-imagePng: /images/articles/png/differences-between-equals-strict-equals-and-objectis-in-javascript.png
-imgAlt: Differences between ==, === and Object.is() in JavaScript
 creationDate: 2024-10-27
 updateDate: 2024-10-27
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## == Loose Equality

@@ -1,15 +1,11 @@
 ---
 title: Understanding JavaScript Prototype
-subtitle: In JavaScript, prototype is a crucial concept in object-oriented programming, serving as the key to implementing inheritance and property sharing.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-javascript-prototype.webp
-imagePng: /images/articles/png/understanding-javascript-prototype.png
-imgAlt: Understanding JavaScript Prototype
 creationDate: 2024-10-16
 updateDate: 2024-10-16
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## Prototype

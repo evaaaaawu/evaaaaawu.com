@@ -1,15 +1,11 @@
 ---
 title: "Understanding Algorithms: The Selection Problem"
-subtitle: Learn how to efficiently find the i-th smallest element in a set, mastering the essence of RANDOMIZED-SELECT and SELECT algorithms.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-selection-problem.webp
-imagePng: /images/articles/png/understanding-algorithms-selection-problem.png
-imgAlt: Understanding Algorithms_The Selection Problem
 creationDate: 2025-12-02
 updateDate: 2025-12-02
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 In the articles [Understanding Algorithms: Comparison-Based Sorting](../understanding-algorithms-comparison-based-sorting/) and [Understanding Algorithms: Linear-Time Sorting](../understanding-algorithms-linear-time-sorting/), we introduced various common sorting algorithms. In this article, we'll continue by introducing the selection problem, which is somewhat related to the sorting problem.

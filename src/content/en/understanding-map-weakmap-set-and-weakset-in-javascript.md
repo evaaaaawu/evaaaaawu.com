@@ -1,15 +1,11 @@
 ---
 title: Understanding Map, WeakMap, Set, and WeakSet in JavaScript
-subtitle: Map/WeakMap are data structures similar to Objects, while Set/WeakSet are similar to arrays.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-map-weakmap-set-and-weakset-in-javascript.webp
-imagePng: /images/articles/png/understanding-map-weakmap-set-and-weakset-in-javascript.png
-imgAlt: Understanding Map, WeakMap, Set, and WeakSet in JavaScript
 creationDate: 2024-11-17
 updateDate: 2024-11-17
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## TL;DR

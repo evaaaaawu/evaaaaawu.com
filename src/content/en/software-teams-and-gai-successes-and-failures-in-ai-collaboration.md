@@ -1,15 +1,11 @@
 ---
 title: Software Teams and GAI - Successes and Failures in AI Collaboration
-subtitle: Notes from the AI Your Summer series event on June 13, 2023.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/software-teams-and-gai-successes-and-failures-in-ai-collaboration.webp
-imagePng: /images/articles/png/software-teams-and-gai-successes-and-failures-in-ai-collaboration.png
-imgAlt: Software Teams and GAI - Successes and Failures in AI Collaboration
 creationDate: 2023-07-17
 updateDate: 2023-07-17
-tags:
+topics:
   - AI
 featured: true
+outdated: true
 ---
 
 This article shares notes from the [AI Your Summer](https://gai-2023.alphacamp.co/) series event on [June 13, 2023](https://www.accupass.com/event/2305221045441859361432). The content has been personally restructured and does not follow the exact flow of the original presentation. Feel free to discuss and share your thoughts.

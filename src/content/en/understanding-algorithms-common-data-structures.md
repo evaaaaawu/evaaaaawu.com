@@ -1,15 +1,11 @@
 ---
 title: "Understanding Algorithms: Common Data Structures"
-subtitle: Comprehensive introduction to arrays, linked lists, stacks, queues, trees, hash tables and other common data structures - mastering the foundation of efficient algorithm design.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-common-data-structures.webp
-imagePng: /images/articles/png/understanding-algorithms-common-data-structures.png
-imgAlt: Understanding Algorithms_Common Data Structures
 creationDate: 2025-11-29
 updateDate: 2025-11-29
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 In the article [Understanding Algorithms: Getting Started](../understanding-algorithms-getting-started/), we mentioned that one strategy that can help design better algorithms is using **data structures**.

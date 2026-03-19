@@ -1,15 +1,11 @@
 ---
 title: 關於 JavaScript 的資料型別
-subtitle: JavaScript 有原生值和物件兩大資料型別。原生值包含 String、Boolean、Number、BigInt、Undefined、Null 和 Symbol；物件則包含 Array、Function 和 Objects。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/about-javascript-data-types.webp
-imagePng: /images/articles/png/about-javascript-data-types.png
-imgAlt: About JavaScript Data Types
 creationDate: 2024-11-03
 updateDate: 2024-11-03
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## JavaScript 有「原生值」和「物件」兩大資料型別

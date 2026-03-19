@@ -1,15 +1,11 @@
 ---
 title: 為什麼在 JavaScript 中 0.1 + 0.2 不會剛好是 0.3？
-subtitle: 因為二進位制 + 電腦記憶體有限，所以 0.1 + 0.2 = 0.30000000000000004。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/why-01-plus-02-equals-030000000000000004-in-javascript.webp
-imagePng: /images/articles/png/why-01-plus-02-equals-030000000000000004-in-javascript.png
-imgAlt: Why 0.1 + 0.2 equals 0.30000000000000004 in JavaScript
 creationDate: 2024-11-24
 updateDate: 2024-11-24
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 在 JavaScript 中 0.1 + 0.2 不會剛好是 0.3，這不是 JavaScript 獨有的現象，而是使用二進制浮點運算的程式語言都會遇到的問題。

@@ -1,15 +1,11 @@
 ---
 title: Key Notes from "ChatGPT Prompt Engineering for Developers" Course
-subtitle: ChatGPT Prompt Engineering for Developers is a famous course launched by DeepLearning.AI after the emergence of generative AI, serving as a comprehensive AI prompt guide suitable for everyone.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/key-notes-from-chatgpt-prompt-engineering-for-developers-course.webp
-imagePng: /images/articles/png/key-notes-from-chatgpt-prompt-engineering-for-developers-course.png
-imgAlt: Key Notes from "ChatGPT Prompt Engineering for Developers" Course
 creationDate: 2023-11-05
 updateDate: 2023-11-05
-tags:
+topics:
   - AI
 featured: true
+outdated: true
 ---
 
 "ChatGPT Prompt Engineering for Developers" is a famous course launched by [DeepLearning.AI](https://www.deeplearning.ai/) after the emergence of generative AI. Despite its name suggesting it's for developers, it serves as a comprehensive AI prompt guide suitable for everyone.

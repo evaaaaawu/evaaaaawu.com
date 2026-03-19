@@ -1,15 +1,11 @@
 ---
 title: JavaScript 中 ==、=== 與 Object.is() 的區別
-subtitle: == 會強制轉換型別與值；=== 不會強制轉換型別與值；Object.is()會比較兩個值是不是相等。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/differences-between-equals-strict-equals-and-objectis-in-javascript.webp
-imagePng: /images/articles/png/differences-between-equals-strict-equals-and-objectis-in-javascript.png
-imgAlt: Differences between ==, === and Object.is() in JavaScript
 creationDate: 2024-10-27
 updateDate: 2024-10-27
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## == 鬆散比較(loose equality)

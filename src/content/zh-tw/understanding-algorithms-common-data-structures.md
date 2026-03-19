@@ -1,15 +1,11 @@
 ---
 title: 認識演算法：常用資料結構
-subtitle: 全面介紹陣列、鏈結串列、堆疊、佇列、樹、雜湊表等常用資料結構，掌握高效演算法設計的基石。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-algorithms-common-data-structures.webp
-imagePng: /images/articles/png/understanding-algorithms-common-data-structures.png
-imgAlt: Understanding Algorithms_Common Data Structures
 creationDate: 2025-11-29
 updateDate: 2025-11-29
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 在 [認識演算法：啟程](../understanding-algorithms-getting-started/) 這篇文章中，我們提到可以幫助更好的設計演算法的其中一個策略是使用**資料結構**。

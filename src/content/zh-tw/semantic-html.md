@@ -1,15 +1,11 @@
 ---
 title: HTML 語意化
-subtitle: HTML 語意化就是用合乎語意的 HTML 標籤開發。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/semantic-html.webp
-imagePng: /images/articles/png/semantic-html.png
-imgAlt: Semantic HTML
 creationDate: 2024-04-07
 updateDate: 2024-04-07
-tags:
+topics:
   - HTML
 featured: false
+outdated: true
 ---
 
 HTML 語意化就是用合乎語意的 HTML 標籤開發，像是 `<form>` 標籤或是 `<table>` 標籤。

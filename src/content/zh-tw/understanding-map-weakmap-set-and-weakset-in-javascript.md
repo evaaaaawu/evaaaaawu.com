@@ -1,15 +1,11 @@
 ---
 title: 關於 JavaScript 的 Map、WeakMap、Set 和 WeakSet
-subtitle: Map/WeakMap 是類似於 Object 的資料結構；Set/WeakSet 的資料結構則類似於陣列。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-map-weakmap-set-and-weakset-in-javascript.webp
-imagePng: /images/articles/png/understanding-map-weakmap-set-and-weakset-in-javascript.png
-imgAlt: Understanding Map, WeakMap, Set, and WeakSet in JavaScript
 creationDate: 2024-11-17
 updateDate: 2024-11-17
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## TL;DR

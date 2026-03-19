@@ -1,15 +1,11 @@
 ---
 title: JavaScript 的提升(Hoisting)
-subtitle: 提升是形容 JavaScript 編譯階段將變數和函式的宣告存入記憶體的概念。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-javascript-hoisting.webp
-imagePng: /images/articles/png/understanding-javascript-hoisting.png
-imgAlt: Understanding JavaScript Hoisting
 creationDate: 2024-12-08
 updateDate: 2024-12-08
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 提升(Hoisting)是用來形容 JavaScript 編譯階段將變數和函式的宣告存入記憶體的概念。其中 var 的提升(hoisting)是指在編譯階段，JavaScript 引擎會將所有的 var 變數宣告提升到該函式作用域的頂端，只不過雖然變數宣告被提升了，但並不會賦值，所以如果提早呼叫該變數會出現 undefined；至於 let/const，如果我們再宣告前就使用會出現 ReferenceError 的錯誤，這會讓人誤以為 let/const 不會提升(hoisting)，但其實 let/const 同樣會有提升(hoisting)的行為，只是和 var 的提升(hoisting)有兩個差異：

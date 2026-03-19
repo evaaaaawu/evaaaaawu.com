@@ -3,15 +3,11 @@ import { z, defineCollection } from 'astro:content';
 const articlesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
-    subtitle: z.string(),
-    author: z.string(),
-    imageWebp: z.string(),
-    imagePng: z.string(),
-    imgAlt: z.string(),
     creationDate: z.date(),
     updateDate: z.date(),
-    tags: z.array(z.string()),
-    featured: z.boolean()
+    topics: z.array(z.string()),
+    featured: z.boolean(),
+    outdated: z.boolean(),
   }),
 });
 

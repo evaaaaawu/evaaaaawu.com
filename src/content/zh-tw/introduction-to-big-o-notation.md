@@ -1,15 +1,11 @@
 ---
 title: Big O 簡介
-subtitle: Big O 是一種用來描述演算法效率的數學符號，主要會關注在輸入的規模、如何成長和最壞的情況。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/introduction-to-big-o-notation.webp
-imagePng: /images/articles/png/introduction-to-big-o-notation.png
-imgAlt: Introduction to Big O Notation
 creationDate: 2024-11-05
 updateDate: 2024-11-05
-tags:
+topics:
   - Algorithm
 featured: false
+outdated: true
 ---
 
 Big O 是一種用來描述演算法效率的數學符號，但它並不會關注在精確這件事情上（e.g., 真正的執行時間或需要用到多少 CPU），而是關注在輸入的規模、如何成長和最壞的情況。

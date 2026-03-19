@@ -1,15 +1,11 @@
 ---
 title: CSS Flexbox Implementation Cheatsheet
-subtitle: CSS Flexbox is a powerful layout model that helps us simplify and make webpage element layouts more flexible.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/css-flexbox-implementation-cheatsheet.webp
-imagePng: /images/articles/png/css-flexbox-implementation-cheatsheet.png
-imgAlt: CSS Flexbox Implementation Cheatsheet
 creationDate: 2024-02-04
 updateDate: 2024-02-04
-tags:
+topics:
   - CSS
 featured: true
+outdated: true
 ---
 
 CSS Flexbox is a powerful layout model that helps us simplify and make webpage element layouts more flexible.

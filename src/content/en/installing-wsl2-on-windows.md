@@ -1,15 +1,11 @@
 ---
 title: Installing WSL2 on Windows - My Experience and Tips
-subtitle: I recently spent quite a bit of time installing WSL2 (Windows Subsystem for Linux) on my computer. Here's my detailed installation guide and the lessons learned along the way.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/installing-wsl2-on-windows.webp
-imagePng: /images/articles/png/installing-wsl2-on-windows.png
-imgAlt: Installing WSL2 on Windows
 creationDate: 2025-06-11
 updateDate: 2025-06-11
-tags:
+topics:
   - Linux
 featured: true
+outdated: true
 ---
 
 I recently switched my main development machine to Windows, and after hearing countless recommendations about using WSL2 for development on Windows, I decided to take the plunge and install WSL2 (Windows Subsystem for Linux) on my computer. The whole process turned out to be quite the adventure—more complex than I initially anticipated—so I'm sharing my installation notes here in case they help fellow developers avoid some of the bumps I encountered.

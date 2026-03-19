@@ -1,15 +1,11 @@
 ---
 title: First-Class, Higher-Order, and First-Order Functions
-subtitle: An introduction to three similar-looking, easily confused technical terms and a comparison of their relationships.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/first-class-vs-higher-order-vs-first-order-function.webp
-imagePng: /images/articles/png/first-class-vs-higher-order-vs-first-order-function.png
-imgAlt: First-Class v.s. Higher-Order v.s. First-Order Function
 creationDate: 2025-07-17
 updateDate: 2025-07-17
-tags:
+topics:
   - JavaScript
 featured: true
+outdated: true
 ---
 
 First-Class Functions, Higher-Order Functions, and First-Order Functions are three technical terms that look very similar and are easily confused. This article will thoroughly introduce what these three terms mean and compare their relationships.

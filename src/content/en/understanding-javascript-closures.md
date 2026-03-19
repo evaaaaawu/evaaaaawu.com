@@ -1,15 +1,11 @@
 ---
 title: Understanding JavaScript Closures
-subtitle: A closure is when an inner function can access variables from an outer function and remembers these variables.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/understanding-javascript-closures.webp
-imagePng: /images/articles/png/understanding-javascript-closures.png
-imgAlt: Understanding JavaScript Closures
 creationDate: 2024-12-15
 updateDate: 2024-12-15
-tags:
+topics:
   - JavaScript
 featured: false
+outdated: true
 ---
 
 ## What is a Closure?

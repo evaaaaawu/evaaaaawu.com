@@ -1,15 +1,11 @@
 ---
 title: CSS GRID Implementation Cheatsheet
-subtitle: CSS Grid is a powerful two-dimensional layout system that helps you control the arrangement and size of web elements more flexibly.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/css-grid-implementation-cheatsheet.webp
-imagePng: /images/articles/png/css-grid-implementation-cheatsheet.png
-imgAlt: CSS GRID Implementation Cheatsheet
 creationDate: 2024-02-11
 updateDate: 2024-02-11
-tags:
+topics:
   - CSS
 featured: true
+outdated: true
 ---
 
 CSS Grid is a powerful two-dimensional layout system that helps you control the arrangement and size of web elements more flexibly.

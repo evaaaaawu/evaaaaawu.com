@@ -1,15 +1,11 @@
 ---
 title: Mastering Responsive Web Design
-subtitle: RWD is a design approach that allows websites to adjust across various devices and screen sizes, presenting content in an optimized way.
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-responsive-web-design-rwd.webp
-imagePng: /images/articles/png/mastering-responsive-web-design-rwd.png
-imgAlt: Mastering Responsive Web Design
 creationDate: 2024-03-10
 updateDate: 2024-03-10
-tags:
+topics:
   - CSS
 featured: true
+outdated: true
 ---
 
 RWD stands for Responsive Web Design, a design approach that allows websites to adapt and display appropriately across various devices and screen sizes.

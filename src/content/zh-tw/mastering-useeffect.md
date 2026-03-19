@@ -1,15 +1,11 @@
 ---
 title: 攻克 useEffect - Dan Abramov 的 A Complete Guide to useEffect — overreacted 文章摘要和理解筆記
-subtitle: 從前 React 開發團隊成員 Dan Abramov 的文章來深度理解 useEffect。
-author: src/content/authors/eva.json
-imageWebp: /images/articles/webp/mastering-useeffect.webp
-imagePng: /images/articles/png/mastering-useeffect.png
-imgAlt: Mastering useEffect
 creationDate: 2025-06-19
 updateDate: 2025-06-19
-tags:
+topics:
   - React
 featured: true
+outdated: true
 ---
 
 useEffect 大概是 React 當中數一數二重要但又難理解的 Hook 了，之前我在 [React 概覽](https://evaaaaawu.com/zh-tw/articles/react-overview/) 這篇文章中的[這個段落](https://evaaaaawu.com/zh-tw/articles/react-overview/#%E5%83%85%E5%8F%AF%E5%9C%A8-function-component-%E5%85%A7%E9%A0%82%E5%B1%A4%E4%BD%9C%E7%94%A8%E5%9F%9F%E4%B8%AD%E5%91%BC%E5%8F%AB%E7%9A%84%E7%89%B9%E6%AE%8A%E5%87%BD%E5%BC%8F-aka-react-%E6%8F%90%E4%BE%9B%E7%9A%84-apihooks)有大概介紹到 useEffect，這裡則要來從前 React 開發團隊成員 Dan Abramov 的 [A Complete Guide to useEffect — overreacted](https://overreacted.io/a-complete-guide-to-useeffect/) 這篇文章更深入的理解 useEffect。
