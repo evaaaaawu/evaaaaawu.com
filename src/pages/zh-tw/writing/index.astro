@@ -1,0 +1,534 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../../utils/translations";
+
+const locale = "zh-tw";
+const { t } = useTranslations(locale);
+
+const allArticles = await getCollection("zh-tw");
+allArticles.sort(
+  (a, b) => Date.parse(b.data.updateDate) - Date.parse(a.data.updateDate),
+);
+
+const uniqueTopics = [
+  ...new Set(allArticles.flatMap((article) => article.data.topics)),
+].sort();
+
+function stripMarkdown(text) {
+  if (!text) return "";
+  return text
+    .replace(/^---[\s\S]*?---/, "")
+    .replace(/#{1,6}\s+/g, "")
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/\*(.+?)\*/g, "$1")
+    .replace(/`(.+?)`/g, "$1")
+    .replace(/\[(.+?)\]\(.+?\)/g, "$1")
+    .replace(/!\[.*?\]\(.+?\)/g, "")
+    .replace(/>\s+/g, "")
+    .replace(/\n+/g, " ")
+    .trim();
+}
+
+const localeForDate = "zh-TW";
+function formatDate(date) {
+  return new Date(date).toLocaleDateString(localeForDate, {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+---
+
+<BaseLayout title="我的文章 | Eva Wu 的個人網站" locale={locale}>
+  <div class="container flow">
+    <section class="section">
+      <h1 class="heading-1">{t("nav.writing")}</h1>
+
+      <div class="filter-bar margin-block-start-6">
+        <div class="filter-bar__left">
+          <button
+            class="filter-btn featured-toggle"
+            aria-pressed="false"
+            data-filter="featured"
+          >
+            {t("common.featured")}
+          </button>
+
+          <div class="topic-dropdown">
+            <button
+              class="filter-btn topic-toggle"
+              aria-expanded="false"
+              aria-controls="topic-list"
+            >
+              <span class="topic-label">{t("common.allTopics")}</span>
+              <span class="dropdown-arrow">&#9660;</span>
+            </button>
+            <ul id="topic-list" class="dropdown-menu" role="listbox">
+              <li role="option" aria-selected="true" data-topic="all">
+                {t("common.allTopics")}
+              </li>
+              {uniqueTopics.map((topic) => (
+                <li role="option" aria-selected="false" data-topic={topic}>
+                  {topic}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div class="sort-dropdown">
+          <button
+            class="filter-btn sort-toggle"
+            aria-expanded="false"
+            aria-controls="sort-list"
+          >
+            <span class="sort-icon">&#8693;</span>
+            <span class="sort-label">{t("common.sortByUpdated")}</span>
+          </button>
+          <div id="sort-list" class="dropdown-menu sort-menu">
+            <p class="sort-heading">{t("common.sortBy")}</p>
+            <button
+              class="sort-option active"
+              data-sort="update"
+            >
+              <span>{t("common.sortByUpdated")}</span>
+              <span class="direction-arrow">&#9650;</span>
+            </button>
+            <button
+              class="sort-option"
+              data-sort="creation"
+            >
+              <span>{t("common.sortByPublished")}</span>
+              <span class="direction-arrow">&#9650;</span>
+            </button>
+            <p class="sort-direction-label" data-newest={t("common.newestFirst")} data-oldest={t("common.oldestFirst")}>{t("common.newestFirst")}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="articles-list margin-block-start-6">
+        {allArticles.map((article) => {
+          const excerpt = stripMarkdown(article.body).slice(0, 200);
+          return (
+            <a
+              href={`/${locale}/articles/${article.slug}/`}
+              class="article-card"
+              data-featured={String(article.data.featured)}
+              data-outdated={String(article.data.outdated)}
+              data-topics={JSON.stringify(article.data.topics)}
+              data-update-date={new Date(article.data.updateDate).getTime()}
+              data-creation-date={new Date(article.data.creationDate).getTime()}
+            >
+              <div class="article-card__header">
+                <h2 class="article-card__title">{article.data.title}</h2>
+                <div class="article-card__badges">
+                  {article.data.featured && (
+                    <span class="badge badge--featured">{t("common.featured")}</span>
+                  )}
+                  {article.data.outdated && (
+                    <span class="badge badge--outdated">{t("common.outdated")}</span>
+                  )}
+                </div>
+              </div>
+              <div class="article-card__meta">
+                {article.data.topics.map((topic) => (
+                  <span class="topic-badge">{topic}</span>
+                ))}
+                <span class="meta-date">
+                  {t("common.published")} {formatDate(article.data.creationDate)}
+                </span>
+                <span class="meta-date">
+                  {t("common.updated")} {formatDate(article.data.updateDate)}
+                </span>
+              </div>
+              {excerpt && <p class="article-card__excerpt">{excerpt}...</p>}
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  @use "../../../styles/abstracts" as *;
+
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .filter-bar__left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    background: transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  .featured-toggle[aria-pressed="true"] {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .topic-dropdown,
+  .sort-dropdown {
+    position: relative;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.6rem;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 100;
+    min-width: 180px;
+    padding: 0.5rem 0;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    list-style: none;
+  }
+
+  .dropdown-menu.open {
+    display: block;
+  }
+
+  .dropdown-menu li,
+  .sort-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    text-align: left;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  .dropdown-menu li[aria-selected="true"] {
+    font-weight: 700;
+  }
+
+  .sort-menu {
+    right: 0;
+    left: auto;
+  }
+
+  .sort-heading {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .sort-option.active {
+    font-weight: 700;
+  }
+
+  .direction-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.15s ease;
+  }
+
+  .direction-arrow.desc {
+    transform: rotate(180deg);
+  }
+
+  .sort-direction-label {
+    padding: 0.35rem 0.85rem;
+    font-size: 0.75rem;
+    color: rgba(0, 0, 0, 0.45);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin-top: 0.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .sort-icon {
+    font-size: 1rem;
+  }
+
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .article-card {
+    display: block;
+    padding: 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+
+    &:hover {
+      text-decoration: none;
+      border-color: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .article-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .article-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .article-card__badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .badge {
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .badge--featured {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .badge--outdated {
+    background-color: #f0f0f0;
+    color: #666;
+  }
+
+  .article-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  .topic-badge {
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.06);
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+
+  .meta-date {
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .article-card__excerpt {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.6);
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const featuredToggle = document.querySelector(".featured-toggle");
+    const topicToggle = document.querySelector(".topic-toggle");
+    const topicList = document.getElementById("topic-list");
+    const topicLabel = document.querySelector(".topic-label");
+    const sortToggle = document.querySelector(".sort-toggle");
+    const sortList = document.getElementById("sort-list");
+    const sortLabel = document.querySelector(".sort-label");
+    const sortDirectionLabel = document.querySelector(".sort-direction-label");
+    const articleCards = document.querySelectorAll(".article-card");
+
+    if (!featuredToggle || !articleCards.length) return;
+
+    let filterFeatured = false;
+    let filterTopic = "all";
+    let sortField = "update";
+    let sortDirection = "desc";
+
+    function applyFilters() {
+      articleCards.forEach((card) => {
+        let visible = true;
+
+        if (filterFeatured && card.dataset.featured !== "true") {
+          visible = false;
+        }
+
+        if (filterTopic !== "all") {
+          const topics = JSON.parse(card.dataset.topics);
+          if (!topics.includes(filterTopic)) {
+            visible = false;
+          }
+        }
+
+        card.classList.toggle("hidden", !visible);
+      });
+    }
+
+    function applySort() {
+      const list = document.querySelector(".articles-list");
+      const cards = [...list.querySelectorAll(".article-card")];
+
+      cards.sort((a, b) => {
+        const dateA = Number(
+          sortField === "update"
+            ? a.dataset.updateDate
+            : a.dataset.creationDate,
+        );
+        const dateB = Number(
+          sortField === "update"
+            ? b.dataset.updateDate
+            : b.dataset.creationDate,
+        );
+        return sortDirection === "desc" ? dateB - dateA : dateA - dateB;
+      });
+
+      cards.forEach((card) => list.appendChild(card));
+    }
+
+    function closeAllDropdowns() {
+      topicToggle.setAttribute("aria-expanded", "false");
+      topicList.classList.remove("open");
+      sortToggle.setAttribute("aria-expanded", "false");
+      sortList.classList.remove("open");
+    }
+
+    // Featured toggle
+    featuredToggle.addEventListener("click", () => {
+      filterFeatured = !filterFeatured;
+      featuredToggle.setAttribute("aria-pressed", String(filterFeatured));
+      applyFilters();
+    });
+
+    // Topic dropdown
+    topicToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = topicToggle.getAttribute("aria-expanded") === "true";
+      closeAllDropdowns();
+      if (!isOpen) {
+        topicToggle.setAttribute("aria-expanded", "true");
+        topicList.classList.add("open");
+      }
+    });
+
+    topicList.querySelectorAll("[role='option']").forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        filterTopic = option.dataset.topic;
+        topicLabel.textContent =
+          filterTopic === "all"
+            ? option.textContent.trim()
+            : filterTopic;
+
+        topicList.querySelectorAll("[role='option']").forEach((o) => {
+          o.setAttribute(
+            "aria-selected",
+            String(o.dataset.topic === filterTopic),
+          );
+        });
+
+        closeAllDropdowns();
+        applyFilters();
+      });
+    });
+
+    // Sort dropdown
+    sortToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = sortToggle.getAttribute("aria-expanded") === "true";
+      closeAllDropdowns();
+      if (!isOpen) {
+        sortToggle.setAttribute("aria-expanded", "true");
+        sortList.classList.add("open");
+      }
+    });
+
+    sortList.querySelectorAll(".sort-option").forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const clickedField = option.dataset.sort;
+
+        if (clickedField === sortField) {
+          sortDirection = sortDirection === "desc" ? "asc" : "desc";
+        } else {
+          sortField = clickedField;
+          sortDirection = "desc";
+        }
+
+        sortList.querySelectorAll(".sort-option").forEach((o) => {
+          o.classList.toggle("active", o.dataset.sort === sortField);
+          const arrow = o.querySelector(".direction-arrow");
+          if (arrow) {
+            arrow.classList.toggle(
+              "desc",
+              o.dataset.sort === sortField && sortDirection === "desc",
+            );
+          }
+        });
+
+        const updatedLabel = sortField === "update"
+          ? sortToggle.closest(".sort-dropdown").querySelector('[data-sort="update"] span:first-child')?.textContent
+          : sortToggle.closest(".sort-dropdown").querySelector('[data-sort="creation"] span:first-child')?.textContent;
+        sortLabel.textContent = updatedLabel || "";
+
+        sortDirectionLabel.textContent =
+          sortDirection === "desc"
+            ? sortDirectionLabel.dataset.newest
+            : sortDirectionLabel.dataset.oldest;
+
+        applySort();
+      });
+    });
+
+    // Close dropdowns on outside click
+    document.addEventListener("click", () => {
+      closeAllDropdowns();
+    });
+  });
+</script>
