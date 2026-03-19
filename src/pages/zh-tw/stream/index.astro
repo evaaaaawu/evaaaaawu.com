@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../../utils/translations";
+
+const locale = "zh-tw";
+const { t } = useTranslations(locale);
+---
+
+<BaseLayout title="短分享 | Eva Wu 的個人網站" locale={locale}>
+  <div class="container flow">
+    <section class="section">
+      <h1 class="heading-1">{t("nav.stream")}</h1>
+      <p class="fs-600 margin-block-start-6">{t("stream.comingSoon")}</p>
+    </section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import { useTranslations } from "../../../utils/translations";
+
+const locale = "en";
+const { t } = useTranslations(locale);
+---
+
+<BaseLayout title="Stream | Eva Wu's Personal Website" locale={locale}>
+  <div class="container flow">
+    <section class="section">
+      <h1 class="heading-1">{t("nav.stream")}</h1>
+      <p class="fs-600 margin-block-start-6">{t("stream.comingSoon")}</p>
+    </section>
+  </div>
+</BaseLayout>
