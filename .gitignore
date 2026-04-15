@@ -2,6 +2,9 @@
 dist/
 .output/
 
+# content repo (fetched at build time from evaaaaawu/evaaaaawu-content)
+/content/
+
 # dependencies
 node_modules/
 

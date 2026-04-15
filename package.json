@@ -12,6 +12,7 @@
     "check": "astro check",
     "typecheck": "astro check",
     "test": "vitest",
+    "content:fetch": "bash scripts/fetch-content.sh",
     "prepare": "husky"
   },
   "dependencies": {
