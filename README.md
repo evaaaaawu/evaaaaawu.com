@@ -57,11 +57,26 @@ an Obsidian vault's `publish/` folder.
 Requirements: Node.js 20+ and pnpm 10+ (developed against Node.js 24.14.0 and pnpm 10.32.1).
 
 ```bash
-git clone https://github.com/evaaaaawu/evaaaaawu.com.git
+git clone --recurse-submodules https://github.com/evaaaaawu/evaaaaawu.com.git
 cd evaaaaawu.com
 pnpm install
 pnpm dev
 ```
+
+If you already cloned without `--recurse-submodules`, pull the content repo in
+afterwards:
+
+```bash
+git submodule update --init --recursive
+```
+
+The private `evaaaaawu-content` repo is mounted at `./content/`. Astro reads
+Markdown from there at build time via the content collection loaders in
+`src/content.config.ts`. You need read access to the content repo for the
+build to succeed; on Cloudflare Pages this is configured via a
+`GITHUB_TOKEN` (or equivalent) environment variable that has access to the
+private submodule, and Cloudflare's `Include submodules in build` option must
+be enabled.
 
 The dev server runs at [http://localhost:4321](http://localhost:4321).
 
@@ -73,29 +88,40 @@ The dev server runs at [http://localhost:4321](http://localhost:4321).
 | `pnpm build`     | Produce a static build in `dist/`.                     |
 | `pnpm preview`   | Serve the built site locally for a final sanity check. |
 | `pnpm typecheck` | Run `astro check` (TypeScript + Astro diagnostics).    |
+| `pnpm test`      | Run Vitest (schemas and other unit tests).             |
 
-A Husky `pre-commit` hook runs Prettier on staged files and `astro check` on
-every commit, so the tree stays formatted and type-clean without waiting for CI.
+A Husky `pre-commit` hook runs Prettier on staged files, `astro check`, and
+the Vitest suite on every commit, so the tree stays formatted, type-clean,
+and green without waiting for CI.
 
 ## Project structure
 
 ```
 .
+├── content/                    # Submodule → evaaaaawu-content (private)
+│   ├── articles/en|zh-tw/
+│   ├── stream/en|zh-tw/
+│   └── assets/
 ├── src/
+│   ├── content/
+│   │   ├── schemas.ts          # Zod schemas for articles and stream
+│   │   └── schemas.test.ts     # Vitest tests for the schemas
+│   ├── content.config.ts       # Astro content collection definitions
 │   ├── layouts/
-│   │   └── BaseLayout.astro    # Shared shell (header/footer slots)
+│   │   └── BaseLayout.astro
 │   ├── pages/
-│   │   └── index.astro         # Hello-world entry point
+│   │   ├── index.astro
+│   │   └── demo-content.astro  # Throwaway demo (removed in a later slice)
 │   ├── styles/
-│   │   └── global.css          # Tailwind entry
-│   └── config.ts               # Feature-flag nav config
+│   │   └── global.css
+│   └── config.ts
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── tsconfig.json
 ```
 
-More directories (`src/content/`, `src/lib/`, `scripts/`) will appear in later
-slices as the Bluesky sync, Obsidian sync, and content collections land.
+More directories (`src/lib/`, `scripts/`) will appear in later slices as the
+Bluesky sync and Obsidian sync land.
 
 ## A note on licensing
 
