@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, render } from "astro:content";
+
+const articles = await getCollection("articles");
+const streamPosts = await getCollection("stream");
+
+const sample = articles.find((a) =>
+  a.id.endsWith("getting-started-with-react-hooks")
+);
+if (!sample) {
+  throw new Error("Sample article not found");
+}
+const { Content } = await render(sample);
+---
+
+<BaseLayout
+  title="Demo — content loading"
+  description="Throwaway route to verify two-repo content loading."
+>
+  <span slot="header">demo / content loading</span>
+
+  <section class="max-w-2xl mx-auto py-16 space-y-12">
+    <div>
+      <p class="text-sm text-neutral-500">
+        Sample article (rendered through content collection)
+      </p>
+      <h1 class="text-3xl font-semibold mt-2">{sample.data.title}</h1>
+      <p class="mt-1 text-sm text-neutral-500">
+        {sample.data.creationDate.toISOString().slice(0, 10)} — topics: {
+          sample.data.topics.join(", ")
+        }
+      </p>
+      <article class="prose mt-6">
+        <Content />
+      </article>
+    </div>
+
+    <div>
+      <p class="text-sm text-neutral-500">
+        All articles loaded ({articles.length})
+      </p>
+      <ul class="mt-2 list-disc pl-6">
+        {
+          articles.map((a) => (
+            <li>
+              {a.id} — {a.data.title}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-sm text-neutral-500">
+        All stream posts loaded ({streamPosts.length})
+      </p>
+      <ul class="mt-2 list-disc pl-6">
+        {
+          streamPosts.map((p) => (
+            <li>
+              {p.id} — {p.data.tags.join(", ")}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <span slot="footer">demo route — remove in next slice</span>
+</BaseLayout>
