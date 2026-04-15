@@ -57,38 +57,40 @@ an Obsidian vault's `publish/` folder.
 Requirements: Node.js 20+ and pnpm 10+ (developed against Node.js 24.14.0 and pnpm 10.32.1).
 
 ```bash
-git clone --recurse-submodules https://github.com/evaaaaawu/evaaaaawu.com.git
+git clone https://github.com/evaaaaawu/evaaaaawu.com.git
 cd evaaaaawu.com
 pnpm install
+pnpm run content:fetch
 pnpm dev
 ```
 
-If you already cloned without `--recurse-submodules`, pull the content repo in
-afterwards:
+`pnpm run content:fetch` clones the private `evaaaaawu-content` repo into
+`./content/` (which is gitignored in this repo). For local development it
+uses your existing GitHub credentials via the `gh` CLI credential helper or
+a GitHub SSH key; no extra setup is needed if you can already `git clone`
+from `evaaaaawu/evaaaaawu-content` manually.
 
-```bash
-git submodule update --init --recursive
-```
+On Cloudflare Pages the same script is invoked by the build command with a
+`CONTENT_REPO_TOKEN` environment variable set to a fine-grained GitHub PAT
+that has read access to `evaaaaawu/evaaaaawu-content`. The script detects
+the variable and swaps in an HTTPS URL with an embedded token so the clone
+works without interactive auth.
 
-The private `evaaaaawu-content` repo is mounted at `./content/`. Astro reads
-Markdown from there at build time via the content collection loaders in
-`src/content.config.ts`. You need read access to the content repo for the
-build to succeed; on Cloudflare Pages this is configured via a
-`GITHUB_TOKEN` (or equivalent) environment variable that has access to the
-private submodule, and Cloudflare's `Include submodules in build` option must
-be enabled.
+Astro reads the Markdown files from `./content/` at build time via the
+content collection loaders in `src/content.config.ts`.
 
 The dev server runs at [http://localhost:4321](http://localhost:4321).
 
 ### Scripts
 
-| Command          | What it does                                           |
-| ---------------- | ------------------------------------------------------ |
-| `pnpm dev`       | Start the Astro dev server with hot module reload.     |
-| `pnpm build`     | Produce a static build in `dist/`.                     |
-| `pnpm preview`   | Serve the built site locally for a final sanity check. |
-| `pnpm typecheck` | Run `astro check` (TypeScript + Astro diagnostics).    |
-| `pnpm test`      | Run Vitest (schemas and other unit tests).             |
+| Command                  | What it does                                                |
+| ------------------------ | ----------------------------------------------------------- |
+| `pnpm dev`               | Start the Astro dev server with hot module reload.          |
+| `pnpm build`             | Produce a static build in `dist/`.                          |
+| `pnpm preview`           | Serve the built site locally for a final sanity check.      |
+| `pnpm typecheck`         | Run `astro check` (TypeScript + Astro diagnostics).         |
+| `pnpm test`              | Run Vitest (schemas and other unit tests).                  |
+| `pnpm run content:fetch` | Clone or update the private content repo into `./content/`. |
 
 A Husky `pre-commit` hook runs Prettier on staged files, `astro check`, and
 the Vitest suite on every commit, so the tree stays formatted, type-clean,
@@ -98,10 +100,12 @@ and green without waiting for CI.
 
 ```
 .
-├── content/                    # Submodule → evaaaaawu-content (private)
+├── content/                    # Fetched from evaaaaawu-content (gitignored)
 │   ├── articles/en|zh-tw/
 │   ├── stream/en|zh-tw/
 │   └── assets/
+├── scripts/
+│   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
 │   ├── content/
 │   │   ├── schemas.ts          # Zod schemas for articles and stream
