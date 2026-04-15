@@ -54,7 +54,7 @@ an Obsidian vault's `publish/` folder.
 
 ## Getting started
 
-Requirements: Node.js 20+ and pnpm 10+.
+Requirements: Node.js 20+ and pnpm 10+ (developed against Node.js 24.14.0 and pnpm 10.32.1).
 
 ```bash
 git clone https://github.com/evaaaaawu/evaaaaawu.com.git
