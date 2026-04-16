@@ -11,6 +11,8 @@
     "astro": "astro",
     "check": "astro check",
     "typecheck": "astro check",
+    "test": "vitest",
+    "content:fetch": "bash scripts/fetch-content.sh",
     "prepare": "husky"
   },
   "dependencies": {
@@ -24,7 +26,8 @@
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.4"
   },
   "packageManager": "pnpm@10.32.1",
   "engines": {

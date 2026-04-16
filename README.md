@@ -56,51 +56,119 @@ an Obsidian vault's `publish/` folder.
 
 Requirements: Node.js 20+ and pnpm 10+ (developed against Node.js 24.14.0 and pnpm 10.32.1).
 
+> **Note for visitors:** `pnpm run content:fetch` clones a private content
+> repo and will only succeed for the site owner. If you want to explore the
+> code, you can run `pnpm install` and read the source directly. Running
+> `pnpm dev` or `pnpm build` requires content files in `./content/` — see
+> [Forking this repo](#forking-this-repo) if you want to set up your own.
+
 ```bash
 git clone https://github.com/evaaaaawu/evaaaaawu.com.git
 cd evaaaaawu.com
 pnpm install
+pnpm run content:fetch
 pnpm dev
 ```
+
+`pnpm run content:fetch` clones the private `evaaaaawu-content` repo into
+`./content/` (which is gitignored in this repo). For local development it
+uses your existing GitHub credentials via the `gh` CLI credential helper or
+a GitHub SSH key; no extra setup is needed if you can already `git clone`
+from `evaaaaawu/evaaaaawu-content` manually.
+
+On Cloudflare Pages the same script is invoked by the build command with a
+`CONTENT_REPO_TOKEN` environment variable set to a fine-grained GitHub PAT
+that has read access to the content repo. The script detects the variable
+and swaps in an HTTPS URL with an embedded token so the clone works without
+interactive auth.
+
+Astro reads the Markdown files from `./content/` at build time via the
+content collection loaders in `src/content.config.ts`.
 
 The dev server runs at [http://localhost:4321](http://localhost:4321).
 
 ### Scripts
 
-| Command          | What it does                                           |
-| ---------------- | ------------------------------------------------------ |
-| `pnpm dev`       | Start the Astro dev server with hot module reload.     |
-| `pnpm build`     | Produce a static build in `dist/`.                     |
-| `pnpm preview`   | Serve the built site locally for a final sanity check. |
-| `pnpm typecheck` | Run `astro check` (TypeScript + Astro diagnostics).    |
+| Command                  | What it does                                                |
+| ------------------------ | ----------------------------------------------------------- |
+| `pnpm dev`               | Start the Astro dev server with hot module reload.          |
+| `pnpm build`             | Produce a static build in `dist/`.                          |
+| `pnpm preview`           | Serve the built site locally for a final sanity check.      |
+| `pnpm typecheck`         | Run `astro check` (TypeScript + Astro diagnostics).         |
+| `pnpm test`              | Run Vitest (schemas and other unit tests).                  |
+| `pnpm run content:fetch` | Clone or update the private content repo into `./content/`. |
 
-A Husky `pre-commit` hook runs Prettier on staged files and `astro check` on
-every commit, so the tree stays formatted and type-clean without waiting for CI.
+A Husky `pre-commit` hook runs Prettier on staged files, `astro check`, and
+the Vitest suite on every commit, so the tree stays formatted, type-clean,
+and green without waiting for CI.
 
 ## Project structure
 
 ```
 .
+├── content/                    # Fetched from evaaaaawu-content (gitignored)
+│   ├── articles/en|zh-tw/
+│   ├── stream/en|zh-tw/
+│   └── assets/
+├── content.example/            # Sample content showing the frontmatter contract
+│   ├── articles/en|zh-tw/
+│   └── stream/en|zh-tw/
+├── scripts/
+│   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
+│   ├── content/
+│   │   ├── schemas.ts          # Zod schemas for articles and stream
+│   │   └── schemas.test.ts     # Vitest tests for the schemas
+│   ├── content.config.ts       # Astro content collection definitions
 │   ├── layouts/
-│   │   └── BaseLayout.astro    # Shared shell (header/footer slots)
+│   │   └── BaseLayout.astro
 │   ├── pages/
-│   │   └── index.astro         # Hello-world entry point
+│   │   ├── index.astro
+│   │   └── demo-content.astro  # Throwaway demo (removed in a later slice)
 │   ├── styles/
-│   │   └── global.css          # Tailwind entry
-│   └── config.ts               # Feature-flag nav config
+│   │   └── global.css
+│   └── config.ts
 ├── astro.config.mjs
 ├── tailwind.config.mjs
 └── tsconfig.json
 ```
 
-More directories (`src/content/`, `src/lib/`, `scripts/`) will appear in later
-slices as the Bluesky sync, Obsidian sync, and content collections land.
+More directories (`src/lib/`, `scripts/`) will appear in later slices as the
+Bluesky sync and Obsidian sync land.
 
-## A note on licensing
+## Forking this repo
 
-This repository does not ship with a formal open-source license. You are
-welcome to read the code, learn from it, and use ideas in your own work — that
-is exactly why it is public. Copying the site wholesale, reusing the branding,
-or republishing the content is not permitted. If you are unsure whether some
-use is fine, feel free to open an issue and ask.
+You are welcome to fork this repo and adapt it into your own site. Here is
+how to get it running with your own content:
+
+1. **Create your own content repo** (public or private). Use the files in
+   `content.example/` as a starting point — they show the expected folder
+   structure and frontmatter fields. The canonical schema definitions live in
+   `src/content/schemas.ts`.
+2. **Set the `CONTENT_REPO_SLUG` environment variable** to point to your
+   repo (e.g. `yourname/yourname-content`). The fetch script defaults to
+   `evaaaaawu/evaaaaawu-content` when the variable is not set.
+3. **If your content repo is private**, also set `CONTENT_REPO_TOKEN` to a
+   fine-grained GitHub PAT with read access to that repo.
+4. Run `pnpm run content:fetch && pnpm dev`.
+
+Hosting is not tied to Cloudflare Pages. This is a standard Astro static
+site and can be deployed to any static hosting provider (Vercel, Netlify,
+GitHub Pages, etc.). If you use a CI-based host, set the environment
+variables above in its dashboard and use
+`pnpm run content:fetch && pnpm build` as the build command.
+
+## Licensing
+
+The **source code** in this repository is released under the
+[MIT License](./LICENSE). You are free to fork, modify, and use it in your
+own projects.
+
+**Content** (articles, stream posts, images) lives in a separate private
+repository and is not covered by the MIT License — all rights are reserved.
+
+**Branding** (the name "evaaaaawu.com", visual identity, and design) is
+personal. If you fork this repo, please replace the branding with your own.
+
+If you are unsure whether a particular use is fine, feel free to open an
+issue and ask.
