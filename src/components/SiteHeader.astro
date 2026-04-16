@@ -1,0 +1,76 @@
+---
+import type { Locale } from "../i18n/config";
+import { defaultLocale } from "../i18n/config";
+import { useTranslations } from "../i18n/translations";
+import { getLocalizedPath } from "../i18n/path";
+
+interface Props {
+  alternateLocaleExists?: boolean;
+}
+
+const { alternateLocaleExists = true } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const targetLocale: Locale = currentLocale === "en" ? "zh-tw" : "en";
+const t = useTranslations(currentLocale);
+const targetT = useTranslations(targetLocale);
+
+const switcherLabel = t("languageSwitcher.label");
+
+const switcherHref = alternateLocaleExists
+  ? getLocalizedPath(currentPath, targetLocale)
+  : targetLocale === defaultLocale
+    ? "/"
+    : `/${targetLocale}/`;
+
+const toastMessage = alternateLocaleExists
+  ? ""
+  : targetT("toast.noTranslation");
+---
+
+<header
+  class="p-4 border-b border-neutral-200 flex items-center justify-between"
+>
+  <a
+    href={currentLocale === defaultLocale ? "/" : `/${currentLocale}/`}
+    class="font-semibold"
+  >
+    evaaaaawu.com
+  </a>
+
+  <a
+    href={switcherHref}
+    class="text-sm px-3 py-1 border border-neutral-300 rounded hover:bg-neutral-100 transition-colors"
+    data-toast-message={toastMessage || undefined}
+  >
+    {switcherLabel}
+  </a>
+</header>
+
+<script>
+  document.addEventListener("click", (e) => {
+    const link = (e.target as HTMLElement).closest<HTMLAnchorElement>(
+      "[data-toast-message]"
+    );
+    if (!link) return;
+
+    const message = link.dataset.toastMessage;
+    if (!message) return;
+
+    e.preventDefault();
+
+    const toast = document.createElement("div");
+    toast.textContent = message;
+    toast.className =
+      "fixed bottom-4 left-1/2 -translate-x-1/2 bg-neutral-800 text-white px-4 py-2 rounded shadow-lg text-sm z-50 transition-opacity duration-300";
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+      toast.classList.add("opacity-0");
+      toast.addEventListener("transitionend", () => toast.remove());
+    }, 2500);
+
+    window.location.href = link.href;
+  });
+</script>
