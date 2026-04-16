@@ -9,7 +9,7 @@ set -euo pipefail
 #   read access to evaaaaawu/evaaaaawu-content. This script will use it to
 #   build an HTTPS URL with an embedded token.
 
-REPO_SLUG="evaaaaawu/evaaaaawu-content"
+REPO_SLUG="${CONTENT_REPO_SLUG:-evaaaaawu/evaaaaawu-content}"
 TARGET_DIR="content"
 
 if [[ -n "${CONTENT_REPO_TOKEN:-}" ]]; then

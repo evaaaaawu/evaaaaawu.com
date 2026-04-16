@@ -1,3 +1,10 @@
+# Block accidental commits of private content
+if git diff --cached --name-only | grep -q '^content/'; then
+  echo "ERROR: staged files under content/ detected."
+  echo "The content/ directory is fetched from a private repo and must not be committed here."
+  exit 1
+fi
+
 pnpm exec lint-staged
 pnpm run typecheck
 pnpm exec vitest --run
