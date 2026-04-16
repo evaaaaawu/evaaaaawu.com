@@ -56,6 +56,12 @@ an Obsidian vault's `publish/` folder.
 
 Requirements: Node.js 20+ and pnpm 10+ (developed against Node.js 24.14.0 and pnpm 10.32.1).
 
+> **Note for visitors:** `pnpm run content:fetch` clones a private content
+> repo and will only succeed for the site owner. If you want to explore the
+> code, you can run `pnpm install` and read the source directly. Running
+> `pnpm dev` or `pnpm build` requires content files in `./content/` — see
+> [Forking this repo](#forking-this-repo) if you want to set up your own.
+
 ```bash
 git clone https://github.com/evaaaaawu/evaaaaawu.com.git
 cd evaaaaawu.com
@@ -72,9 +78,9 @@ from `evaaaaawu/evaaaaawu-content` manually.
 
 On Cloudflare Pages the same script is invoked by the build command with a
 `CONTENT_REPO_TOKEN` environment variable set to a fine-grained GitHub PAT
-that has read access to `evaaaaawu/evaaaaawu-content`. The script detects
-the variable and swaps in an HTTPS URL with an embedded token so the clone
-works without interactive auth.
+that has read access to the content repo. The script detects the variable
+and swaps in an HTTPS URL with an embedded token so the clone works without
+interactive auth.
 
 Astro reads the Markdown files from `./content/` at build time via the
 content collection loaders in `src/content.config.ts`.
@@ -104,6 +110,9 @@ and green without waiting for CI.
 │   ├── articles/en|zh-tw/
 │   ├── stream/en|zh-tw/
 │   └── assets/
+├── content.example/            # Sample content showing the frontmatter contract
+│   ├── articles/en|zh-tw/
+│   └── stream/en|zh-tw/
 ├── scripts/
 │   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
@@ -127,10 +136,39 @@ and green without waiting for CI.
 More directories (`src/lib/`, `scripts/`) will appear in later slices as the
 Bluesky sync and Obsidian sync land.
 
-## A note on licensing
+## Forking this repo
 
-This repository does not ship with a formal open-source license. You are
-welcome to read the code, learn from it, and use ideas in your own work — that
-is exactly why it is public. Copying the site wholesale, reusing the branding,
-or republishing the content is not permitted. If you are unsure whether some
-use is fine, feel free to open an issue and ask.
+You are welcome to fork this repo and adapt it into your own site. Here is
+how to get it running with your own content:
+
+1. **Create your own content repo** (public or private). Use the files in
+   `content.example/` as a starting point — they show the expected folder
+   structure and frontmatter fields. The canonical schema definitions live in
+   `src/content/schemas.ts`.
+2. **Set the `CONTENT_REPO_SLUG` environment variable** to point to your
+   repo (e.g. `yourname/yourname-content`). The fetch script defaults to
+   `evaaaaawu/evaaaaawu-content` when the variable is not set.
+3. **If your content repo is private**, also set `CONTENT_REPO_TOKEN` to a
+   fine-grained GitHub PAT with read access to that repo.
+4. Run `pnpm run content:fetch && pnpm dev`.
+
+Hosting is not tied to Cloudflare Pages. This is a standard Astro static
+site and can be deployed to any static hosting provider (Vercel, Netlify,
+GitHub Pages, etc.). If you use a CI-based host, set the environment
+variables above in its dashboard and use
+`pnpm run content:fetch && pnpm build` as the build command.
+
+## Licensing
+
+The **source code** in this repository is released under the
+[MIT License](./LICENSE). You are free to fork, modify, and use it in your
+own projects.
+
+**Content** (articles, stream posts, images) lives in a separate private
+repository and is not covered by the MIT License — all rights are reserved.
+
+**Branding** (the name "evaaaaawu.com", visual identity, and design) is
+personal. If you fork this repo, please replace the branding with your own.
+
+If you are unsure whether a particular use is fine, feel free to open an
+issue and ask.
