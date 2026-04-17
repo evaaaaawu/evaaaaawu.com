@@ -25,6 +25,9 @@ pnpm-debug.log*
 # Astro
 .astro/
 
+# Lighthouse CI
+.lighthouseci/
+
 # editor
 .vscode/*
 !.vscode/extensions.json
