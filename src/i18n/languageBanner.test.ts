@@ -50,16 +50,19 @@ describe("shouldShowBanner", () => {
     ).toBe(false);
   });
 
-  it.each([["zh"], ["zh-CN"], ["zh-HK"], ["ZH-TW"], ["Zh-Hant"]])(
-    "recognises %s as Chinese",
-    (lang) => {
-      expect(
-        shouldShowBanner({
-          navigatorLanguage: lang,
-          dismissed: false,
-          currentLocale: "en",
-        })
-      ).toBe(true);
-    }
-  );
+  it.each([
+    ["zh"],
+    ["zh-CN"],
+    ["zh-HK"],
+    ["ZH-TW"],
+    ["Zh-Hant"],
+  ])("recognises %s as Chinese", (lang) => {
+    expect(
+      shouldShowBanner({
+        navigatorLanguage: lang,
+        dismissed: false,
+        currentLocale: "en",
+      })
+    ).toBe(true);
+  });
 });
