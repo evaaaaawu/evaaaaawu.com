@@ -2,10 +2,10 @@
 
 The source code for [evaaaaawu.com](https://evaaaaawu.com), Eva's personal website.
 
-> **Status:** Work in progress. The site is being rebuilt from scratch. This
-> repository currently contains only the project scaffolding (slice 1 of 17).
-> The existing coming-soon placeholder remains live at the domain until the
-> new site reaches feature parity and DNS is cut over.
+> **Status:** Work in progress. Slices 1–3 of 17 are shipped: project
+> scaffolding, two-repo content pipeline, and bilingual i18n routing with a
+> language switcher. The existing coming-soon placeholder remains live at
+> the domain until the new site reaches feature parity and DNS is cut over.
 
 ## About
 
@@ -116,15 +116,25 @@ and green without waiting for CI.
 ├── scripts/
 │   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
+│   ├── components/
+│   │   └── SiteHeader.astro    # Site header with language switcher
 │   ├── content/
 │   │   ├── schemas.ts          # Zod schemas for articles and stream
 │   │   └── schemas.test.ts     # Vitest tests for the schemas
 │   ├── content.config.ts       # Astro content collection definitions
+│   ├── i18n/
+│   │   ├── config.ts           # Locale definitions (mirrors astro.config.mjs)
+│   │   ├── path.ts             # Locale-aware path helpers + switcher logic
+│   │   ├── path.test.ts
+│   │   ├── translations.ts     # useTranslations + dot-path key lookup
+│   │   └── translations.test.ts
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── pages/
 │   │   ├── index.astro
-│   │   └── demo-content.astro  # Throwaway demo (removed in a later slice)
+│   │   ├── demo-content.astro  # Throwaway demo (removed in a later slice)
+│   │   └── zh-tw/
+│   │       └── index.astro
 │   ├── styles/
 │   │   └── global.css
 │   └── config.ts
@@ -133,8 +143,8 @@ and green without waiting for CI.
 └── tsconfig.json
 ```
 
-More directories (`src/lib/`, `scripts/`) will appear in later slices as the
-Bluesky sync and Obsidian sync land.
+More directories (`src/lib/`) will appear in later slices as the Bluesky
+sync and Obsidian sync land.
 
 ## Forking this repo
 
