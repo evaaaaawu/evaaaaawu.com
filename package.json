@@ -12,6 +12,11 @@
     "check": "astro check",
     "typecheck": "astro check",
     "test": "vitest",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format --write . && prettier --write \"**/*.astro\"",
+    "format:check": "biome format . && prettier --check \"**/*.astro\"",
+    "ci:lint": "biome ci . && prettier --check \"**/*.astro\"",
     "content:fetch": "bash scripts/fetch-content.sh",
     "prepare": "husky"
   },
@@ -22,6 +27,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
+    "@biomejs/biome": "2.4.12",
+    "@lhci/cli": "0.15.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "prettier": "^3.8.2",
