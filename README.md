@@ -2,10 +2,11 @@
 
 The source code for [evaaaaawu.com](https://evaaaaawu.com), Eva's personal website.
 
-> **Status:** Work in progress. Slices 1–3 of 17 are shipped: project
-> scaffolding, two-repo content pipeline, and bilingual i18n routing with a
-> language switcher. The existing coming-soon placeholder remains live at
-> the domain until the new site reaches feature parity and DNS is cut over.
+> **Status:** Work in progress. Slices 1–3 and 15 of 17 are shipped: project
+> scaffolding, two-repo content pipeline, bilingual i18n routing with a
+> language switcher, and CI quality gates (lint, typecheck, tests, Lighthouse).
+> The existing coming-soon placeholder remains live at the domain until the
+> new site reaches feature parity and DNS is cut over.
 
 ## About
 
@@ -49,6 +50,11 @@ an Obsidian vault's `publish/` folder.
   [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) for
   privacy-respecting, server-side analytics.
 - **[Pagefind](https://pagefind.app/)** for static-site search (planned).
+- **[Biome](https://biomejs.dev/)** for linting and formatting TypeScript,
+  JavaScript, and JSON. Prettier continues to format `.astro` files because
+  Biome does not yet support them.
+- **[Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)** as a
+  merge gate on Performance, Accessibility, Best Practices, and SEO.
 - **[Husky](https://typicode.github.io/husky/)** + **[lint-staged](https://github.com/lint-staged/lint-staged)** +
   **[Prettier](https://prettier.io/)** for commit-time quality gates.
 
@@ -89,23 +95,32 @@ The dev server runs at [http://localhost:4321](http://localhost:4321).
 
 ### Scripts
 
-| Command                  | What it does                                                |
-| ------------------------ | ----------------------------------------------------------- |
-| `pnpm dev`               | Start the Astro dev server with hot module reload.          |
-| `pnpm build`             | Produce a static build in `dist/`.                          |
-| `pnpm preview`           | Serve the built site locally for a final sanity check.      |
-| `pnpm typecheck`         | Run `astro check` (TypeScript + Astro diagnostics).         |
-| `pnpm test`              | Run Vitest (schemas and other unit tests).                  |
-| `pnpm run content:fetch` | Clone or update the private content repo into `./content/`. |
+| Command                  | What it does                                                                 |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| `pnpm dev`               | Start the Astro dev server with hot module reload.                           |
+| `pnpm build`             | Produce a static build in `dist/`.                                           |
+| `pnpm preview`           | Serve the built site locally for a final sanity check.                       |
+| `pnpm typecheck`         | Run `astro check` (TypeScript + Astro diagnostics).                          |
+| `pnpm test`              | Run Vitest (schemas and other unit tests).                                   |
+| `pnpm lint`              | Biome lint on TS/JS/JSON.                                                    |
+| `pnpm lint:fix`          | Same as `lint`, applies safe fixes in place.                                 |
+| `pnpm format`            | Biome format on TS/JS/JSON + Prettier on `.astro`.                           |
+| `pnpm format:check`      | Read-only format verification (matches what CI runs).                        |
+| `pnpm run ci:lint`       | `biome ci .` + `prettier --check "**/*.astro"`; what the `Lint` CI job runs. |
+| `pnpm run content:fetch` | Clone or update the private content repo into `./content/`.                  |
 
-A Husky `pre-commit` hook runs Prettier on staged files, `astro check`, and
-the Vitest suite on every commit, so the tree stays formatted, type-clean,
-and green without waiting for CI.
+A Husky `pre-commit` hook runs Biome (on TS/JS/JSON) and Prettier (on
+`.astro` and other files) via lint-staged, then `astro check`, then the
+Vitest suite. GitHub Actions runs the same four checks plus Lighthouse CI
+on every pull request — see `.github/workflows/ci.yml`.
 
 ## Project structure
 
 ```
 .
+├── .github/
+│   └── workflows/
+│       └── ci.yml              # Lint, typecheck, test, Lighthouse CI
 ├── content/                    # Fetched from evaaaaawu-content (gitignored)
 │   ├── articles/en|zh-tw/
 │   ├── stream/en|zh-tw/
@@ -113,6 +128,8 @@ and green without waiting for CI.
 ├── content.example/            # Sample content showing the frontmatter contract
 │   ├── articles/en|zh-tw/
 │   └── stream/en|zh-tw/
+├── public/
+│   └── favicon.svg             # Placeholder favicon (design slice will replace)
 ├── scripts/
 │   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
@@ -132,13 +149,23 @@ and green without waiting for CI.
 │   │   └── BaseLayout.astro
 │   ├── pages/
 │   │   ├── index.astro
+│   │   ├── stream.astro        # Scaffold stream page (replaced in later slice)
 │   │   ├── demo-content.astro  # Throwaway demo (removed in a later slice)
+│   │   ├── articles/
+│   │   │   ├── index.astro     # Scaffold articles list
+│   │   │   └── [slug].astro    # Scaffold article detail
 │   │   └── zh-tw/
-│   │       └── index.astro
+│   │       ├── index.astro
+│   │       ├── stream.astro
+│   │       └── articles/
+│   │           ├── index.astro
+│   │           └── [slug].astro
 │   ├── styles/
 │   │   └── global.css
 │   └── config.ts
 ├── astro.config.mjs
+├── biome.json                  # Biome lint + format config
+├── lighthouserc.json           # Lighthouse CI thresholds and audited routes
 ├── tailwind.config.mjs
 └── tsconfig.json
 ```

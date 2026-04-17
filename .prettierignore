@@ -1,4 +1,16 @@
 dist/
 node_modules/
 .astro/
+content/
 pnpm-lock.yaml
+
+# TS/JS/JSON are formatted by Biome, not Prettier.
+# Keep this in sync with biome.json's `files.includes`.
+*.ts
+*.tsx
+*.js
+*.jsx
+*.mjs
+*.cjs
+*.json
+*.jsonc
