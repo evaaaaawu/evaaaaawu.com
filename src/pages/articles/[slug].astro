@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return [{ params: { slug: "hello-world" } }];
+}
+---
+
+<BaseLayout
+  title="Hello, world — evaaaaawu.com"
+  description="Placeholder article. Real content lands in a later slice."
+>
+  <article class="max-w-2xl mx-auto py-16 prose prose-neutral">
+    <h1>Hello, world</h1>
+    <p>
+      This is a placeholder article page. A later slice will replace it with
+      Markdown content from the content repository.
+    </p>
+  </article>
+  <span slot="footer">&copy; {new Date().getFullYear()} Eva</span>
+</BaseLayout>

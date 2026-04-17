@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return [{ params: { slug: "hello-world" } }];
+}
+---
+
+<BaseLayout
+  title="Hello, world — evaaaaawu.com"
+  description="暫定文章頁，後續 slice 會換成從 content repo 載入的 Markdown。"
+>
+  <article class="max-w-2xl mx-auto py-16 prose prose-neutral">
+    <h1>Hello, world</h1>
+    <p>
+      這是一個暫定的文章頁，之後會由後續 slice 替換成從 content repo 載入的
+      Markdown。
+    </p>
+  </article>
+  <span slot="footer">&copy; {new Date().getFullYear()} Eva</span>
+</BaseLayout>
