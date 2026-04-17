@@ -6,7 +6,7 @@ function stripLocalePrefix(path: string): string {
     if (locale === defaultLocale) continue;
     const prefix = `/${locale}/`;
     if (path === prefix || path.startsWith(prefix)) {
-      return "/" + path.slice(prefix.length);
+      return `/${path.slice(prefix.length)}`;
     }
   }
   return path;
