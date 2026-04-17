@@ -1,25 +1,55 @@
 ---
+import type { Locale } from "../i18n/config";
+import { defaultLocale } from "../i18n/config";
+import { getLocalizedPath } from "../i18n/path";
+import SiteHeader from "../components/SiteHeader.astro";
+
 interface Props {
   title?: string;
   description?: string;
+  alternateLocaleExists?: boolean;
 }
 
-const { title = "evaaaaawu.com", description = "Personal site of Eva." } =
-  Astro.props;
+const {
+  title = "evaaaaawu.com",
+  description = "Personal site of Eva.",
+  alternateLocaleExists = true,
+} = Astro.props;
+
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const htmlLang = currentLocale === "zh-tw" ? "zh-Hant-TW" : "en";
+const currentPath = Astro.url.pathname;
+const targetLocale: Locale = currentLocale === "en" ? "zh-tw" : "en";
+const alternatePath = getLocalizedPath(currentPath, targetLocale);
+const site = Astro.site?.origin ?? "";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={htmlLang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    {
+      alternateLocaleExists && (
+        <>
+          <link
+            rel="alternate"
+            hreflang={currentLocale === "zh-tw" ? "zh-Hant-TW" : "en"}
+            href={`${site}${currentPath}`}
+          />
+          <link
+            rel="alternate"
+            hreflang={targetLocale === "zh-tw" ? "zh-Hant-TW" : "en"}
+            href={`${site}${alternatePath}`}
+          />
+        </>
+      )
+    }
   </head>
   <body class="min-h-screen flex flex-col bg-white text-neutral-900">
-    <header class="p-4 border-b border-neutral-200">
-      <slot name="header" />
-    </header>
+    <SiteHeader alternateLocaleExists={alternateLocaleExists} />
 
     <main class="flex-1 p-4">
       <slot />
