@@ -34,14 +34,14 @@ const toastMessage = alternateLocaleExists
 >
   <a
     href={currentLocale === defaultLocale ? "/" : `/${currentLocale}/`}
-    class="font-semibold"
+    class="font-semibold cursor-pointer"
   >
     evaaaaawu.com
   </a>
 
   <a
     href={switcherHref}
-    class="text-sm px-3 py-1 border border-neutral-300 rounded hover:bg-neutral-100 transition-colors"
+    class="text-sm px-3 py-1 border border-neutral-300 rounded hover:bg-neutral-100 transition-colors cursor-pointer"
     data-toast-message={toastMessage || undefined}
   >
     {switcherLabel}
