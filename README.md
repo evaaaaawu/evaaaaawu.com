@@ -2,11 +2,12 @@
 
 The source code for [evaaaaawu.com](https://evaaaaawu.com), Eva's personal website.
 
-> **Status:** Work in progress. Slices 1–3 and 15 of 17 are shipped: project
+> **Status:** Work in progress. Slices 1–4 and 15 of 17 are shipped: project
 > scaffolding, two-repo content pipeline, bilingual i18n routing with a
-> language switcher, and CI quality gates (lint, typecheck, tests, Lighthouse).
-> The existing coming-soon placeholder remains live at the domain until the
-> new site reaches feature parity and DNS is cut over.
+> language switcher, a first-visit Chinese-language suggestion banner, and
+> CI quality gates (lint, typecheck, tests, Lighthouse). The existing
+> coming-soon placeholder remains live at the domain until the new site
+> reaches feature parity and DNS is cut over.
 
 ## About
 
@@ -134,7 +135,8 @@ on every pull request — see `.github/workflows/ci.yml`.
 │   └── fetch-content.sh        # Clones or updates ./content/ for local + CI
 ├── src/
 │   ├── components/
-│   │   └── SiteHeader.astro    # Site header with language switcher
+│   │   ├── SiteHeader.astro    # Site header with language switcher
+│   │   └── LanguageBanner.astro # First-visit Chinese-language suggestion banner
 │   ├── content/
 │   │   ├── schemas.ts          # Zod schemas for articles and stream
 │   │   └── schemas.test.ts     # Vitest tests for the schemas
@@ -144,7 +146,9 @@ on every pull request — see `.github/workflows/ci.yml`.
 │   │   ├── path.ts             # Locale-aware path helpers + switcher logic
 │   │   ├── path.test.ts
 │   │   ├── translations.ts     # useTranslations + dot-path key lookup
-│   │   └── translations.test.ts
+│   │   ├── translations.test.ts
+│   │   ├── languageBanner.ts   # shouldShowBanner predicate + dismiss key
+│   │   └── languageBanner.test.ts
 │   ├── layouts/
 │   │   └── BaseLayout.astro
 │   ├── pages/

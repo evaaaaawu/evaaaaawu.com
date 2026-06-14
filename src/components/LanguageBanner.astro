@@ -1,0 +1,87 @@
+---
+import type { Locale } from "../i18n/config";
+import { defaultLocale } from "../i18n/config";
+import { BANNER_DISMISSED_KEY } from "../i18n/languageBanner";
+import { useTranslations } from "../i18n/translations";
+
+const currentLocale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const t = useTranslations(currentLocale);
+
+const message = t("languageBanner.message");
+const switchAction = t("languageBanner.switchAction");
+const dismissLabel = t("languageBanner.dismissLabel");
+---
+
+<div
+  id="language-banner"
+  role="region"
+  aria-label={dismissLabel}
+  data-current-locale={currentLocale}
+  data-dismiss-key={BANNER_DISMISSED_KEY}
+  hidden
+  class="bg-neutral-900 text-white px-4 py-3 flex items-center justify-center gap-4 text-sm"
+>
+  <span>{message}</span>
+  <a
+    href="/zh-tw/"
+    class="underline font-medium hover:opacity-80 cursor-pointer"
+  >
+    {switchAction}
+  </a>
+  <button
+    type="button"
+    data-banner-dismiss
+    aria-label={dismissLabel}
+    class="ml-2 px-2 py-1 rounded hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-white cursor-pointer"
+  >
+    ✕
+  </button>
+</div>
+
+<script>
+  import { shouldShowBanner } from "../i18n/languageBanner";
+  import type { Locale } from "../i18n/config";
+
+  const banner = document.getElementById("language-banner");
+  if (banner) {
+    const dismissKey = banner.dataset.dismissKey ?? "lang-banner-dismissed";
+    const currentLocale = (banner.dataset.currentLocale ?? "en") as Locale;
+
+    let dismissed = false;
+    try {
+      dismissed = localStorage.getItem(dismissKey) === "1";
+    } catch {
+      dismissed = false;
+    }
+
+    const visible = shouldShowBanner({
+      navigatorLanguage: navigator.language ?? "",
+      dismissed,
+      currentLocale,
+    });
+
+    if (visible) {
+      banner.hidden = false;
+    }
+
+    const dismissButton = banner.querySelector<HTMLButtonElement>(
+      "[data-banner-dismiss]"
+    );
+    const hideAndPersist = () => {
+      banner.hidden = true;
+      try {
+        localStorage.setItem(dismissKey, "1");
+      } catch {
+        // storage unavailable — banner already hidden for this visit
+      }
+    };
+
+    dismissButton?.addEventListener("click", hideAndPersist);
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !banner.hidden) {
+        hideAndPersist();
+      }
+    });
+  }
+</script>

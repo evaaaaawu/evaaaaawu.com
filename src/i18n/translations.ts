@@ -20,6 +20,11 @@ const ui = {
     languageSwitcher: {
       label: "中文",
     },
+    languageBanner: {
+      message: "這個網站有繁體中文版，要切換嗎？",
+      switchAction: "切換到中文",
+      dismissLabel: "關閉語言提示",
+    },
   },
   "zh-tw": {
     nav: {
@@ -35,6 +40,11 @@ const ui = {
     },
     languageSwitcher: {
       label: "English",
+    },
+    languageBanner: {
+      message: "這個網站有繁體中文版，要切換嗎？",
+      switchAction: "切換到中文",
+      dismissLabel: "關閉語言提示",
     },
   },
 } as const;
